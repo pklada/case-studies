@@ -1,0 +1,64 @@
+.imageFocus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.9);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .imageFocus_imageContainer {
+        padding: $size-xl;
+        margin: auto;
+        max-height: 100%;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .imageFocus_close {
+        position: fixed;
+        right: $size-md;
+        top: $size-md;
+        width: $min-tap-size;
+        height: $min-tap-size;
+        background: transparent;
+        border: none;
+        color: white;
+        background-image: url('/assets/images/close.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: rgba(0,0,0,.5);
+        }
+    }
+
+    .imageFocus_caption {
+        position: fixed;
+        bottom: $size-md;
+        color: white;
+        font-size: $font-sm;
+        background: rgba(0,0,0,.5);
+        padding: $size-sm;
+        border-radius: $border-radius;
+        text-align: center;
+        max-width: 600px;
+    }
+}

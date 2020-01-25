@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            .video-container {
+                width: calc(100vw);
+                height: calc(100vh);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .video-frame {
+                position: relative;
+            }
+
+            .navbar {
+                height: 38px;
+                background-color: red;
+                position:absolute;
+                left: 0;
+                right: 0;
+                top: 0; 
+                background-image: url(/assets/images/status-bar.png);
+            }
+        </style>
+    </head>
+    <body style="background-color: ECECEC; overflow: hidden;">
+        <div class="video-container">
+            <div class="video-frame">
+                <video autoplay muted name="media" style="
+    width: 375px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.03);
+" loop=""><source src="/assets/videos/bottom-filter.mov" type="video/mp4"></video>
+                <div class="navbar"></div>
+            </div>
+        </div>
+    </body>
+</html>

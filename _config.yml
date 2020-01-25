@@ -1,0 +1,60 @@
+title: Pete Lada
+email: pklada@gmail.com
+description: Selected works of Pete Lada
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+theme_color: '#c0ffee'
+twitter_username: pklada
+github_username:  pklada
+author: Pete Lada
+logo: assets/images/large-logo.png
+twitter:
+  username: pklada
+social:
+  name: Pete Lada
+  links:
+    - https://twitter.com/pklada
+    - https://www.linkedin.com/in/pklada
+    - https://github.com/pklada
+
+languages: ["en"]
+ampdir: amp
+netlify_cms: false
+
+### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
+#webmaster_verifications:
+#  google: verification_code
+#google_analytics: id
+#doorbell:
+#  id: doorbell_id
+#  appKey: doorbell_appKey
+
+#cookie_consent: true
+
+### Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - octopress-minify-html
+
+### Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _src
+  - _images
+  - _videos
+  - LICENSE
+  - package.json
+  - README.md
+  - webpack.config.js
+  - yarn-error.log
+  - yarn.lock
+  - config
+  - optimization-fix
+  - optimization-fix-this-file-is-ignored.js
+  - icon.png

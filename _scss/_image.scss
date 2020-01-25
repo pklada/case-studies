@@ -1,0 +1,95 @@
+.image {
+    margin: 0;
+    text-align: center;
+    
+    img,
+    video {
+        height: auto;
+        max-width: 100%;
+        border-radius: $border-radius;
+    }
+
+    .image_caption {
+        font-size: $font-xs;
+        text-align: center;
+        margin-top: $size-sm;
+        color: $text-light-color;
+    }
+
+    .image_frame {
+        border: 1px solid #C4C4C4;
+        border-radius: $border-radius;
+        display: inline-block;
+
+        img,
+        video {
+            vertical-align: middle;
+        }
+    }
+
+    &.is-clickable {
+        .image_frame {
+            cursor: pointer;
+        }
+    }
+
+    &.is-focusable {
+        cursor: zoom-in;
+        position: relative;
+
+        &:hover {
+            .image_frame {
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    background: rgba(0,0,0,.05);
+                }
+
+                img,
+                video {
+                    opacity: .6;
+                }
+            }
+
+            .image_zoomIndicator {
+                background-color: rgba(255, 255, 255, .85);
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+
+                &:before {
+                    opacity: .8;
+                }
+            }
+        }
+
+        .image_zoomIndicator {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: $min-tap-size;
+            height: $min-tap-size;
+            background-color: rgba(255, 255, 255, .7);
+            border-radius: $border-radius;
+            transform: scale(.75);
+            transform-origin: top right;
+
+            &:before {
+                content: "";
+                background-image: url(/assets/images/zoom.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                opacity: .5;
+            }
+        }
+    }
+}

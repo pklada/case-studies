@@ -1,0 +1,205 @@
+---
+layout: default
+---
+<div class="post">
+    <div class="post_intro">
+      <div class="post_title">
+        <h2>Guidebook Spaces</h2>
+      </div>
+      <div class="post_introQuote">
+        <p>Adding a new layer to the Guidebook platform</p>
+      </div>
+    </div>
+    <div class="post_body">
+      <h3>Summary</h3>
+      <p>An overhaul of Guidebook's schedule feature, given that it is the platform's most popular feature and is a main selling point for the product. The redesign targeted the schedule's date picker, filtering method, and general user experience improvements.</p>
+      <h3>Background</h3>
+      <p>The Guidebook platform developed essentially as a collection of tools surrounding its primary feature: the schedule. Starting as an events-specific product, the schedule was the true catalyst for app usage - without one there would be little purpose to use the app. Additionally, Guidebook has achieved and maintained success within the events-app space by focusing on the end-user experience of the app, and relentlessly iterating on this experience. With that in mind, in 2019 I took it upon myself to overhaul the schedule module, and to convince the executive team to approve the project.</p>
+      <figure class="image image-popped post_section popped js-image-focus" data-image-src="/assets/images/guidebook-schedule-iterations.jpg" data-caption="The schedule module has evolved and refined over 10 years. The right-most figure is after the schedule redesign.">
+        <div class="image_frame">
+          <img src="/assets/images/guidebook-schedule-iterations.jpg" />
+        </div>
+        <figcaption class="image_caption">The schedule module has evolved and refined over 10 years. The right-most figure is after the schedule redesign.</figcaption>
+      </figure>
+      <h3>Goals</h3>
+      <ol class="numbered-list">
+        <li>Improve the general user experience of the feature. While the feature was relatively easy to use, I wanted to make it more delightful, engaging, and fun to use, as well as tap into some newer design paradigms (i.e. a page sheet).</li>
+        <li>Simplify day navigation. Given that Guidebook supports a wide range of guide durations, we should adjust the date picker to display in an optimal way based on the guide's specific duration. </li>
+        <li>Improve filtering behavior. We want to make filtering by track easier and more intuitive.</li>
+        <li>Update schedule/my schedule toggle design. Current design is fragile and confusing.</li>
+      </ol>
+      <h3>Specific improvements</h3>
+      <h4>Adaptive Date Picker</h4>
+      <p>Guidebook supports guides ranging from a single day to year-round. Given this, it became apparent that the date picker needed to adjust based on the duration of the guide. I proposed introducing four states to the date picker: single-day, short, medium, and on-going.</p>
+      <p>When the date picker is in the "single day" state, it will present itself not as a picker, but as a rendering of the day the guide occurs on. The user can no longer adjust the date selected.</p>
+      
+      <div class="post_section popped focused">
+        <div class="figureGrid">
+          <div class="figureGrid_item">
+            <figure class="image">
+              <div class="image_frame l-v-bottom-spaced">
+                <img src="/assets/images/guidebook-schedule-single-day-picker.png" />
+              </div>
+              <div>
+                <h4>Single-day event</h4>
+                <p>When the date picker is in the "single day" state, it will present itself not as a picker, but as a rendering of the day the guide occurs on. The user can no longer adjust the date selected. </p>
+              </div>
+            </figure>
+          </div>
+          <div class="figureGrid_item">
+            <figure class="image">
+              <div class="image_frame l-v-bottom-spaced">
+                <img src="/assets/images/guidebook-schedule-short-event-picker.jpg" />
+              </div>
+              <div>
+                <h4>Short event</h4>
+                <p>When the date picker is in the "short" state (2-4 days), it will present itself as a simple picker, which no ability to swipe to the next or previous week. It will not render days outside the bounds of the guide's duration. </p>
+              </div>
+            </figure>
+          </div>
+          <div class="figureGrid_item">
+            <figure class="image">
+              <div class="image_frame l-v-bottom-spaced">
+                <img src="/assets/images/guidebook-schedule-medium-event-picker.jpg" />
+              </div>
+              <div>
+                <h4>Medium-length event</h4>
+                <p>When the date picker is in the "medium" state (5-14 days), it will present itself as a date picker which is interactive (you can swipe to the next or previous week). Days outside the duration are not selectable.</p>
+              </div>
+            </figure>
+          </div>
+          <div class="figureGrid_item">
+            <figure class="image js-image-focus" data-image-src="/assets/images/guidebook-schedule-ongoing-picker.gif" data-caption="The ongoing event day picker can expand from a week view to a full calendar view.">
+              <div class="image_frame l-v-bottom-spaced">
+                <img src="/assets/images/guidebook-schedule-ongoing-picker.gif" />
+              </div>
+              <div>
+                <h4>Ongoing event</h4>
+                <p>When the date picker is in the "on-going" state (no start or end date, or longer than 2 weeks), it will present it as a fully functional calendar. It can be expanded from week to calendar view, and any day can be selected (displaying "no sessions" if nothing occurs on that day). We also display "dots" on days which have sessions. </p>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="figureRow post_section pull-left">
+        <figure class="figureRow_figure">
+          <div class="image js-image-focus" data-image-src="/assets/images/guidebook-bottom-sheet.gif">
+            <div class="image_frame l-v-bottom-spaced">
+              <img src="/assets/images/guidebook-bottom-sheet.gif" />
+            </div>
+          </div>
+        </figure>
+        <div class="figureRow_details">
+          <h4>Better filtering UX</h4>
+          <p>To make filtering more obvious and intuitive, we replaced the popover with a full bottom sheet. This sheet can be dragged up to expand the full list of filters, with clear indications for which filter is applied.</p>
+          <p>We surfaced the applied filters in the navigation bar, so the user is aware of what filter is applied at any moment.</p>
+        </div>
+      </div>
+      <div class="figureRow reversed post_section pull-right">
+        <figure class="figureRow_figure">
+          <div class="image js-image-focus" data-image-src="/assets/images/guidebook-session-toggle.gif" data-caption="The updated bottom toggle allowed for a simpler and more extendable metaphor for saved sessions.">
+            <div class="image_frame l-v-bottom-spaced">
+              <img src="/assets/images/guidebook-session-toggle.gif" />
+            </div>
+            <figcaption class="image_caption">
+              A prototype of the footer toggle built in Principle.
+            </figcaption>
+          </div>
+        </figure>
+        <div class="figureRow_details">
+          <h4>Schedule toggle improvements</h4>
+          <p>To reduce confusion with the schedule/my schedule toggle (as well as remove the labels as they often became truncated) I proposed moving to a check mark motif. This both matched the motif we use in the schedule rows themselves, but also saved room in the footer so that the labels no longer truncated. This would more clearly operate as a higher level filter as well, rather than paging between two separate views.</p>
+          <p class="deemphasized">Note: this portion of the schedule update has not yet launched.</p>
+        </div>
+      </div>
+
+      <hr class="post_divider" />
+
+      <div class="post_section">
+        <h3>Process</h3>
+        <ol class="post_subtitleList">
+          <li>
+            <h4>Executive & Product Buy-in</h4>
+            <p>Once I decided that the schedule module needed an overhaul, it became important to convince the product and executive teams that it was a worthwhile endeavor. This was a relatively simple process which started with the creation of a one-page product pitch document. This document explained the goals of the project, the reasoning for its importance, and a estimated scope. I presented this document to the product team, and was able to convince them to add it to a list of projects under consideration. Next, I presented the one-pager to the executive team in our monthly product/exec meeting. It got buy in from the rest of the executives, and was formally slotted into the roadmap. </p>
+          </li>
+          <li>
+            <h4>Ideation & Research</h4>
+            <p>I had a rough idea of what I wanted to improve, but wanted to validate those ideas with other, customer-facing teams. I sat down with both the CSA team leaders and sales team leaders to discuss the biggest issues they hear from customers relating to the schedule module. These complaints aligned fairly closely with what I had anticipated: difficulty with day selection and some confusion around filtering.</p>
+            <p>I did a lot of research on how other apps handle scheduling. Our use-case is fairly specialized (bounded events) but it was useful to gather interaction inspiration from such apps as Outlook, Google Calendar, Google I/O, Sunrise, among others.</p>
+            <p>Next, I started producing some rough designs of how we could improve the feature. I had a fairly clear idea of what I wanted to create, but still explored here, mainly around the layout for the filter sheet.</p>
+          </li>
+          <li>
+            <h4>Prototyping</h4>
+            <p>From the designs, I created some prototypes of some of the new interactions (primarily, the new filter sheet and the new day picker states). I ran these prototypes by product as well as members of the sales and CSA teams to gather feedback. The prototypes helped better communicate how the filter sheet and collapsable picker would operate.</p>
+            <div class="post_section popped">
+              <div class="figureGrid">
+                <div class="figureGrid_item">
+                  <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-android-filter-sheet.m4v" data-caption="A Framer prototype I created for the Android filter bottom sheet.">
+                    <div class="image_frame">
+                      <video autoplay loop mute>
+                        <source src="/assets/videos/guidebook-prototype-android-filter-sheet.m4v">
+                      </video>
+                    </div>
+                    <figcaption class="image_caption">A Framer prototype I created for the Android filter bottom sheet.</figcaption>
+                  </figure>
+                </div>
+                <div class="figureGrid_item">
+                  <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-android-schedule.m4v" data-caption="A Framer prototype I created for the Android schedule header scroll collapse behavior.">
+                    <div class="image_frame">
+                      <video autoplay loop mute>
+                        <source src="/assets/videos/guidebook-prototype-android-schedule.m4v">
+                      </video>
+                    </div>
+                    <figcaption class="image_caption">A Framer prototype I created for the Android schedule header scroll collapse behavior.</figcaption>
+                  </figure>
+                </div>
+                <div class="figureGrid_item">
+                  <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-filter-sheet.m4v" data-caption="A Framer prototype I created to test various filter pill colors in both selected and default state.">
+                    <div class="image_frame">
+                      <video autoplay loop mute>
+                        <source src="/assets/videos/guidebook-prototype-filter-sheet.m4v">
+                      </video>
+                    </div>
+                    <figcaption class="image_caption">A Framer prototype I created to test various filter pill colors in both selected and default state.</figcaption>
+                  </figure>
+                </div>
+                <div class="figureGrid_item">
+                  <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-week-picker.m4v" data-caption="A Framer prototype I created showing the behavior of the collapsed week/day picker on iOS.">
+                    <div class="image_frame">
+                      <video autoplay loop mute>
+                        <source src="/assets/videos/guidebook-prototype-week-picker.m4v">
+                      </video>
+                    </div>
+                    <figcaption class="image_caption">A Framer prototype I created showing the behavior of the collapsed week/day picker on iOS.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li>
+            <h4>Impact Analysis</h4>
+            <p>Once the designs were fairly well established, I constructed an impact analysis with one of our product managers. This analysis contained near-final designs and interactions. These were presented to team leads for any final feedback. </p>
+          </li>
+          <li>
+            <h4>Development & implementation</h4>
+            <p>Finally, development began. I worked closely with our primary iOS and Android engineers to implement the new designs. Often, they would set up a view and then pass it over to me to tweak and polish. This process of design/developer back and forth within the actual codebase is something I have done for years and find results in quality products.</p>
+          </li>
+          <li>
+            <h4>Testing & release</h4>
+            <p>Next, with the QA team I set up a "testing party" for the feature. I worked with our QA lead to produce a set of criteria and requirements which had to pass to consider the feature release-ready. We sat down with PMs and other developers to complete the test. Once the tests were passed, we cut a release candidate for both apps.</p>
+          </li>
+          <li>
+            <h4>Validating goals</h4>
+            <p>After release, we primarily tracked if the feature was successful through customer feedback. Our net promotor score was something we kept an eye on. I had some of our account managers discuss the changes with customers to gather feedback, most of which was positive. We closely tracked metrics on schedule usage (schedule views, schedule item adds, etc) to make sure there were no negative effects, which did not materialize.</p>
+          </li>
+          <li>
+            <h4>Iteration</h4>
+            <p>As with any major project, after release inevitably bugs are found or edge cases are unearthed. We continued to iterate on the feature, adjusting things like how single track schedules operate. The schedule is the type of feature which will never be "done" at Guidebook, and I envision iteration and evolution here will continue for the next 10 years, as it has for the previous.</p>
+          </li>
+        </ol>
+      </div>
+
+
+    </div>
+  </div>

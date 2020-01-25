@@ -1,0 +1,117 @@
+$browser-bgd-color: #DFE1E5;
+.browser {
+    
+    .browser_frame {
+        padding: $size-sm;
+        background: $browser-bgd-color;
+        border-radius: $border-radius;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+    }
+
+    &.is-focusable {
+        .browser_frame {
+            cursor: zoom-in;
+            position: relative;
+        }
+
+        &:hover {
+            .browser_screen {
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    background: rgba(0,0,0,.05);
+                }
+
+                img,
+                video {
+                    opacity: .6;
+                }
+            }
+
+            .browser_zoomIndicator {
+                background-color: rgba(255, 255, 255, .85);
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+
+                &:before {
+                    opacity: .8;
+                }
+            }
+        }
+    }
+
+    .browser_screen {
+        position: relative;
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+    }
+
+    .browser_controls {
+        display: flex;
+        height: 30px;
+        align-items: stretch;
+        margin-bottom: $size-sm;
+
+        p {
+            background: white;
+            flex-grow: 1;
+            margin-bottom: 0;
+            padding: $size-xs $size-xs $size-xs $size-sm;
+            border-radius: 10000px;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(0,0,0,.5);
+            margin-left: $size-md;
+            opacity: .5;
+        }
+    }
+
+    .browser_button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: darken($browser-bgd-color, 5%);
+        align-self: center;
+        margin-left: $size-sm;
+    }
+
+    .browser_zoomIndicator {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: $min-tap-size;
+        height: $min-tap-size;
+        background-color: rgba(255, 255, 255, .7);
+        border-radius: $border-radius;
+        transform: scale(.75);
+        transform-origin: top right;
+
+        &:before {
+            content: "";
+            background-image: url(/assets/images/zoom.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: .5;
+        }
+    }
+
+    .browser_caption {
+        font-size: $font-xs;
+        text-align: center;
+        margin-top: $size-sm;
+        color: $text-light-color;
+    }
+}

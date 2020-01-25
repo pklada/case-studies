@@ -1,0 +1,17 @@
+
+
+$figureGridGutter: $size-lg;
+
+.figureGrid {
+    display: flex;
+    margin-right: -1 * $figureGridGutter;
+    margin-bottom: -1 * $figureGridGutter;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .figureGrid_item {
+        width: calc(50% - #{$figureGridGutter});
+        margin-right: $figureGridGutter;
+        margin-bottom: $figureGridGutter;
+    }
+}

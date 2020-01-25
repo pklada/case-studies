@@ -1,0 +1,79 @@
+$nav-logo-size: 100px;
+
+.navigation {
+  @include container();
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: $size-md;
+  padding-bottom: $size-md;
+
+  height: 130px;
+
+  &_branding {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: $nav-logo-size;
+    width: $nav-logo-size;
+
+    &:before {
+      position: absolute;
+      background: darken($bgd-color, 5%);
+      content: "";
+      width: 120%;
+      height: 120%;
+      display: block;
+      z-index: -1;
+      top: -10%;
+      left: -10%;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &_title {
+    color: $primary-color;
+    font-size: $font-xs;
+    font-weight: 500;
+  }
+
+  &_logo {
+    margin-bottom: $size-md;
+    width: 48px;
+    height: 48px;
+  }
+
+  &_logo svg {
+    width: 100%;
+    height: auto;
+
+    path {
+      fill: $primary-color;
+    }
+  }
+
+  &_links {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_link {
+    margin-left: 30px;
+    font-size: $font-xs;
+
+    &--active {
+      color: $primary-color;
+    }
+  }
+}

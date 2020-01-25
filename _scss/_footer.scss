@@ -1,0 +1,45 @@
+.footer {
+  background-color: darken($bgd-color, 4%);
+  padding: $size-md 0;
+  margin-top: $size-xl;
+  font-size: $font-xs;
+
+  &_container {
+    @include container();
+    color: $link-color;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer_copy {
+      flex-grow: 1;
+  }
+
+  .footer_links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      li {
+          padding: 0;
+
+          &:after {
+              content: "•";
+              margin: 0 $size-xs;
+              display: inline-block;
+          }
+
+          &:last-child {
+              &:after {
+                  content: "";
+              }
+          }
+      }
+
+      a {
+          font-size: $font-xs;
+      }
+  }
+
+}

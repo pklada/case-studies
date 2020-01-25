@@ -1,0 +1,24 @@
+.figureRow {
+    display: flex;
+
+    .figureRow_figure {
+        flex-basis: 40%;
+        flex-grow: 1;
+        margin: 0;
+    }
+
+    .figureRow_details {
+        flex-shrink: 1;
+        flex-basis: 60%;
+        margin-left: $size-lg;
+    }
+
+    &.reversed {
+        flex-direction: row-reverse;
+
+        .figureRow_details {
+            margin-left: auto;
+            margin-right: $size-lg;
+        }
+    }
+}
