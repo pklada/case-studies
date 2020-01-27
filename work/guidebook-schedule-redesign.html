@@ -1,9 +1,17 @@
 ---
 layout: default
+darkHero: true
+details:
+  - item:
+    key: Company
+    value: Guidebook
+  - item:
+    key: Year
+    value: 2019
 ---
 <div class="">
   <div class="post">
-    <div class="post_intro">
+    <div class="post_intro inverted">
       <div class="post_title">
         <h2>Guidebook Schedule Redesign</h2>
       </div>
@@ -15,14 +23,12 @@ layout: default
 
       <div class="post_details">
         <table>
-          <tr>
-            <td>Company</td>
-            <td>Guidebook</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>2019</td>
-          </tr>
+          {% for detail in page.details %}
+            <tr>
+              <td>{{ detail.key }}</td>
+              <td>{{ detail.value }}</td>
+            </tr>
+          {% endfor %}
         </table>
       </div>
 
@@ -151,7 +157,7 @@ layout: default
                 <div class="figureGrid_item">
                   <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-android-filter-sheet.m4v" data-caption="A Framer prototype I created for the Android filter bottom sheet.">
                     <div class="image_frame">
-                      <video autoplay loop mute>
+                      <video autoplay loop mute playsinline>
                         <source src="/assets/videos/guidebook-prototype-android-filter-sheet.m4v">
                       </video>
                     </div>
@@ -161,7 +167,7 @@ layout: default
                 <div class="figureGrid_item">
                   <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-android-schedule.m4v" data-caption="A Framer prototype I created for the Android schedule header scroll collapse behavior.">
                     <div class="image_frame">
-                      <video autoplay loop mute>
+                      <video autoplay loop mute playsinline>
                         <source src="/assets/videos/guidebook-prototype-android-schedule.m4v">
                       </video>
                     </div>
@@ -171,7 +177,7 @@ layout: default
                 <div class="figureGrid_item">
                   <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-filter-sheet.m4v" data-caption="A Framer prototype I created to test various filter pill colors in both selected and default state.">
                     <div class="image_frame">
-                      <video autoplay loop mute>
+                      <video autoplay loop mute playsinline>
                         <source src="/assets/videos/guidebook-prototype-filter-sheet.m4v">
                       </video>
                     </div>
@@ -181,7 +187,7 @@ layout: default
                 <div class="figureGrid_item">
                   <figure class="image js-image-focus" data-video-src="/assets/videos/guidebook-prototype-week-picker.m4v" data-caption="A Framer prototype I created showing the behavior of the collapsed week/day picker on iOS.">
                     <div class="image_frame">
-                      <video autoplay loop mute>
+                      <video autoplay loop mute playsinline>
                         <source src="/assets/videos/guidebook-prototype-week-picker.m4v">
                       </video>
                     </div>

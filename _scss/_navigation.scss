@@ -1,16 +1,20 @@
 $nav-logo-size: 100px;
+$nav-height: 130px;
 
 .navigation {
-  @include container();
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  margin-top: $size-md;
-  padding-bottom: $size-md;
+  padding: $size-md $size-lg;
 
   height: 130px;
+
+  z-index: 1;
 
   &_branding {
     display: flex;
@@ -33,11 +37,14 @@ $nav-logo-size: 100px;
       left: -10%;
       border-radius: 50%;
       opacity: 0;
+      transform: scale(.5);
+      transition: all ease 150ms;
     }
 
     &:hover {
       &:before {
         opacity: 1;
+        transform: scale(1);
       }
     }
   }
@@ -45,7 +52,12 @@ $nav-logo-size: 100px;
   &_title {
     color: $primary-color;
     font-size: $font-xs;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    transform-origin: center top;
+    transform: scale(.9);
+    opacity: .7;
   }
 
   &_logo {
@@ -74,6 +86,41 @@ $nav-logo-size: 100px;
 
     &--active {
       color: $primary-color;
+    }
+  }
+
+  &.navigation-dark {
+    .navigation_logo {
+      svg path {
+        fill: transparentize($color: $bgd-color, $amount: .6);
+      }
+    }
+
+    .navigation_title {
+      color: transparentize($color: $bgd-color, $amount: .6);
+    }
+
+    .navigation_branding {
+      &:before {
+        background: darken($text-color, 2%);
+      }
+
+      &:hover {
+        .navigation_logo svg path {
+          fill: transparentize($color: $bgd-color, $amount: .2);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 0;
+
+    .navigation_branding {
+      position: relative;
+      transform: scale(.9);
     }
   }
 }

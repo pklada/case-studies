@@ -124,6 +124,13 @@ layout: default
                         for small screen sizes as well, as much of our homepage traffic comes from mobile. </p>
                     <p>At this point, our illustrator was working on the final versions of the illustrations, made in
                         Sketch. </p>
+
+                    <figure class="image post_section popped">
+                        <div class="image_frame">
+                            <img src="/assets/images/guidebook-homepage-illu-examples.jpg" />
+                        </div>
+                        <figcaption class="image_caption">Some illustration exploration for the homepage. Illustrations by Guillermo Mont.</figcaption>
+                    </figure>
                 </li>
                 <li>
                     <h4>Marketing sign-off</h4>
@@ -160,11 +167,50 @@ layout: default
                         exporting angles of the model as highly optimized bitmaps, and using CSS/HTML to insert the UI
                         screenshots and distort them to appear as if they were part of the model. This technique proved
                         both quite fast to iterate on, and the results were something I was happy with. </p>
+                    
+                    <figure class="browser post_section">
+                        <div class="browser_frame">
+                            <div class="browser_controls">
+                                <div class="browser_button"></div>
+                                <div class="browser_button"></div>
+                                <div class="browser_button"></div>
+                                <p>localhost:4000</p>
+                            </div>
+                            <div class="browser_screen">
+                                <video autoplay loop mute playsinline>
+                                    <source src="/assets/videos/guidebook-homepage-iphone-3d.m4v">
+                                </video>
+                            </div>
+                        </div>
+                        <figcaption class="browser_caption">
+                            The raw 3d asset opened using three.js. I would position this device to an angle I was happy with and then export the canvas contents. The red screen was easy to delete to create a hollow device frame.
+                        </figcaption>
+                    </figure>
+                    
                     <p>In addition to the device and app UI, I wanted to include some "floating" UI above the phone
                         frame to highlight important parts of the UI for the customer. Given that we were showcasing our
                         newsfeed feature in the app screenshot, I decided to float some newsfeed style cards above the
                         device, showing the customer some examples of the event-based content they could expect to see
                         on Guidebook (a popular sessions card, for example). </p>
+
+                    <figure class="browser post_section">
+                        <div class="browser_frame">
+                            <div class="browser_controls">
+                                <div class="browser_button"></div>
+                                <div class="browser_button"></div>
+                                <div class="browser_button"></div>
+                                <p>localhost:4000</p>
+                            </div>
+                            <div class="browser_screen">
+                                <video autoplay loop mute playsinline>
+                                    <source src="/assets/videos/guidebook-homepage-popped-ui.m4v">
+                                </video>
+                            </div>
+                        </div>
+                        <figcaption class="browser_caption">
+                            A video of the floating UI during development. The cards are built entirely using HTML/CSS, making translations especially simple.
+                        </figcaption>
+                    </figure>
                 </li>
                 <li>
                     <h4>Testing & launch</h4>

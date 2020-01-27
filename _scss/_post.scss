@@ -1,6 +1,7 @@
 $post-container-width: $readable-max-width;
 $post-container-popped-width: $readable-max-width * 1.5;
 $post-section-margin: $size-xl;
+$post-subtitle-list-counter-size: 24px;
 
 .post {
     @include container();
@@ -30,6 +31,35 @@ $post-section-margin: $size-xl;
         max-width: $post-container-width;
         margin-left: auto;
         margin-right: auto;
+
+        &.inverted {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                top: 0;
+                left: calc((100vw - #{$post-container-width}) / 2 * -1);
+                bottom: 0;
+                width: 100vw;
+                content: "";
+                background-color: $text-color;
+                z-index: 0;
+            }
+
+            .post_title,
+            .post_introQuote {
+                z-index: 1;
+                position: relative;
+            }
+
+            .post_title h2 {
+                color: $bgd-color;
+            }
+
+            .post_introQuote p {
+                color: transparentize($color: $bgd-color, $amount: .5);
+            }
+        }
     }
 
     .post_details {
@@ -130,6 +160,14 @@ $post-section-margin: $size-xl;
             }
         }
 
+        &.focused.inverted {
+            color: $bgd-color;
+
+            &:before {
+                background-color: $text-color;
+            }
+        }
+
         &.focused.popped {
             &:before {
                 left: calc((100vw - #{$post-container-popped-width}) / 2 * -1);
@@ -154,8 +192,6 @@ $post-section-margin: $size-xl;
     }
 
     .post_subtitleList {
-        $post-subtitle-list-counter-size: 24px;
-
         counter-reset: listCounter;
         padding-left: 0;
         
@@ -182,6 +218,7 @@ $post-section-margin: $size-xl;
                 margin-top: 4px;
                 left: ($post-subtitle-list-counter-size + $size-sm) * -1;
                 top: -4px;
+                line-height: 1;
             }
 
             ul {
@@ -190,6 +227,77 @@ $post-section-margin: $size-xl;
 
             ol {
                 list-style-type: decimal;
+            }
+        }
+    }
+
+    @include mobile {
+        .post_title h2 {
+            font-size: $font-lg;
+        }
+
+        .post_intro {
+            padding-top: $nav-height;
+            padding-bottom: $size-lg;
+            
+            h2 {
+                margin-top: $size-md;
+            }
+
+            &.inverted {
+                &:before {
+                    left: $size-md * -1;
+                }
+            }
+        }
+
+        .post_details {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+        }
+
+        .post_body {
+            margin: $size-lg auto;
+        }
+
+        .post_section {
+            margin-top: $size-lg;
+            margin-bottom: $size-lg;
+
+            &.popped {
+                width: 100%;
+                margin-left: auto;
+            }
+
+            &.focused {
+                padding-top: $size-lg;
+                padding-bottom: $size-lg;
+            }
+
+            &.focused.popped {
+                &:before {
+                    left: $size-md * -1;
+                }
+            }
+
+            &.pull-left {
+                margin-left: 0;
+            }
+
+            &.pull-right {
+                margin-right: 0;
+            }
+        }
+
+        .post_subtitleList {
+            > li {
+                &:before {
+                    position: relative;
+                    float: left;
+                    left: auto;
+                }
             }
         }
     }

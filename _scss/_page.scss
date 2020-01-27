@@ -1,8 +1,29 @@
 
 .page {
+    margin-top: $nav-height;
+
+    .page_intro {
+        margin-bottom: $size-xl;
+    }
     
     .page_title {
         font-size: $font-xl;
         color: $primary-color;
+        font-weight: normal;
+    }
+
+    .page_description {
+        font-size: $font-md;
+        color: $text-color;
+    }
+
+    @include mobile {
+        .page_title {
+            font-size: $font-lg;
+        }
+
+        .page_description {
+            font-size: $font-sm;
+        }
     }
 }

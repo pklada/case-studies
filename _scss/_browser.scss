@@ -1,5 +1,6 @@
 $browser-bgd-color: #DFE1E5;
 .browser {
+    margin: auto;
     
     .browser_frame {
         padding: $size-sm;
@@ -46,7 +47,7 @@ $browser-bgd-color: #DFE1E5;
     .browser_screen {
         position: relative;
 
-        img {
+        img, video {
             max-width: 100%;
             vertical-align: middle;
             border-radius: 2px;

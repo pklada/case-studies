@@ -21,4 +21,16 @@
             margin-right: $size-lg;
         }
     }
+
+    @include mobile {
+        .figureRow_details {
+            margin-left: $size-md;
+        }
+
+        &.reversed {
+            .figureRow_details {
+                margin-right: $size-md;
+            }
+        }
+    }
 }

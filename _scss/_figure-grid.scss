@@ -14,4 +14,13 @@ $figureGridGutter: $size-lg;
         margin-right: $figureGridGutter;
         margin-bottom: $figureGridGutter;
     }
+
+    @include mobile {
+        margin-right: auto;
+
+        .figureGrid_item {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 }
