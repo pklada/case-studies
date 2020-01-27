@@ -15,7 +15,7 @@
             justify-content: center;
             width: $size-md;
             height: $size-md;
-            background: #988F75;
+            background: $primary-color;
             color: white;
             content: counter(listCounter);
             flex-shrink: 0;

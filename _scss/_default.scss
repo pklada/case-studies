@@ -5,11 +5,15 @@ $container-width-narrow: 800px;
 $readable-max-width: 600px;
 $container-padding: 32px;
 
-$bgd-color: #F0EDE4;
-$primary-color: #595139;
-$text-color: #2C281C;
-$text-light-color: #988F75;
-$link-color: #7F7F7F;
+$dark-mix-color: #000;
+$light-mix-color: #fafafa;
+$base-color: #8B572A;
+
+$bgd-color: mix($base-color, $light-mix-color, 5%);
+$primary-color: $base-color;
+$text-color: mix($base-color, $dark-mix-color, 50%);
+$text-light-color: mix($text-color, $bgd-color, 50%);
+$link-color: $base-color;
 
 $size-xs: 4px;
 $size-sm: 8px;

@@ -23,8 +23,9 @@
         padding: $size-xl;
         margin: auto;
         max-height: 100%;
+        width: 100%;
 
-        img {
+        img, video {
             max-width: 100%;
             width: 100%;
         }
