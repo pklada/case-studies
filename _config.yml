@@ -1,9 +1,9 @@
 title: Pete Lada
 email: pklada@gmail.com
 description: Selected works of Pete Lada
-baseurl: "/case-studies" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-theme_color: '#c0ffee'
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://work.petelada.com" # the base hostname & protocol for your site, e.g. http://example.com
+theme_color: '#8B572A'
 twitter_username: pklada
 github_username:  pklada
 author: Pete Lada
