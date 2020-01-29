@@ -361,7 +361,7 @@ html {
 html.has-open-overlay {
     overflow: hidden; }
 body {
-  font-family: "Avenir";
+  font-family: "Raleway";
   color: #462c15;
   display: -ms-flexbox;
   display: flex;
@@ -985,7 +985,9 @@ code {
       cursor: pointer;
       font-size: 14px;
       text-transform: uppercase;
-      font-family: "Avenir"; }
+      font-family: "Raleway";
+      font-weight: 600;
+      letter-spacing: .5px; }
 .imageFocus .imageFocus_controls .imageFocus_controlButton:hover {
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.8); }
