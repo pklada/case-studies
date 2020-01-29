@@ -10,9 +10,6 @@ module.exports = {
     app: './_src/index.js',
   },
   plugins: [
-    new FaviconsWebpackPlugin({
-      logo: './icon.png',
-    }),
     new HtmlWebpackPlugin({
       template: './_src/template/default.html',
       filename: '../_layouts/default.html',
