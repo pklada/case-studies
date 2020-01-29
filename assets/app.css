@@ -467,9 +467,9 @@ a:hover {
         flex-direction: column;
     -ms-flex-pack: center;
         justify-content: center;
-    position: relative;
     height: 100px;
-    width: 100px; }
+    width: 100px;
+    position: fixed; }
 .navigation_branding:before {
       position: absolute;
       background: #e9e5e1;

@@ -11,10 +11,12 @@ $post-subtitle-list-counter-size: 24px;
         font-weight: normal;
         text-align: center;
         color: $primary-color;
+        margin-bottom: 0;
     }
 
     .post_introQuote {
         text-align: center;
+        margin-top: $size-lg;
 
         p {
             font-style: italic;

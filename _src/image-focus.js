@@ -2,11 +2,19 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-new */
 
+const zoomEnum = Object.freeze({
+    fit: 1, 
+    zoom: 2, 
+    full: 3,
+});
+
 class ImageFocus {
     constructor(el, src, caption) {
         this.element = el;
         this.src = src;
         this.caption = caption;
+        this.zoomMode = zoomEnum.fit;
+
         this.setup();
         this.createOverlay();
         this.attachEvents();
@@ -55,8 +63,34 @@ class ImageFocus {
             this.createCaption();
         }
 
+        this.createControls();
+        this.configureZoom(this.zoomMode);
+
         document.body.appendChild(this.overlay);
         this.element.appendChild(zoomIndicator);
+    }
+
+    createControls() {
+        this.controls = document.createElement('div');
+        this.controls.classList.add('imageFocus_controls');
+
+        this.fitButton = document.createElement('button');
+        this.zoomButton = document.createElement('button');
+        this.fullButton = document.createElement('button');
+
+        this.fitButton.classList.add('imageFocus_controlFitButton', 'imageFocus_controlButton');
+        this.zoomButton.classList.add('imageFocus_controlZoomButton', 'imageFocus_controlButton');
+        this.fullButton.classList.add('imageFocus_controlFullButton', 'imageFocus_controlButton');
+
+        this.zoomButton.textContent = 'Zoom';
+        this.fitButton.textContent = 'Fit';
+        this.fullButton.textContent = '100%';
+
+        this.controls.appendChild(this.fitButton);
+        // this.controls.appendChild(this.zoomButton);
+        this.controls.appendChild(this.fullButton);
+
+        this.overlay.appendChild(this.controls);
     }
 
     createCaption() {
@@ -64,6 +98,27 @@ class ImageFocus {
         caption.textContent = this.caption;
         caption.classList.add('imageFocus_caption');
         this.overlay.appendChild(caption);
+    }
+
+    configureZoom(zoomMode) {
+        this.zoomMode = zoomMode;
+
+        if (this.zoomMode === zoomEnum.fit) {
+            this.zoomButton.classList.remove('is-selected');
+            this.fullButton.classList.remove('is-selected');
+            this.fitButton.classList.add('is-selected');
+            this.overlay.dataset.zoomMode = 'fit';
+        } else if (this.zoomMode === zoomEnum.zoom) {
+            this.zoomButton.classList.add('is-selected');
+            this.fullButton.classList.remove('is-selected');
+            this.fitButton.classList.remove('is-selected');
+            this.overlay.dataset.zoomMode = 'zoom';
+        } else if (this.zoomMode === zoomEnum.full) {
+            this.zoomButton.classList.remove('is-selected');
+            this.fullButton.classList.add('is-selected');
+            this.fitButton.classList.remove('is-selected');
+            this.overlay.dataset.zoomMode = 'full';
+        }
     }
 
     attachEvents() {
@@ -81,6 +136,10 @@ class ImageFocus {
         this.closeButton.addEventListener('click', () => {
             that.closeOverlay();
         }, true);
+
+        this.zoomButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.zoom));
+        this.fullButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.full));
+        this.fitButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.fit));
     }
 
     openOverlay() {

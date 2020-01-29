@@ -4,6 +4,14 @@ projectClass: spaces
 
 nextProjectSlug: guidebook-homepage
 previousProjectSlug: guidebook-schedule-redesign
+
+details:
+  - item:
+    key: Company
+    value: Guidebook
+  - item:
+    key: Year
+    value: 2018
 ---
 <div class="post">
   <div class="post_intro">
@@ -15,6 +23,16 @@ previousProjectSlug: guidebook-schedule-redesign
     </div>
   </div>
   <div class="post_body">
+    <div class="post_details">
+      <table>
+        {% for detail in page.details %}
+        <tr>
+          <td>{{ detail.key }}</td>
+          <td>{{ detail.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
     <h3>Summary</h3>
     <p>A new concept designed for the Guidebook platform allowing for a completely branded, private collection of guides on the Guidebook container app. A challenging project, it was forced upon us after Apple's rule changes for their app store, disallowing templated apps from the same developer. This presented a number of constraints, and an extremely aggressive timeline to keep the company sustainable.</p>
     <h3>Background</h3>

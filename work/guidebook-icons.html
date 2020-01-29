@@ -2,6 +2,17 @@
 layout: project
 nextProjectSlug: guidebook-schedule-redesign
 previousProjectSlug: guidebook-homepage
+
+details:
+  - item:
+    key: Company
+    value: Guidebook
+  - item:
+    key: Year
+    value: 2017-2019
+  - item:
+    key: Additional design
+    value: Guillermo Mont
 ---
 <div class="">
   <div class="post">
@@ -9,26 +20,17 @@ previousProjectSlug: guidebook-homepage
       <div class="post_title">
         <h2>Guidebook UI Icon Set</h2>
       </div>
-      <div class="post_introQuote">
-        <p>"Who knew designing a calendar could be so difficult??"</p>
-      </div>
     </div>
     <div class="post_body">
 
       <div class="post_details">
         <table>
+          {% for detail in page.details %}
           <tr>
-            <td>Company</td>
-            <td>Guidebook</td>
+            <td>{{ detail.key }}</td>
+            <td>{{ detail.value }}</td>
           </tr>
-          <tr>
-            <td>Year</td>
-            <td>2017-2020</td>
-          </tr>
-          <tr>
-            <td>Additional Design</td>
-            <td>Guillermo Mont</td>
-          </tr>
+          {% endfor %}
         </table>
       </div>
 
