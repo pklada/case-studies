@@ -27,6 +27,12 @@
         }
     }
 
+    &.image-borderless {
+        .image_frame {
+            border: none;
+        }
+    }
+
     &.is-clickable {
         .image_frame {
             cursor: pointer;

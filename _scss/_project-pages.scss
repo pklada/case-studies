@@ -1,0 +1,101 @@
+.project {
+
+    .project_footer {
+        @include container($narrow: true);
+        max-width: $post-container-width;
+        display: flex;
+        border-top: 3px solid darken($bgd-color, 5%);
+        margin-top: $size-xl;
+        padding-top: $size-xl;
+        padding-left: 0;
+        padding-right: 0;
+
+        > a {
+            width: 50%;
+            padding: $size-md;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+
+            &:first-child {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &:last-child {
+                justify-content: flex-end;
+
+                svg {
+                    margin-right: 0;
+                    margin-left: $size-sm;
+                }
+            }
+
+            svg {
+                margin-right: $size-sm;
+
+                path {
+                    fill: $link-color;
+                }
+            }
+
+            &:hover {
+                background-color: darken($bgd-color, 3%);
+            }
+        }
+    }
+
+    &.project-schedule {
+
+        .project-figure-phone-android {
+            float: right; 
+            width: auto;
+            max-width: none;
+            margin-right: -130px;
+            margin-left: $size-xl;
+
+            img {
+                max-width: 400px;
+            }
+        }
+    }
+
+    &.project-spaces {
+        .project-figure-themes {
+            @include mobile {
+                img {
+                    width: 200vw;
+                    max-width: none;
+                    position: relative;
+                    left: -50%;
+                }
+            }
+        }
+
+        .project-figure-phones {
+            float: right; 
+            width: auto;
+            max-width: none;
+            margin-right: -330px;
+            margin-left: $size-xl;
+            margin-top: -60px;
+
+            img {
+                max-width: 500px;
+            }
+
+            @include mobile {
+                max-width: 400px;
+                margin-right: 0;
+                margin-left: auto;
+                margin-top: $size-md;
+                margin-bottom: $size-md;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

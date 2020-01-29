@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="project project-{{ page.projectClass }}">
+    {{ content }}
+    
+    <div class="project_footer">
+        <a href="{{ site.baseurl }}/work/{{ page.previousProjectSlug }}.html">
+            {% include svg/arrow.svg %}
+            Previous project
+        </a>
+        <a href="{{ site.baseurl }}/work/{{ page.nextProjectSlug }}.html">
+            Next project
+            {% include svg/arrow.svg %}
+        </a>
+    </div>
+</div>

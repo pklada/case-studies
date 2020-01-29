@@ -633,6 +633,9 @@ a:hover {
 .post .post_section.popped {
       width: 900px;
       margin-left: -150px; }
+.post .post_section.popped-full {
+      width: calc(100vw - 128px);
+      margin-left: calc((100vw - 128px - 600px) / 2 * -1); }
 .post .post_section.focused {
       position: relative;
       padding-top: 64px;
@@ -696,6 +699,19 @@ a:hover {
         list-style-type: disc; }
 .post .post_subtitleList > li ol {
         list-style-type: decimal; }
+.post .post_quote {
+    border-left: 2px solid #e9e5e1;
+    padding: 16px 0;
+    margin: 32px; }
+.post .post_quote .post_quoteAuthor {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #9d8f83; }
+.post .post_quote p {
+      font-size: 24px;
+      margin-bottom: 0;
+      margin-left: 32px; }
 @media only screen and (max-width: 600px) {
     .post .post_title h2 {
       font-size: 36px; }
@@ -724,6 +740,9 @@ a:hover {
         padding-bottom: 32px; }
       .post .post_section.focused.popped:before {
         left: -16px; }
+      .post .post_section.popped-full {
+        width: 100%;
+        margin-left: auto; }
       .post .post_section.pull-left {
         margin-left: 0; }
       .post .post_section.pull-right {
@@ -752,6 +771,8 @@ a:hover {
 .image .image_frame img,
     .image .image_frame video {
       vertical-align: middle; }
+.image.image-borderless .image_frame {
+    border: none; }
 .image.is-clickable .image_frame {
     cursor: pointer; }
 .image.is-focusable {
@@ -904,8 +925,7 @@ code {
 .imageFocus .imageFocus_imageContainer {
     padding: 64px;
     margin: auto;
-    max-height: 100%;
-    width: 100%; }
+    max-height: 100%; }
 .imageFocus .imageFocus_imageContainer img, .imageFocus .imageFocus_imageContainer video {
       max-width: 100%;
       width: 100%; }
@@ -1089,7 +1109,11 @@ code {
     margin-top: 8px;
     color: #9d8f83; }
 .projectCard .projectCard_image {
-  position: relative; }
+  position: relative;
+  background: #e9e5e1;
+  overflow: hidden; }
+.projectCard .projectCard_image img {
+    transition: all ease 150ms; }
 .projectCard .projectCard_info {
   position: absolute;
   bottom: 0;
@@ -1105,7 +1129,9 @@ code {
       align-items: center;
   box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   border-radius: 0 0 6px 6px;
-  font-size: 14px; }
+  font-size: 14px;
+  z-index: 1;
+  transition: background-color ease 150ms; }
 .projectCard .projectCard_title {
   -ms-flex-positive: 1;
       flex-grow: 1;
@@ -1127,5 +1153,43 @@ code {
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: .5px; }
+.projectCard:hover .projectCard_image img {
+  transform: scale(1.02);
+  opacity: .8; }
+.projectCard:hover .projectCard_info {
+  background: white; }
+/* specific page layouts */
+.project.project-schedule .project-figure-phone-android {
+  float: right;
+  width: auto;
+  max-width: none;
+  margin-right: -130px;
+  margin-left: 64px; }
+.project.project-schedule .project-figure-phone-android img {
+    max-width: 400px; }
+@media only screen and (max-width: 600px) {
+  .project.project-spaces .project-figure-themes img {
+    width: 200vw;
+    max-width: none;
+    position: relative;
+    left: -50%; } }
+.project.project-spaces .project-figure-phones {
+  float: right;
+  width: auto;
+  max-width: none;
+  margin-right: -330px;
+  margin-left: 64px;
+  margin-top: -60px; }
+.project.project-spaces .project-figure-phones img {
+    max-width: 500px; }
+@media only screen and (max-width: 600px) {
+    .project.project-spaces .project-figure-phones {
+      max-width: 400px;
+      margin-right: 0;
+      margin-left: auto;
+      margin-top: 16px;
+      margin-bottom: 16px; }
+      .project.project-spaces .project-figure-phones img {
+        width: 100%; } }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
