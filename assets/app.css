@@ -696,7 +696,7 @@ a:hover {
         top: -4px;
         line-height: 1; }
 .post .post_subtitleList > li ul {
-        list-style-type: disc; }
+        list-style-image: url(/assets/images/arrow-bullet.svg); }
 .post .post_subtitleList > li ol {
         list-style-type: decimal; }
 .post .post_quote {
@@ -848,7 +848,7 @@ a:hover {
       font-size: 10px;
       border-radius: 50%;
       margin-right: 8px;
-      margin-top: 4px;
+      margin-top: 3px;
       line-height: 1; }
 code {
   color: #8B572A;
@@ -1159,6 +1159,40 @@ code {
 .projectCard:hover .projectCard_info {
   background: white; }
 /* specific page layouts */
+.project .project_footer {
+  max-width: 800px;
+  padding: 0 16px;
+  margin: auto;
+  max-width: 600px;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 3px solid #e9e5e1;
+  margin-top: 64px;
+  padding-top: 64px;
+  padding-left: 0;
+  padding-right: 0; }
+.project .project_footer > a {
+    width: 50%;
+    padding: 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    line-height: 1; }
+.project .project_footer > a:first-child svg {
+      transform: rotate(180deg); }
+.project .project_footer > a:last-child {
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+.project .project_footer > a:last-child svg {
+        margin-right: 0;
+        margin-left: 8px; }
+.project .project_footer > a svg {
+      margin-right: 8px; }
+.project .project_footer > a svg path {
+        fill: #8B572A; }
+.project .project_footer > a:hover {
+      background-color: #eeeae7; }
 .project.project-schedule .project-figure-phone-android {
   float: right;
   width: auto;
