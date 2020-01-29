@@ -105,6 +105,8 @@
             font-size: $font-xs;
             text-transform: uppercase;
             font-family: $primary-font-family;
+            font-weight: 600;
+            letter-spacing: .5px;
 
             &:hover {
                 opacity: 1;

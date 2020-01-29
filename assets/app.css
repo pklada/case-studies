@@ -467,9 +467,9 @@ a:hover {
         flex-direction: column;
     -ms-flex-pack: center;
         justify-content: center;
+    position: relative;
     height: 100px;
-    width: 100px;
-    position: fixed; }
+    width: 100px; }
 .navigation_branding:before {
       position: absolute;
       background: #e9e5e1;
@@ -541,9 +541,11 @@ a:hover {
     font-size: 48px;
     font-weight: normal;
     text-align: center;
-    color: #8B572A; }
+    color: #8B572A;
+    margin-bottom: 0; }
 .post .post_introQuote {
-    text-align: center; }
+    text-align: center;
+    margin-top: 32px; }
 .post .post_introQuote p {
       font-style: italic;
       font-size: 24px;
@@ -918,7 +920,9 @@ code {
       justify-content: center;
   opacity: 0;
   visibility: hidden;
-  overflow-y: auto; }
+  overflow-y: auto;
+  padding-top: 100px;
+  padding-bottom: 100px; }
 .imageFocus.is-open {
     opacity: 1;
     visibility: visible; }
@@ -929,6 +933,15 @@ code {
 .imageFocus .imageFocus_imageContainer img, .imageFocus .imageFocus_imageContainer video {
       max-width: 100%;
       width: 100%; }
+.imageFocus[data-zoom-mode="fit"] .imageFocus_imageContainer img, .imageFocus[data-zoom-mode="fit"] .imageFocus_imageContainer video {
+    max-width: 100%;
+    width: 100%; }
+.imageFocus[data-zoom-mode="zoom"] .imageFocus_imageContainer img, .imageFocus[data-zoom-mode="zoom"] .imageFocus_imageContainer video {
+    max-width: none;
+    width: 200%; }
+.imageFocus[data-zoom-mode="full"] .imageFocus_imageContainer img, .imageFocus[data-zoom-mode="full"] .imageFocus_imageContainer video {
+    max-width: none;
+    width: auto; }
 .imageFocus .imageFocus_close {
     position: fixed;
     right: 16px;
@@ -942,9 +955,43 @@ code {
     background-position: center center;
     background-repeat: no-repeat;
     cursor: pointer;
-    border-radius: 50%; }
+    border-radius: 50%;
+    z-index: 2; }
 .imageFocus .imageFocus_close:hover {
       background-color: rgba(0, 0, 0, 0.5); }
+.imageFocus .imageFocus_controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    top: 16px;
+    left: 16px;
+    z-index: 1; }
+.imageFocus .imageFocus_controls .imageFocus_controlButton {
+      min-width: 84px;
+      height: 42px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      background-image: none;
+      border: none;
+      padding: 0 16px;
+      border-radius: 5000px;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      margin-right: 16px;
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: "Avenir"; }
+.imageFocus .imageFocus_controls .imageFocus_controlButton:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.8); }
+.imageFocus .imageFocus_controls .imageFocus_controlButton.is-selected {
+        background: rgba(255, 255, 255, 0.7);
+        color: black; }
 .imageFocus .imageFocus_caption {
     position: fixed;
     bottom: 16px;
@@ -958,6 +1005,10 @@ code {
 @media only screen and (max-width: 600px) {
     .imageFocus .imageFocus_imageContainer {
       padding: 16px; }
+      .imageFocus .imageFocus_imageContainer img, .imageFocus .imageFocus_imageContainer video {
+        max-width: none;
+        min-width: 100%;
+        width: auto; }
     .imageFocus .imageFocus_caption {
       left: 0;
       right: 0;
