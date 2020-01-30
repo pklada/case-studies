@@ -34,7 +34,7 @@ details:
       </table>
     </div>
     <h3>Summary</h3>
-    <p>A new concept designed for the Guidebook platform allowing for a completely branded, private collection of guides on the Guidebook container app. A challenging project, it was forced upon us after Apple's rule changes for their app store, disallowing templated apps from the same developer. This presented a number of constraints, and an extremely aggressive timeline to keep the company sustainable.</p>
+    <p>A new concept designed for the <a href="https://guidebook.com">Guidebook</a> platform allowing for a completely branded, private collection of guides on the Guidebook container app. A challenging project, it was forced upon us after Apple's rule changes for their app store, disallowing templated apps from the same developer. This presented a number of constraints, and an extremely aggressive timeline to keep the company sustainable.</p>
     <h3>Background</h3>
     <p>At the end of 2017, Apple surprised developers by implementing a set of new rules for the app store relating to "templated" apps. These apps are ones which have largely the same codebase, but are resubmitted to the app store with slightly different content and branding. Guidebook's apps fall into this category: we produce hundreds of apps per year for individual events and organizations, all of which use largely the same code base. </p>
     <div class="post_quote">
@@ -85,7 +85,7 @@ details:
             <div class="figureGrid_item">
               <figure class="image">
                 <div class="image_frame">
-                  <video controls>
+                  <video controls playsinline poster="{{ site.baseurl }}/assets/images/guidebook-spaces-card-onboarding-poster.jpg">
                     <source src="{{ baseurl }}/assets/videos/guidebook-spaces-cards-onboarding.m4v" />
                   </video>
                 </div>
@@ -95,7 +95,7 @@ details:
             <div class="figureGrid_item">
               <figure class="image">
                 <div class="image_frame">
-                  <video controls>
+                  <video controls playsinline poster="{{ site.baseurl }}/assets/images/guidebook-spaces-carousel-onboarding-poster.jpg">
                     <source src="{{ baseurl }}/assets/videos/guidebook-spaces-carousel-onboarding.m4v" />
                   </video>
                 </div>
@@ -108,7 +108,7 @@ details:
           <div class="figureRow_figure">
             <figure class="image">
               <div class="image_frame">
-                <video muted autoplay loop>
+                <video muted autoplay loop playsinline>
                   <source src="{{ baseurl }}/assets/videos/guidebook-spaces-combined-onboarding.m4v" />
                 </video>
               </div>
@@ -135,17 +135,13 @@ details:
       </li>
     </ol> 
     <h3>The solution</h3>
-    <figure class="image image-popped image-borderless project-figure-phones">
-      <div class="image_frame">
-        <img src="/assets/images/guidebook-home-3d-ios+android.png" />
-      </div>
-    </figure>
+
     <p>Our final solution for Spaces ended up taking a much simper approach than we initially conceptualized. The onboarding flow would give users an overview of what Guidebook is, while directing them to either search for a guide or enter a redemption code. By default, users would be a member of the Guidebook Space - the public Space which houses all public guides.</p>
     <p>When searching for a guide either from the onboarding or from the Guidebook Space, we would surface guides which belonged to other Spaces - thus allowing for easy guide discovery. If you attempted to access a guide from the Guidebook space which was a member of another, you would automatically be taken to that Space first. Any non-Guidebook Space would only surface its own guides during search. Redemption codes were still the preferred way to access guides, as they would take the user directly to the guide in question, regardless of current context. </p>
     
     <figure class="image post_section image-popped">
       <div class="image_frame">
-        <video mute autoplay loop>
+        <video mute autoplay loop playsinline>
           <source src="{{ site.baseurl }}/assets/videos/guidebook-spaces-onboarding-example.m4v" >
         </video>
       </div>
@@ -158,5 +154,10 @@ details:
     <p>While I do wish we had more time to spend on the project - the entire process felt quite rushed due to the time constraint - I think the end result accomplished our immediate needs. We had many clients switch from their branded app to using a Space, which was the primary metric we were using to gauge success for this project. The company didn't end up churning a more-than-normal number of clients, which again pointed to the success of this project. </p>
     <p>Once Spaces launched, we were able to develop a second solution to the App Store rejection problem where we would submit apps under a client's Apple developer account using our Assembler product. While this process was still quite manual and labor intensive, it was able to save clients who absolutely needed their own branded app. </p>
     <p>In the end, a crisis was averted and the company was able to continue operating, much due to the success of Spaces.</p>
+    <hr class="post_divider" />
+    <h4>Additional materials</h4>
+    <p><a href="https://guidebook.com/spaces/">Read more about Spaces</a></p>
+    <p><a href="https://apps.apple.com/us/app/guidebook/id428713847">Guidebook on the App Store</a></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.guidebook.android&hl=en_US">Guidebook on the Play Store</a></p>
   </div>
 </div>

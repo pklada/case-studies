@@ -24,6 +24,7 @@ $nav-height: 130px;
     position: relative;
     height: $nav-logo-size;
     width: $nav-logo-size;
+    border: none;
 
     &:before {
       position: absolute;

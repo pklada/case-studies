@@ -373,11 +373,12 @@ main {
   -ms-flex: 1;
       flex: 1;
   width: 100%;
-  border-top: 3px solid #B78B6B; }
+  border-top: 3px solid #B78B6B;
+  overflow: hidden; }
 a {
   color: #B78B6B;
   text-decoration: none;
-  font-size: 18px; }
+  border-bottom: 1px solid rgba(183, 139, 107, 0.5); }
 a:hover {
     color: #B78B6B; }
 .button {
@@ -469,7 +470,8 @@ a:hover {
         justify-content: center;
     position: relative;
     height: 100px;
-    width: 100px; }
+    width: 100px;
+    border: none; }
 .navigation_branding:before {
       position: absolute;
       background: #f5efea;
@@ -1067,7 +1069,8 @@ code {
 .footer .footer_links li:last-child:after {
         content: ""; }
 .footer .footer_links a {
-      font-size: 14px; }
+      font-size: 14px;
+      border: none; }
 @media only screen and (max-width: 600px) {
     .footer {
       padding-bottom: calc(env(safe-area-inset-bottom) + 16px); } }
@@ -1231,7 +1234,8 @@ code {
     display: flex;
     -ms-flex-align: center;
         align-items: center;
-    line-height: 1; }
+    line-height: 1;
+    border: none; }
 .project .project_footer > a:first-child svg {
       transform: rotate(180deg); }
 .project .project_footer > a:last-child {
