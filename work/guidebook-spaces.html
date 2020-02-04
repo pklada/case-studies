@@ -36,7 +36,7 @@ details:
     <h3>Summary</h3>
     <p>A new concept designed for the <a href="https://guidebook.com">Guidebook</a> platform allowing for a completely branded, private collection of guides on the Guidebook container app. A challenging project, it was forced upon us after Apple's rule changes for their app store, disallowing templated apps from the same developer. This presented a number of constraints, and an extremely aggressive timeline to keep the company sustainable.</p>
     <h3>Background</h3>
-    <p>At the end of 2017, Apple surprised developers by implementing a set of new rules for the app store relating to "templated" apps. These apps are ones which have largely the same codebase, but are resubmitted to the app store with slightly different content and branding. Guidebook's apps fall into this category: we produce hundreds of apps per year for individual events and organizations, all of which use largely the same code base. </p>
+    <p>At the end of 2017, Apple surprised developers by implementing a set of new rules for the app store relating to "templated" apps. These apps are ones which have largely the same codebase, but are resubmitted to the app store with slightly different content and branding. Guidebook's apps fall into this category; we produce hundreds of apps per year for individual events and organizations, all of which use largely the same code base. </p>
     <div class="post_quote">
       <p class="post_quoteAuthor">4.2.6 App Store guidelines</p>
       <p>Apps created from a commercialized template or app generation service will be rejected.</p>
@@ -51,7 +51,7 @@ details:
         <ol>
           <li>contact Apple and argue our case (our apps are not considered spam by any reasonable person)</li>
           <li>Force all of our clients onto the Guidebook container app</li>
-          <li>Develop a solution to satisfy 90% of our clients branded app needs, minus the standalone app</li>
+          <li>Develop a solution to satisfy 90% of our clients branded app needs, minus the app & Play store listing.</li>
         </ol>
         <p>In the end and after much discussion, we decided to move forward with a combination of 2 and 3. It was up to the product and design team to figure out what that solution would actually look like.</p>
       </li>
@@ -66,7 +66,7 @@ details:
         </ul>
         <p>After much discussion both internally and with impacted clients, we decided to introduce a new concept to the Guidebook platform: <strong>Spaces</strong>.</p>
         <p>Spaces would be a layer between app and guide. One app could have multiple Spaces. One Space could have multiple guides. Branding would live at the Space level. A user would only be able to have a single Space open at once, with the ability to context switch between Spaces. </p>
-        <p>This allowed for us to continue to offer our clients a private, siloed guide experience within their branding, but accessed through the Guidebook container app. This would provide them with nearly everything they had access to with a standalone app, except for the actual listing and presence in the app and Play stores (though at this point Google had no rule preventing us from submitting our standalone apps). </p>
+        <p>Spaces allowed for us to continue to offer our clients a private, siloed guide experience within their branding, but accessed through the Guidebook container app. This would provide them with nearly everything they had access to with a standalone app, except for the actual listing and presence in the app and Play stores (though at this point Google had no rule preventing us from submitting our standalone apps). </p>
       </li>
       <li>
         <h4>Design explorations</h4>
@@ -125,18 +125,28 @@ details:
         <p>Theming was technically a very challenging problem to solve. Thankfully, given that we already produced standalone apps, we already had a system set up to pull theme colors and color the apps at build time. The issue was that we now had to allow every UI element in the app to theme itself at <em>run time</em>, which was something we had never yet explored. This was especially challenging on Android with how that platform handles styles - run time changes are not straightforward. Thankfully we had talented engineers on both our iOS and Android teams who were able to create solutions for run time theming. </p>
 
         <div class="post_section popped-full">
-          <figure class="image image-borderless project-figure-themes">
+          <figure class="image image-borderless project-figure-themes js-image-focus" data-image-src="{{ baseurl }}/assets/images/guidebook-spaces-examples.png">
               <div class="image_frame">
                 <img src="{{ baseurl }}/assets/images/guidebook-spaces-examples.png" />
               </div>
               <figcaption class="image_caption">Our theming system allowed for full re-skinning of the UI, down to the keyline. Dark themes were especially challenging.</figcaption>
-            </figure>
+          </figure>
         </div>
+
+        <p>Another challenge with theming was allowing them to be user-generated. We wanted to allow power users to theme elements down to the keyline color, but provide a straight-forward interface for others. We ended up creating a system where a set of 5 base colors would generate a theme for the entire UI. The system would dynamically select colors based on the brightness of others, ensuring UI elements would always be visible within their context. More advanced users could opt to disable the theme generation and instead input their own colors at the micro-UI level.</p>
       </li>
     </ol> 
     <h3>The solution</h3>
 
     <p>Our final solution for Spaces ended up taking a much simper approach than we initially conceptualized. The onboarding flow would give users an overview of what Guidebook is, while directing them to either search for a guide or enter a redemption code. By default, users would be a member of the Guidebook Space - the public Space which houses all public guides.</p>
+    <div class="post_section popped">
+      <figure class="image js-image-focus" data-image-src="{{ baseurl }}/assets/images/guidebook-spaces-android.png" data-caption="Guidebook's default Space on Android. Showing 'My Guides', 'Explore', 'Search', and the Spaces drawer.">
+          <div class="image_frame">
+            <img src="{{ baseurl }}/assets/images/guidebook-spaces-android.png" srcset="{{ baseurl }}/assets/images/guidebook-spaces-android.png, {{ baseurl }}/assets/images/guidebook-spaces-android@2x.png 2x" />
+          </div>
+          <figcaption class="image_caption">Guidebook's default Space on Android. Showing "My Guides", "Explore", "Search", and the Spaces drawer.</figcaption>
+      </figure>
+    </div>
     <p>When searching for a guide either from the onboarding or from the Guidebook Space, we would surface guides which belonged to other Spaces - thus allowing for easy guide discovery. If you attempted to access a guide from the Guidebook space which was a member of another, you would automatically be taken to that Space first. Any non-Guidebook Space would only surface its own guides during search. Redemption codes were still the preferred way to access guides, as they would take the user directly to the guide in question, regardless of current context. </p>
     
     <figure class="image post_section image-popped">
@@ -146,12 +156,12 @@ details:
         </video>
       </div>
       <figcaption class="image_caption">
-        An example flow from initial app onboarding to downloading a guide via passphrase, then accessing a separate \Space via search.
+        An example flow from initial app onboarding to downloading a guide via passphrase, then accessing a separate Space via search.
       </figcaption>
     </figure>
     
     <h3>Conclusion</h3>
-    <p>While I do wish we had more time to spend on the project - the entire process felt quite rushed due to the time constraint - I think the end result accomplished our immediate needs. We had many clients switch from their branded app to using a Space, which was the primary metric we were using to gauge success for this project. The company didn't end up churning a more-than-normal number of clients, which again pointed to the success of this project. </p>
+    <p>While I do wish we had more time to spend on the project&mdash;the entire process felt quite rushed due to the time constraint&mdash;I think the end result accomplished our immediate needs. We had many clients switch from their branded app to using a Space, which was the primary metric we were using to gauge success for this project. The company didn't end up churning a higher-than-normal number of clients, which again pointed to the success of this project. </p>
     <p>Once Spaces launched, we were able to develop a second solution to the App Store rejection problem where we would submit apps under a client's Apple developer account using our Assembler product. While this process was still quite manual and labor intensive, it was able to save clients who absolutely needed their own branded app. </p>
     <p>In the end, a crisis was averted and the company was able to continue operating, much due to the success of Spaces.</p>
     <hr class="post_divider" />

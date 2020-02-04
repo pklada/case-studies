@@ -377,8 +377,7 @@ main {
   overflow: hidden; }
 a {
   color: #B78B6B;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(183, 139, 107, 0.5); }
+  text-decoration: underline; }
 a:hover {
     color: #B78B6B; }
 .button {
@@ -471,7 +470,7 @@ a:hover {
     position: relative;
     height: 100px;
     width: 100px;
-    border: none; }
+    text-decoration: none; }
 .navigation_branding:before {
       position: absolute;
       background: #f5efea;
@@ -706,7 +705,8 @@ a:hover {
 .post .post_quote {
     border-left: 2px solid #f5efea;
     padding: 16px 0;
-    margin: 32px; }
+    margin: 32px;
+    position: relative; }
 .post .post_quote .post_quoteAuthor {
       font-size: 14px;
       text-transform: uppercase;
@@ -716,6 +716,21 @@ a:hover {
       font-size: 24px;
       margin-bottom: 0;
       margin-left: 32px; }
+.post .post_quote:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "\201C";
+      font-size: 90px;
+      font-family: Georgia, "Work Sans", sans-serif;
+      top: -6px;
+      left: -60px;
+      opacity: .2; }
+@media only screen and (max-width: 600px) {
+      .post .post_quote {
+        margin-left: 0; }
+        .post .post_quote:before {
+          display: none; } }
 @media only screen and (max-width: 600px) {
     .post .post_title h2 {
       font-size: 36px; }
@@ -1032,6 +1047,12 @@ code {
 .page .page_description {
     font-size: 24px;
     color: #5c4636; }
+.page .page_introDivider {
+    height: 2px;
+    background: #f5efea;
+    border: none;
+    width: 120px;
+    margin: 32px auto; }
 @media only screen and (max-width: 600px) {
     .page .page_title {
       font-size: 36px; }
@@ -1070,7 +1091,7 @@ code {
         content: ""; }
 .footer .footer_links a {
       font-size: 14px;
-      border: none; }
+      text-decoration: none; }
 @media only screen and (max-width: 600px) {
     .footer {
       padding-bottom: calc(env(safe-area-inset-bottom) + 16px); } }
@@ -1214,6 +1235,34 @@ code {
   opacity: .8; }
 .projectCard:hover .projectCard_info {
   background: white; }
+.avatar {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden; }
+.avatar:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    content: "";
+    z-index: 1; }
+.avatar img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+.avatar.avatar-small {
+    width: 24px;
+    height: 24px; }
 /* specific page layouts */
 .project .project_footer {
   max-width: 800px;
@@ -1254,10 +1303,20 @@ code {
   float: right;
   width: auto;
   max-width: none;
-  margin-right: -130px;
+  margin-right: -290px;
   margin-left: 64px; }
 .project.project-schedule .project-figure-phone-android img {
-    max-width: 400px; }
+    max-width: 500px; }
+@media only screen and (max-width: 600px) {
+    .project.project-schedule .project-figure-phone-android {
+      float: none;
+      position: relative;
+      bottom: -30px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 0; }
+      .project.project-schedule .project-figure-phone-android img {
+        max-width: 400px; } }
 @media only screen and (max-width: 600px) {
   .project.project-spaces .project-figure-themes img {
     width: 200vw;
@@ -1282,5 +1341,7 @@ code {
       margin-bottom: 16px; }
       .project.project-spaces .project-figure-phones img {
         width: 100%; } }
+.home .home_avatar {
+  box-shadow: 0 0 0 3px #fdfcfb, 0 0 0 4px rgba(183, 139, 107, 0.3); }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

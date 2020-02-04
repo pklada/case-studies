@@ -53,11 +53,24 @@
             float: right; 
             width: auto;
             max-width: none;
-            margin-right: -130px;
+            margin-right: -290px;
             margin-left: $size-xl;
 
             img {
-                max-width: 400px;
+                max-width: 500px;
+            }
+
+            @include mobile {
+                float: none;
+                position: relative;
+                bottom: -30px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 0;
+
+                img {
+                    max-width: 400px;
+                }
             }
         }
     }
