@@ -17,6 +17,14 @@
         color: $text-color;
     }
 
+    .page_introDivider {
+        height: 2px;
+        background: darken($bgd-color, 5%);
+        border: none;
+        width: 120px;
+        margin: $size-lg auto;
+    }
+
     @include mobile {
         .page_title {
             font-size: $font-lg;

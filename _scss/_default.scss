@@ -86,8 +86,7 @@ main {
 
 a {
   color: $link-color;
-  text-decoration: none;
-  border-bottom: 1px solid transparentize($link-color, .5);
+  text-decoration: underline;
 
   &:hover {
     color: $primary-color;

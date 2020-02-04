@@ -36,9 +36,9 @@ previousProjectSlug: guidebook-icons
       </div>
 
       <h3>Summary</h3>
-      <p>An overhaul of Guidebook's schedule feature, given that it is the platform's most popular feature and is a main selling point for the product. The redesign targeted the schedule's date picker, filtering method, and general user experience improvements.</p>
+      <p>An overhaul of Guidebook's schedule feature - the platform's most popular feature and a key differentiator for the product. The redesign targeted improvements to the schedule's date picker, filtering method, and general user experience.</p>
       <h3>Background</h3>
-      <p>The Guidebook platform developed essentially as a collection of tools surrounding its primary feature: the schedule. Starting as an events-specific product, the schedule was the true catalyst for app usage - without one there would be little purpose to use the app. Additionally, Guidebook has achieved and maintained success within the events-app space by focusing on the end-user experience of the app, and relentlessly iterating on this experience. With that in mind, in 2019 I took it upon myself to overhaul the schedule module, and to convince the executive team to approve the project.</p>
+      <p>The Guidebook platform developed essentially as a collection of tools surrounding its primary feature: the schedule. Starting as an events-specific product, the schedule was the true catalyst for app usage - without one there would be little purpose to use the app. Additionally, Guidebook has achieved and maintained success within the event-app space by focusing and relentlessly iterating on the end-user experience of the app. With that in mind, in 2019 I took it upon myself to overhaul the schedule module, and to convince the executive team to approve the project.</p>
       <figure class="image image-popped post_section popped js-image-focus" data-image-src="/assets/images/guidebook-schedule-iterations.jpg" data-caption="The schedule module has evolved and refined over 10 years. The right-most figure is after the schedule redesign.">
         <div class="image_frame">
           <img src="/assets/images/guidebook-schedule-iterations.jpg" />
@@ -47,8 +47,8 @@ previousProjectSlug: guidebook-icons
       </figure>
       <h3>Goals</h3>
       <ol class="numbered-list">
-        <li>Improve the general user experience of the feature. While the feature was relatively easy to use, I wanted to make it more delightful, engaging, and fun to use, as well as tap into some newer design paradigms (i.e. a page sheet).</li>
-        <li>Simplify day navigation. Given that Guidebook supports a wide range of guide durations, we should adjust the date picker to display in an optimal way based on the guide's specific duration. </li>
+        <li>Improve the general user experience. While the schedule was relatively easy to use, I wanted to make it more delightful, engaging, and fun, as well as tap into some newer design paradigms (i.e. a page sheet).</li>
+        <li>Simplify date navigation. Given that Guidebook supports a wide range of guide durations, we should adjust the date picker to render in an optimal way based on the guide's specific length. </li>
         <li>Improve filtering behavior. We want to make filtering by track easier and more intuitive.</li>
         <li>Update schedule/my schedule toggle design. Current design is fragile and confusing.</li>
       </ol>
@@ -61,7 +61,6 @@ previousProjectSlug: guidebook-icons
       <h3>Specific improvements</h3>
       <h4>Adaptive Date Picker</h4>
       <p>Guidebook supports guides ranging from a single day to year-round. Given this, it became apparent that the date picker needed to adjust based on the duration of the guide. I proposed introducing four states to the date picker: single-day, short, medium, and on-going.</p>
-      <p>When the date picker is in the "single day" state, it will present itself not as a picker, but as a rendering of the day the guide occurs on. The user can no longer adjust the date selected.</p>
       
       <div class="post_section popped focused">
         <div class="figureGrid">
@@ -150,17 +149,18 @@ previousProjectSlug: guidebook-icons
         <ol class="post_subtitleList">
           <li>
             <h4>Executive & Product Buy-in</h4>
-            <p>Once I decided that the schedule module needed an overhaul, it became important to convince the product and executive teams that it was a worthwhile endeavor. This was a relatively simple process which started with the creation of a one-page product pitch document. This document explained the goals of the project, the reasoning for its importance, and a estimated scope. I presented this document to the product team, and was able to convince them to add it to a list of projects under consideration. Next, I presented the one-pager to the executive team in our monthly product/exec meeting. It got buy in from the rest of the executives, and was formally slotted into the roadmap. </p>
+            <p>Once I decided that the schedule module needed an overhaul, it became important to convince the product and executive teams that it was a worthwhile endeavor. This was a relatively simple process which started with the creation of a one-page product pitch document. This document explained the goals of the project, a business case, and an estimated scope. I presented this document to the product team, and was able to convince them to add it to a list of projects under consideration. Next, I presented the one-pager to the executive team in our monthly product/exec meeting. It got buy in from the rest of the executives, and was formally slotted into the roadmap. </p>
           </li>
           <li>
             <h4>Ideation & Research</h4>
-            <p>I had a rough idea of what I wanted to improve, but wanted to validate those ideas with other, customer-facing teams. I sat down with both the CSA team leaders and sales team leaders to discuss the biggest issues they hear from customers relating to the schedule module. These complaints aligned fairly closely with what I had anticipated: difficulty with day selection and some confusion around filtering.</p>
-            <p>I did a lot of research on how other apps handle scheduling. Our use-case is fairly specialized (bounded events) but it was useful to gather interaction inspiration from such apps as Outlook, Google Calendar, Google I/O, Sunrise, among others.</p>
+            <p>I had a rough idea of what I wanted to improve, but wanted to validate those ideas with other, customer-facing teams. I sat down with both the CSA and sales team leaders to discuss the biggest issues they hear from customers relating to the schedule module. These complaints aligned fairly closely with what I had anticipated: difficulty with day selection and some confusion around filtering.</p>
+            <p>I did a lot of research on how other apps handle scheduling. Our use-case is fairly specialized (bounded events) but it was useful to gather interaction inspiration from such apps as Outlook, Google Calendar, Google I/O's event app, Sunrise, among others.</p>
             <p>Next, I started producing some rough designs of how we could improve the feature. I had a fairly clear idea of what I wanted to create, but still explored here, mainly around the layout for the filter sheet.</p>
           </li>
           <li>
             <h4>Prototyping</h4>
-            <p>From the designs, I created some prototypes of some of the new interactions (primarily, the new filter sheet and the new day picker states). I ran these prototypes by product as well as members of the sales and CSA teams to gather feedback. The prototypes helped better communicate how the filter sheet and collapsable picker would operate.</p>
+            <p>From the designs, I created prototypes of nearly every new interaction encompassed by the redesign. I feel very strongly about prototyping and try to incorporate it into every project I work on. I ran these prototypes by product as well as members of the sales and CSA teams to gather feedback. They helped better communicate how the filter, picker, and other UI elements would behave. Some are shown below.</p>
+            <p>We did some user testing here as well, having non-technical members of our team play around with the prototypes to provide feedback.</p>
             <div class="post_section popped">
               <div class="figureGrid">
                 <div class="figureGrid_item">
@@ -209,7 +209,7 @@ previousProjectSlug: guidebook-icons
           </li>
           <li>
             <h4>Impact Analysis</h4>
-            <p>Once the designs were fairly well established, I constructed an impact analysis with one of our product managers. This analysis contained near-final designs and interactions. These were presented to team leads for any final feedback. </p>
+            <p>Once the designs and prototypes were fairly well established, I constructed an impact analysis with one of our product managers. This analysis contained near-final designs and interactions. These were presented to team leads for any final feedback. </p>
           </li>
           <li>
             <h4>Development & implementation</h4>
@@ -223,7 +223,7 @@ previousProjectSlug: guidebook-icons
           
           <li>
             <h4>Testing & release</h4>
-            <p>Next, with the QA team I set up a "testing party" for the feature. I worked with our QA lead to produce a set of criteria and requirements which had to pass to consider the feature release-ready. We sat down with PMs and other developers to complete the test. Once the tests were passed, we cut a release candidate for both apps.</p>
+            <p>Next, with the QA team I set up a "testing party" for the feature. I worked with our QA lead to produce a set of criteria and requirements which had to pass to consider the feature release-ready. We sat down with PMs and other developers to complete the tests. Once passed, we cut a release candidate for both apps.</p>
           </li>
           <li>
             <h4>Validating goals</h4>
