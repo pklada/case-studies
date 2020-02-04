@@ -1344,5 +1344,7 @@ code {
         width: 100%; } }
 .home .home_avatar {
   box-shadow: 0 0 0 3px #fdfcfb, 0 0 0 4px rgba(183, 139, 107, 0.3); }
+.home .home_dribbbleLink {
+  margin-top: 64px; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
