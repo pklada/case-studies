@@ -45,6 +45,12 @@
         color: rgba(0,0,0,.4);
     }
 
+    .projectCard_pills {
+        text-align: right;
+        align-self: flex-end;
+        flex-basis: 0;
+    }
+
     .projectCard_pill {
         display: inline-flex;
         align-items: center;
@@ -52,7 +58,7 @@
         background: rgba(0, 0, 0, .05);
         border: 1px solid rgba(0, 0, 0, .1);
         line-height: 1;
-        margin-right: $size-xs;
+        margin-bottom: $size-xs;
         border-radius: $border-radius/2;
         text-transform: uppercase;
         font-size: $font-xxs;
@@ -60,7 +66,7 @@
         font-family: "Menlo", monospace;
 
         &:last-child {
-            margin-right: 0;
+            margin-bottom: 0;
         }
     }
 

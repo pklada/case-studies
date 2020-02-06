@@ -1221,6 +1221,12 @@ code {
 .projectCard .projectCard_subtitle {
   margin: 0;
   color: rgba(0, 0, 0, 0.4); }
+.projectCard .projectCard_pills {
+  text-align: right;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0; }
 .projectCard .projectCard_pill {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1230,14 +1236,14 @@ code {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 1;
-  margin-right: 4px;
+  margin-bottom: 4px;
   border-radius: 3px;
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 1px;
   font-family: "Menlo", monospace; }
 .projectCard .projectCard_pill:last-child {
-    margin-right: 0; }
+    margin-bottom: 0; }
 .projectCard:hover .projectCard_image img {
   transform: scale(1.02);
   opacity: .8; }
