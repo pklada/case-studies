@@ -1196,7 +1196,7 @@ code {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   padding: 6px;
   display: -ms-flexbox;
   display: flex;
@@ -1209,13 +1209,18 @@ code {
   font-size: 14px;
   z-index: 1;
   transition: background-color ease 150ms; }
-.projectCard .projectCard_title {
+.projectCard .projectCard_overview {
   -ms-flex-positive: 1;
       flex-grow: 1;
   text-align: left;
+  margin-right: 16px; }
+.projectCard .projectCard_title {
   margin: 0;
   color: rgba(0, 0, 0, 0.75);
   font-weight: 500; }
+.projectCard .projectCard_subtitle {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4); }
 .projectCard .projectCard_pill {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1231,6 +1236,8 @@ code {
   font-size: 11px;
   letter-spacing: 1px;
   font-family: "Menlo", monospace; }
+.projectCard .projectCard_pill:last-child {
+    margin-right: 0; }
 .projectCard:hover .projectCard_image img {
   transform: scale(1.02);
   opacity: .8; }

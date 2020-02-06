@@ -16,7 +16,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, .8);
+        background: rgba(255, 255, 255, .95);
         padding: 6px;
         display: flex;
         flex-direction: row;
@@ -28,12 +28,21 @@
         transition: background-color ease 150ms;
     }
 
-    .projectCard_title {
+    .projectCard_overview {
         flex-grow: 1;
         text-align: left;
+        margin-right: $size-md;
+    }
+
+    .projectCard_title {
         margin: 0;
         color: rgba(0,0,0,.75);
         font-weight: 500;
+    }
+
+    .projectCard_subtitle {
+        margin: 0;
+        color: rgba(0,0,0,.4);
     }
 
     .projectCard_pill {
@@ -49,6 +58,10 @@
         font-size: $font-xxs;
         letter-spacing: 1px;
         font-family: "Menlo", monospace;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &:hover {
