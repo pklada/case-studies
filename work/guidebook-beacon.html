@@ -1,0 +1,64 @@
+---
+layout: project
+nextProjectSlug: guidebook-schedule-redesign
+previousProjectSlug: guidebook-schedule-redesign
+projectTitle: Guidebook Beacon UI Kit
+
+details:
+  - item:
+    key: Company
+    value: Guidebook
+  - item:
+    key: Year
+    value: 2018-2020
+  - item:
+    key: Additional design
+    value: Guillermo Mont
+---
+<div class="">
+  <div class="post">
+    <div class="post_intro">
+      <div class="post_title">
+        <h2>Guidebook Beacon UI Kit</h2>
+      </div>
+      <div class="post_introQuote">
+        <p>Formalizing Guidebook's app UI</p>
+      </div>
+    </div>
+    <div class="post_body">
+
+      <div class="post_details">
+        <table>
+          {% for detail in page.details %}
+          <tr>
+            <td>{{ detail.key }}</td>
+            <td>{{ detail.value }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <h3>Summary</h3>
+      <p>I created a UI Kit for Guidebook for both iOS and Android - Beacon. This served as a tool to quickly build and iterate on both of our client apps.</p>
+      <figure class="image image-popped image-borderless post_section popped js-image-focus" data-image-src="/assets/images/guidebook-beacon-abstract.png">
+        <div class="image_frame">
+          <img src="/assets/images/guidebook-beacon-abstract.png" />
+        </div>
+      </figure>
+      <h3>Details</h3>
+      <p>As the design team grew, it became immediately obvious that we needed a way to store, version, and organize our design files. We played around initially with using GitHub to store our sketch files, but quickly realized that it was both too slow and too opaque to use as a true home for a design system or UI kit.</p>
+      <p>I decided to use Abstract as the system of record for our design files. Not only could you preview Sketch files through the browser or their mac app, it also used git under the hood for robust and proven versioning. While it took the team some time to get used to the workflow of git, it eventually led to us having a much more organized and logical system in place to store our UI.</p>
+      <p>The UI kit itself is nothing revolutionary, but was built to help us more rapidly iterate and build upon existing designs. The gains from standardization due to formalizing your UI can't be understated - it made interfacing with our developers simpler development speed increase exponentially.</p>
+      <figure class="image image-popped image-borderless post_section popped">
+        <div class="image_frame">
+          <video muted autoplay playsinline loop>
+            <source src="/assets/videos/guidebook-beacon-example-fast.m4v">
+          </video>
+        </div>
+        <figcaption class="image_caption">A video of me recreating a view from our iOS client using our UI kit (4x speed).</figcaption>
+      </figure>
+      <p>From an structure standpoint, we initially started with a single component library with all of our UI components living inside. This ended up becoming incredibly bloated and slow, so we broke each component out into a separate <code>[comp]</code> file which helped with both speed and merge reconciliation. It also helped us reason easier about any individual component. The downside of this approach is that Sketch library updates enter a massive cascade, which can lead to confusion or errors.</p>
+      <p>While the system did allow for more atomic level components, in general designers were inputting higher order components into individual view files. We found that cheaper, higher order components helped with iteration and reusability.</p>
+    </div>
+  </div>
+</div>
