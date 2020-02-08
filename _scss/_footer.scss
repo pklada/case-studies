@@ -8,7 +8,6 @@
     @include container();
     color: $link-color;
     display: flex;
-    flex-direction: row;
   }
 
   .footer_copy {
@@ -20,6 +19,8 @@
       padding: 0;
       margin: 0;
       display: flex;
+      width: 50%;
+      justify-content: flex-end;
 
       li {
           padding: 0;
@@ -40,6 +41,21 @@
       a {
           font-size: $font-xs;
           text-decoration: none;
+      }
+
+      @include mobile {
+          flex-wrap: wrap;
+          margin-bottom: -1 * $size-md;
+
+          li {
+              width: 50%;
+              display: block;
+              margin-bottom: $size-md;
+          }
+
+          li:after {
+              display: none;
+          }
       }
   }
 
