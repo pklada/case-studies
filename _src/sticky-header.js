@@ -12,6 +12,7 @@ class StickyHeader {
     }
 
     this.setupScrollEvent();
+    this.checkScrollPosition();
   }
 
   setupScrollEvent() {
