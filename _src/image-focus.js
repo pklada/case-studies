@@ -6,6 +6,7 @@ const zoomEnum = Object.freeze({
     fit: 1, 
     zoom: 2, 
     full: 3,
+    fill: 4,
 });
 
 class ImageFocus {
@@ -28,8 +29,8 @@ class ImageFocus {
         this.overlay = document.createElement('div');
         this.overlay.classList.add('imageFocus');
 
-        const imageContainer = document.createElement('div');
-        imageContainer.classList.add('imageFocus_imageContainer');
+        this.imageContainer = document.createElement('div');
+        this.imageContainer.classList.add('imageFocus_imageContainer');
 
         let asset;
 
@@ -54,10 +55,15 @@ class ImageFocus {
         const zoomIndicator = document.createElement('div');
         zoomIndicator.classList.add('image_zoomIndicator');
 
-        imageContainer.appendChild(asset);
-        imageContainer.appendChild(this.closeButton);
+        this.imageContainer.appendChild(asset);
+        this.imageContainer.appendChild(this.closeButton);
 
-        this.overlay.appendChild(imageContainer);
+        this.sizeTestContainer = document.createElement('div');
+        this.sizeTestContainer.classList.add('imageFocus_sizeTestContainer');
+        this.sizeTestContainer.appendChild(asset.cloneNode());
+
+        this.overlay.appendChild(this.imageContainer);
+        this.overlay.appendChild(this.sizeTestContainer);
 
         if (this.caption) {
             this.createCaption();
@@ -77,17 +83,21 @@ class ImageFocus {
         this.fitButton = document.createElement('button');
         this.zoomButton = document.createElement('button');
         this.fullButton = document.createElement('button');
+        this.fillButton = document.createElement('button');
 
         this.fitButton.classList.add('imageFocus_controlFitButton', 'imageFocus_controlButton');
         this.zoomButton.classList.add('imageFocus_controlZoomButton', 'imageFocus_controlButton');
         this.fullButton.classList.add('imageFocus_controlFullButton', 'imageFocus_controlButton');
+        this.fillButton.classList.add('imageFocus_controlCoverButton', 'imageFocus_controlButton');
 
         this.zoomButton.textContent = 'Zoom';
         this.fitButton.textContent = 'Fit';
         this.fullButton.textContent = '100%';
+        this.fillButton.textContent = 'Fill';
 
         this.controls.appendChild(this.fitButton);
         // this.controls.appendChild(this.zoomButton);
+        this.controls.appendChild(this.fillButton);
         this.controls.appendChild(this.fullButton);
 
         this.overlay.appendChild(this.controls);
@@ -102,22 +112,29 @@ class ImageFocus {
 
     configureZoom(zoomMode) {
         this.zoomMode = zoomMode;
+        const buttons = Array.prototype.slice.call(this.overlay.querySelectorAll('.imageFocus_controlButton'));
+
+        const elementHeight = this.sizeTestContainer.offsetHeight;
+        const elementWidth = this.sizeTestContainer.offsetWidth;
+
+        this.overlay.dataset.aspect = (elementHeight > elementWidth) ? 'tall' : 'wide';
+
+        buttons.forEach((button) => {
+            button.classList.remove('is-selected');
+        });
 
         if (this.zoomMode === zoomEnum.fit) {
-            this.zoomButton.classList.remove('is-selected');
-            this.fullButton.classList.remove('is-selected');
             this.fitButton.classList.add('is-selected');
             this.overlay.dataset.zoomMode = 'fit';
         } else if (this.zoomMode === zoomEnum.zoom) {
             this.zoomButton.classList.add('is-selected');
-            this.fullButton.classList.remove('is-selected');
-            this.fitButton.classList.remove('is-selected');
             this.overlay.dataset.zoomMode = 'zoom';
         } else if (this.zoomMode === zoomEnum.full) {
-            this.zoomButton.classList.remove('is-selected');
             this.fullButton.classList.add('is-selected');
-            this.fitButton.classList.remove('is-selected');
             this.overlay.dataset.zoomMode = 'full';
+        } else if (this.zoomMode === zoomEnum.fill) {
+            this.fillButton.classList.add('is-selected');
+            this.overlay.dataset.zoomMode = 'fill';
         }
     }
 
@@ -140,6 +157,7 @@ class ImageFocus {
         this.zoomButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.zoom));
         this.fullButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.full));
         this.fitButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.fit));
+        this.fillButton.addEventListener('click', this.configureZoom.bind(this, zoomEnum.fill));
     }
 
     openOverlay() {

@@ -3,3 +3,4 @@ import './index.scss';
 
 
 import './image-focus';
+import './sticky-header';

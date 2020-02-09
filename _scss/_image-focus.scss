@@ -32,6 +32,16 @@
         }
     }
 
+    .imageFocus_sizeTestContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        width: 50px;
+        overflow: hidden;
+    }
+
     &[data-zoom-mode="fit"] {
         .imageFocus_imageContainer {
             img, video {
@@ -55,6 +65,45 @@
             img, video {
                 max-width: none;
                 width: auto;
+            }
+        }
+    }
+
+    &[data-zoom-mode="fill"] {
+        padding: 0;
+        margin: 0;
+
+        &[data-aspect="tall"] {
+            overflow-x: hidden;
+
+            .imageFocus_imageContainer {
+                padding: 0;
+                margin: 0;
+                width: 100vw;
+
+                img, video {
+                    width: 100vw;
+                    max-width: none;
+                    max-height: none;
+                    height: auto;
+                }
+            }
+        }
+
+        &[data-aspect="wide"] {
+            overflow-y: hidden;
+
+            .imageFocus_imageContainer {
+                padding: 0;
+                margin: 0;
+                height: 100vh;
+
+                img, video {
+                    height: 100vh;
+                    max-width: none;
+                    max-height: none;
+                    width: auto;
+                }
             }
         }
     }

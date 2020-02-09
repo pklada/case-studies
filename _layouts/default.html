@@ -6,7 +6,22 @@
   <link href="/assets/app.css" rel="stylesheet"></head>
 
   <body>
-
+    {% if page.nextProjectSlug || page.previousProjectSlug %}
+    <div class="stickyHeader js-sticky-header">
+      <div class="stickyHeader_start">
+        <a href="{{ site.baseurl }}/work/{{ page.previousProjectSlug }}.html">
+          {% include svg/arrow.svg %}
+          Previous project
+        </a>
+      </div>
+      <div class="stickyHeader_end">
+        <a href="{{ site.baseurl }}/work/{{ page.nextProjectSlug }}.html">
+          {% include svg/arrow.svg %}
+          Next project
+        </a>
+      </div>
+    </div>
+    {% endif %}
     <main>
     {% include navigation.html %}
     {{ content }}
@@ -17,5 +32,15 @@
     {% include scripts.html %}
 
   <script type="text/javascript" src="/assets/app.bundle.js"></script></body>
+
+  <script>
+    document.querySelectorAll('.js-sticky-header').forEach((element) => {
+      {% if page.stickyTestElementClass %}
+      new StickyHeader(element, '.{{ page.stickyTestElementClass}}');
+      {% else %}
+      new StickyHeader(element);
+      {% endif %}
+    });
+  </script>
 
 </html>
