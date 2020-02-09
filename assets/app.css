@@ -787,7 +787,10 @@ a:hover {
     font-size: 14px;
     text-align: center;
     margin-top: 8px;
-    color: #ada199; }
+    color: #ada199;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto; }
 .image .image_frame {
     border: 1px solid #C4C4C4;
     border-radius: 6px;
