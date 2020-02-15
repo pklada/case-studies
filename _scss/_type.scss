@@ -31,6 +31,6 @@
 code {
     color: $primary-color;
     border-radius: $border-radius;
-    background: darken($bgd-color, 5%);
+    background: var(--color-bgd-adjusted);
     padding: 0 $size-xs;
 }

@@ -1,5 +1,5 @@
 .footer {
-  background-color: darken($bgd-color, 4%);
+  background-color: var(--color-bgd-adjusted);
   padding: $size-md 0;
   margin-top: $size-xl;
   font-size: $font-xs;

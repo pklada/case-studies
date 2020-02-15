@@ -1,6 +1,6 @@
 .home {
     .home_avatar {
-        box-shadow: 0 0 0 3px $bgd-color, 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
+        box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
     }
 
     .home_dribbbleLink {

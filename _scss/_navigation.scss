@@ -25,10 +25,11 @@ $nav-height: 130px;
     height: $nav-logo-size;
     width: $nav-logo-size;
     text-decoration: none;
+    top: $size-md;
 
     &:before {
       position: absolute;
-      background: darken($bgd-color, 5%);
+      background: var(--color-bgd-adjusted);
       content: "";
       width: 120%;
       height: 120%;
@@ -91,25 +92,9 @@ $nav-height: 130px;
   }
 
   &.navigation-dark {
-    .navigation_logo {
-      svg path {
-        fill: transparentize($color: $bgd-color, $amount: .6);
-      }
-    }
-
-    .navigation_title {
-      color: transparentize($color: $bgd-color, $amount: .6);
-    }
-
     .navigation_branding {
       &:before {
-        background: darken($text-color, 2%);
-      }
-
-      &:hover {
-        .navigation_logo svg path {
-          fill: transparentize($color: $bgd-color, $amount: .2);
-        }
+        background: transparentize($color-dark-bgd, .8);
       }
     }
   }

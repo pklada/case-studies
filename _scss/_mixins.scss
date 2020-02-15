@@ -1,0 +1,15 @@
+@mixin container($narrow: false) {
+  @if $narrow {
+    max-width: $container-width-narrow;
+  } @else {
+    max-width: $container-width;
+  }
+  padding: 0 $size-md;
+  margin: auto;
+}
+
+@mixin prefers-dark {
+  @media (prefers-color-scheme: dark) { 
+    @content;
+  }
+}

@@ -1,0 +1,34 @@
+
+$dark-mix-color: #000;
+$light-mix-color: #fff;
+$base-color: #B78B6B;
+
+$bgd-color: mix($base-color, $light-mix-color, 3%);
+$primary-color: $base-color;
+$text-color: mix($base-color, $dark-mix-color, 50%);
+$text-light-color: mix($text-color, $bgd-color, 50%);
+$link-color: $base-color;
+
+$color-dark-bgd: mix($base-color, $dark-mix-color, 5%);
+$color-dark-text: mix($base-color, $light-mix-color, 50%);
+
+:root {
+    --color-text: #{$text-color};
+    --color-bgd: #{$bgd-color};
+    --color-bgd-adjusted: #{darken($bgd-color, 5%)};
+    --color-bgd-adjusted-sm: #{darken($bgd-color, 2%)};
+    --color-text-subtle: #{mix($text-color, $bgd-color, 50%)};
+    --color-text-adjusted: #{darken($text-color, 5%)};
+
+    --color-sticky-header-bgd: #{transparentize($color: lighten($bgd-color, 20%), $amount: .05)};
+
+    @include prefers-dark {
+        --color-text: #{$color-dark-text};
+        --color-bgd: #{$color-dark-bgd};
+        --color-bgd-adjusted: #{lighten($color-dark-bgd, 7%)};
+        --color-bgd-adjusted-sm: #{lighten($color-dark-bgd, 5%)};
+        --color-text-subtle: #{mix($color-dark-text, $color-dark-bgd, 50%)};
+        --color-text-adjusted: #{lighten($color-dark-text, 5%)};
+        --color-sticky-header-bgd: #{transparentize($color: darken($color-dark-bgd, 20%), $amount: .05)};
+    }
+}

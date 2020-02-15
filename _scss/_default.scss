@@ -5,16 +5,6 @@ $container-width-narrow: 800px;
 $readable-max-width: 600px;
 $container-padding: 32px;
 
-$dark-mix-color: #000;
-$light-mix-color: #fff;
-$base-color: #B78B6B;
-
-$bgd-color: mix($base-color, $light-mix-color, 3%);
-$primary-color: $base-color;
-$text-color: mix($base-color, $dark-mix-color, 50%);
-$text-light-color: mix($text-color, $bgd-color, 50%);
-$link-color: $base-color;
-
 $size-xs: 4px;
 $size-sm: 8px;
 $size-md: 16px;
@@ -41,18 +31,6 @@ $min-tap-size: 42px;
 
 
 
-// Mixin
-
-@mixin container($narrow: false) {
-  @if $narrow {
-    max-width: $container-width-narrow;
-  } @else {
-    max-width: $container-width;
-  }
-  padding: 0 $size-md;
-  margin: auto;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,11 +49,16 @@ html {
 
 body {
   font-family: $primary-font-family;
-  color: $text-color;
+  color: var(--color-text);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: $bgd-color;
+  background-color: var(--color-bgd);
+
+  @include prefers-dark {
+    color: $color-dark-text;
+    background-color: $color-dark-bgd;
+  }
 }
 
 main {
@@ -172,7 +155,7 @@ a {
   }
 
   &__title {
-    color: $text-color;
+    color: var(--color-text);
     font-size: $font-md;
     padding-top: 0;
   }

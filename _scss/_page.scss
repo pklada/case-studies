@@ -14,12 +14,12 @@
 
     .page_description {
         font-size: $font-md;
-        color: $text-color;
+        color: var(--color-text);
     }
 
     .page_introDivider {
         height: 2px;
-        background: darken($bgd-color, 5%);
+        background: var(--color-bgd-adjusted);
         border: none;
         width: 120px;
         margin: $size-lg auto;

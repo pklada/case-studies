@@ -4,7 +4,7 @@
         @include container($narrow: true);
         max-width: $post-container-width;
         display: flex;
-        border-top: 3px solid darken($bgd-color, 5%);
+        border-top: 3px solid var(--color-bgd-adjusted);
         margin-top: $size-xl;
         padding-top: $size-xl;
         padding-left: 0;
@@ -42,7 +42,7 @@
             }
 
             &:hover {
-                background-color: darken($bgd-color, 3%);
+                background-color: var(--color-bgd-adjusted-sm);
             }
         }
     }
