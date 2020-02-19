@@ -76,13 +76,81 @@
     }
 
     &.project-spaces {
+
+        .project-intro-phones {
+            width: 500px;
+            position: relative;
+            float: left;
+            margin-left: -460px;
+            height: 940px;
+            margin-right: $size-lg;
+
+            .phone-drawer {
+                width: 400px;
+                height: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 2;
+
+                @include mobile {
+                    width: 260px;
+                    top: -10px;
+                    z-index: 1;
+                }
+
+                @include tablet {
+                    right: -20px;
+                    z-index: 1;
+                    top: -80px;
+                }
+            }
+
+            .phone-home {
+                width: 400px;
+                height: auto;
+                position: absolute;
+                top: 220px;
+                right: 100px;
+                z-index: 1;
+
+                @include mobile {
+                    width: 280px;
+                    top: 230px;
+                    right: 0;
+                    z-index: 2;
+                }
+
+                @include tablet {
+                    right: -10px;
+                    top: 170px;
+                    z-index: 1;
+                }
+            }
+
+            @include mobile {
+                margin-right: $size-md;
+                margin-left: -225px;
+                height: 620px;
+            }
+
+            @include tablet {
+                margin-left: -400px;
+            }
+        }
+
         .project-figure-themes {
             @include mobile {
+                > .image_frame {
+                    width: calc(100vw);
+                    overflow: scroll;
+                    margin-left: -1 * $size-md;
+                }
+
                 img {
                     width: 200vw;
                     max-width: none;
                     position: relative;
-                    left: -50%;
                 }
             }
         }

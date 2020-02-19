@@ -48,7 +48,7 @@ $post-subtitle-list-counter-size: 24px;
             width: 100%;
             border-radius: $border-radius;
             border: 1px solid var(--color-bgd-adjusted);
-            background: var(--color-bgd);
+            background: var(--color-bgd-increased);
             overflow: hidden;
 
             td {
@@ -365,6 +365,7 @@ $post-subtitle-list-counter-size: 24px;
 
             table {
                 border: none;
+                background: transparent;
                 
                 td {
                     &:first-child {

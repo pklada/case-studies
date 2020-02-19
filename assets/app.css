@@ -357,6 +357,7 @@ template {
   --color-text: #5c4636;
   --color-bgd: #fdfcfb;
   --color-bgd-adjusted: #f5efea;
+  --color-bgd-increased: white;
   --color-bgd-adjusted-sm: #faf7f4;
   --color-text-subtle: #ada199;
   --color-text-adjusted: #4c3a2d;
@@ -366,6 +367,7 @@ template {
       --color-text: #dbc5b5;
       --color-bgd: #090705;
       --color-bgd-adjusted: #201912;
+      --color-bgd-increased: black;
       --color-bgd-adjusted-sm: #19140e;
       --color-text-subtle: #72665d;
       --color-text-adjusted: #e3d2c6;
@@ -591,7 +593,7 @@ a:hover {
       width: 100%;
       border-radius: 6px;
       border: 1px solid var(--color-bgd-adjusted);
-      background: var(--color-bgd);
+      background: var(--color-bgd-increased);
       overflow: hidden; }
 .post .post_details table td {
         padding: 8px;
@@ -804,7 +806,8 @@ a:hover {
       margin-top: -16px;
       border-bottom: 3px solid var(--color-bgd-adjusted); }
       .post .post_details table {
-        border: none; }
+        border: none;
+        background: transparent; }
         .post .post_details table td:first-child {
           padding-left: 0; }
         .post .post_details table td:last-child {
@@ -1522,12 +1525,65 @@ code {
       margin-bottom: 0; }
       .project.project-schedule .project-figure-phone-android img {
         max-width: 400px; } }
+.project.project-spaces .project-intro-phones {
+  width: 500px;
+  position: relative;
+  float: left;
+  margin-left: -460px;
+  height: 940px;
+  margin-right: 32px; }
+.project.project-spaces .project-intro-phones .phone-drawer {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2; }
 @media only screen and (max-width: 600px) {
+      .project.project-spaces .project-intro-phones .phone-drawer {
+        width: 260px;
+        top: -10px;
+        z-index: 1; } }
+@media (min-width: 768px) and (max-width: 991px) {
+      .project.project-spaces .project-intro-phones .phone-drawer {
+        right: -20px;
+        z-index: 1;
+        top: -80px; } }
+.project.project-spaces .project-intro-phones .phone-home {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 220px;
+    right: 100px;
+    z-index: 1; }
+@media only screen and (max-width: 600px) {
+      .project.project-spaces .project-intro-phones .phone-home {
+        width: 280px;
+        top: 230px;
+        right: 0;
+        z-index: 2; } }
+@media (min-width: 768px) and (max-width: 991px) {
+      .project.project-spaces .project-intro-phones .phone-home {
+        right: -10px;
+        top: 170px;
+        z-index: 1; } }
+@media only screen and (max-width: 600px) {
+    .project.project-spaces .project-intro-phones {
+      margin-right: 16px;
+      margin-left: -225px;
+      height: 620px; } }
+@media (min-width: 768px) and (max-width: 991px) {
+    .project.project-spaces .project-intro-phones {
+      margin-left: -400px; } }
+@media only screen and (max-width: 600px) {
+  .project.project-spaces .project-figure-themes > .image_frame {
+    width: calc(100vw);
+    overflow: scroll;
+    margin-left: -16px; }
   .project.project-spaces .project-figure-themes img {
     width: 200vw;
     max-width: none;
-    position: relative;
-    left: -50%; } }
+    position: relative; } }
 .project.project-spaces .project-figure-phones {
   float: right;
   width: auto;
