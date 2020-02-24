@@ -7,8 +7,14 @@
 <meta name="theme-color" content="{{ site.theme_color }}">
 <meta name="msapplication-navbutton-color" content="{{ site.theme_color }}">
 <meta name="apple-mobile-web-app-status-bar-style" content="{{ site.theme_color }}">
+
+{% if page.webImage %}
+<meta property="og:image" content="{{ site.baseurl }}/assets/images/{{ page.webImage }}" />
+<link rel="image_src" type="image/png" href="{{ site.baseurl }}/assets/images/{{ page.webImage }}">
+{% else %}
 <meta property="og:image" content="{{ site.baseurl }}/assets/images/web-image.png" />
 <link rel="image_src" type="image/png" href="{{ site.baseurl }}/assets/images/web-image.png">
+{% endif %}
 
 <title>Pete Lada | Selected Work{% if page.projectTitle %} | {{ page.projectTitle }}{% endif %}</title>
 
