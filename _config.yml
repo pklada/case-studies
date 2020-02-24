@@ -1,6 +1,6 @@
 title: Pete Lada
 email: pklada@gmail.com
-description: Selected works of Pete Lada
+description: Selected work of Pete Lada
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://work.petelada.com" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#8B572A'
@@ -8,6 +8,7 @@ twitter_username: pklada
 github_username:  pklada
 author: Pete Lada
 logo: assets/images/large-logo.png
+image: assets/images/web-image.png
 twitter:
   username: pklada
 social:

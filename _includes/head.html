@@ -8,9 +8,9 @@
 <meta name="msapplication-navbutton-color" content="{{ site.theme_color }}">
 <meta name="apple-mobile-web-app-status-bar-style" content="{{ site.theme_color }}">
 
-{% if page.webImage %}
-<meta property="og:image" content="{{ site.baseurl }}/assets/images/{{ page.webImage }}" />
-<link rel="image_src" type="image/png" href="{{ site.baseurl }}/assets/images/{{ page.webImage }}">
+{% if page.image %}
+<meta property="og:image" content="{{ site.baseurl }}/assets/images/{{ page.image }}" />
+<link rel="image_src" type="image/png" href="{{ site.baseurl }}/assets/images/{{ page.image }}">
 {% else %}
 <meta property="og:image" content="{{ site.baseurl }}/assets/images/web-image.png" />
 <link rel="image_src" type="image/png" href="{{ site.baseurl }}/assets/images/web-image.png">
