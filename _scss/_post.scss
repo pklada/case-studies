@@ -20,7 +20,6 @@ $post-subtitle-list-counter-size: 24px;
         margin-top: $size-lg;
 
         p {
-            font-style: italic;
             font-size: $font-md;
             font-weight: normal;
             color: var(--color-text-subtle);
@@ -259,7 +258,7 @@ $post-subtitle-list-counter-size: 24px;
     }
 
     .post_quote {
-        border-left: 2px solid var(--color-bgd-adjusted);
+        border-left: 3px solid transparentize($color: $primary-color, $amount: .5);
         padding: $size-md 0; 
         margin: $size-lg;
         position: relative;
@@ -286,7 +285,8 @@ $post-subtitle-list-counter-size: 24px;
             font-family: Georgia, "Work Sans", sans-serif;
             top: -6px;
             left: -60px;
-            opacity: .2;
+            opacity: .5;
+            color: $primary-color;
         }
 
         @include mobile {
@@ -305,13 +305,14 @@ $post-subtitle-list-counter-size: 24px;
             
             &:before {
                 position: absolute;
-                top: 0;
-                left: calc((100vw - #{$post-container-width}) / 2 * -1);
+                top: -50vh;
+                left: calc((150vw - #{$post-container-width}) / 2 * -1);
                 bottom: 0;
-                width: 100vw;
+                width: calc(150vw);
                 content: "";
                 background-color: var(--color-text);
                 z-index: 0;
+                transform: rotate(-2deg);
             }
 
             .post_title,
@@ -367,6 +368,7 @@ $post-subtitle-list-counter-size: 24px;
             .post_intro {
                 &:before {
                     left: $size-md * -1;
+                    transform: rotate(0deg);
                 }
             }
         }

@@ -1,0 +1,24 @@
+.callout {
+    border: 2px solid transparentize($color: $primary-color, $amount: .7);
+    background: var(--color-bgd);
+    border-radius: $border-radius;
+    padding: $size-lg;
+    position: relative;
+
+    > .callout_title {
+        text-transform: uppercase;
+        font-size: $font-xs !important;
+        font-family: "Menlo", monospace;
+        letter-spacing: 2px;
+        position: absolute;
+        top: calc((1.3 * #{$font-xs} + #{$size-xs} * 2) / -2);
+        left: $size-lg - $size-sm;
+        background: var(--color-bgd);
+        padding: $size-xs $size-sm;
+        color: $primary-color !important;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
