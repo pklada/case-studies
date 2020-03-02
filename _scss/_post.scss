@@ -6,7 +6,7 @@ $post-subtitle-list-counter-size: 24px;
 .post {
     @include container();
 
-    .post_title h2{
+    .post_title h2 {
         font-size: $font-xl;
         font-weight: normal;
         text-align: center;
@@ -29,11 +29,16 @@ $post-subtitle-list-counter-size: 24px;
     }
 
     .post_intro {
-        padding: $size-xl*2 0;
+        padding: ($size-xl * 2) 0;
         border-bottom: 3px solid var(--color-bgd-adjusted); 
         max-width: $post-container-width;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .post_meta {
+        text-align: center;
+        margin-top: $size-lg;
     }
 
     .post_details {
@@ -135,6 +140,13 @@ $post-subtitle-list-counter-size: 24px;
                 margin-top: $size-lg;
             }
         }
+
+        hr {
+            border: none;
+            border-top: 1px dashed var(--color-bgd-adjusted);
+            height: 0;
+            margin: $size-xl auto; 
+        }
     }
 
     .post_section {
@@ -189,6 +201,13 @@ $post-subtitle-list-counter-size: 24px;
         &.pull-right {
             margin-right: -15%;
         }
+    }
+
+    .post_footer {
+        max-width: $post-container-width;
+        margin: $size-xl auto;
+        border-top: 3px solid var(--color-bgd-adjusted);
+        padding-top: $size-xl;
     }
 
     .post_divider {

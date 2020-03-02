@@ -1,9 +1,93 @@
 .home {
+    $home-sidebar-width: 30vw;
+    $home-sidebar-intro-height: 200px;
+
+    display: grid;
+    grid-template-columns: $home-sidebar-width auto;
+    grid-template-areas: "sidebar main";
+    margin: 0;
+    padding: 0;
+    max-width: none;
+
     .home_avatar {
         box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
     }
 
     .home_dribbbleLink {
         margin-top: $size-xl;
+    }
+
+    .home_sidebar{
+        grid-area: sidebar;
+        background: var(--color-bgd-adjusted-sm);
+        padding: $size-lg;
+        position: fixed;
+        left: 0;
+        top: $top-line-height;
+        height: calc(100vh - #{$top-line-height});
+        width: $home-sidebar-width;
+
+        @include mobile {
+            width: auto;
+            position: relative;
+            height: auto;
+        }
+    }
+
+    .home_sidebarDivider {
+        height: 3px;
+        background: var(--color-bgd-adjusted);
+        border: none;
+        margin-top: 0;
+        margin-bottom: $size-lg;
+    }
+
+    .home_sidebarIntro {
+        height: $home-sidebar-intro-height;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        > p {
+            margin-bottom: $size-lg;
+        }
+    }
+
+    .home_content {
+        grid-area: main;
+        padding: $size-lg;
+    }
+
+    .home_contentWrapper {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home_contentIntro {
+        height: $home-sidebar-intro-height;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        > h3 {
+            margin-top: 0;
+            margin-bottom: $size-sm;
+            font-size: $font-md;
+        }
+
+        > p {
+            color: var(--color-text-subtle);
+            margin-bottom: $size-lg;
+            margin-top: 0;
+        }
+    }
+
+    @include mobile {
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "sidebar"
+            "main"
+        ;
     }
 }

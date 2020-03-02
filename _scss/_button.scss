@@ -1,0 +1,14 @@
+.button {
+    background-color: var(--color-button-bgd);
+    color: var(--color-bgd);
+    padding: $size-md;
+    text-decoration: none;
+    border-radius: $border-radius;
+    display: inline-flex;
+    transition: background-color ease 200ms;
+
+    &:hover {
+        color: var(--color-bgd);
+        background-color: var(--color-button-bgd-hover);
+    }
+}

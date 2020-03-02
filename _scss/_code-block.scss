@@ -1,0 +1,25 @@
+.code-block {
+    background: var(--color-bgd-adjusted);
+    padding: $size-md;
+    border-radius: $border-radius;
+
+    .code-block_title {
+        font-weight: 600;
+        font-size: $font-xs;
+        margin-bottom: $size-md;
+        display: block;
+        color: var(--color-text-subtle);
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    code {
+        background: transparent;
+    }
+}

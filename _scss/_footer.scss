@@ -10,57 +10,100 @@
     display: flex;
   }
 
+  .has-sidebar & {
+      display: none;
+
+      @include mobile {
+          display: block;
+      }
+  }
+
   .footer_copy {
-      flex-grow: 1;
+    flex-grow: 1;
   }
 
   .footer_links {
-      list-style: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+
+    li {
       padding: 0;
-      margin: 0;
-      display: flex;
-      width: 50%;
-      justify-content: flex-end;
+
+      &:after {
+        content: "•";
+        margin: 0 $size-xs;
+        display: inline-block;
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+
+    a {
+      font-size: $font-xs;
+      text-decoration: none;
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
+      margin-bottom: -1 * $size-md;
 
       li {
-          padding: 0;
-
-          &:after {
-              content: "•";
-              margin: 0 $size-xs;
-              display: inline-block;
-          }
-
-          &:last-child {
-              &:after {
-                  content: "";
-              }
-          }
+        width: 50%;
+        display: block;
+        margin-bottom: $size-md;
       }
 
-      a {
-          font-size: $font-xs;
-          text-decoration: none;
+      li:after {
+        display: none;
       }
+    }
+  }
 
-      @include mobile {
-          flex-wrap: wrap;
-          margin-bottom: -1 * $size-md;
+  &.footer-in-sidebar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    flex-wrap: wrap;
+    margin-bottom: -1 * $size-md;
+    display: flex;
 
-          li {
-              width: 50%;
-              display: block;
-              margin-bottom: $size-md;
-          }
+    .footer_container {
+        flex-wrap: wrap;
+    }
 
-          li:after {
-              display: none;
-          }
-      }
+    .footer_links {
+        width: 100%;
+        margin-top: $size-md;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
+
+    li {
+        width: 33%;
+        display: block;
+        margin-bottom: $size-md;
+    }
+
+    li:after {
+        display: none;
+    }
+
+    @include mobile {
+        display: none;
+    }
   }
 
   @include mobile {
-      padding-bottom: calc(env(safe-area-inset-bottom) + #{$size-md});
+    padding-bottom: calc(env(safe-area-inset-bottom) + #{$size-md});
   }
-
 }
