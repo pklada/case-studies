@@ -5,7 +5,6 @@
     height: 50px;
     position: relative;
     border-radius: 50%;
-    overflow: hidden;
 
     &:before {
         position: absolute;
@@ -26,10 +25,36 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 50%;
     }
 
     &.avatar-small {
         width: 24px;
         height: 24px;
+    }
+
+    .avatar_badge {
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        width: 24px;
+        height: 24px;
+        z-index: 2;
+        background: var(--color-text);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 3px var(--color-bgd-adjusted-sm);
+        
+        > svg {
+            width: 12px;
+            height: auto;
+            vertical-align: middle;
+
+            path {
+                fill: var(--color-bgd);
+            }
+        }
     }
 }

@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Thoughts on the iPhone 6"
+date:   2014-09-26
+img: "/images/img_iphone6_reachability.png"
+has_excerpt: true
+---
+
+I recently purchased an iPhone 6 (not the 6 Plus which [I initially indicated I would purchase](http://cl.ly/image/2m0N1r1Z3h0t/Image%202014-09-27%20at%203.00.11%20PM.png)). I understand there is a general trend within the mobile phone industry to skew phone sizes larger, and initially I was an advocate for this change. I've recently, however, significantly changed my views on larger phone form factors. 
+
+The iPhone 6 is a nearly perfect phone. The design is beautiful. The build quality is impeccable. The camera is amazing. The screen is incredibly sharp with a simply awe-inspiring viewing angle. The size, however, is stopping me from being completely in love. 
+
+<!--end-->
+
+I think I have fairly normal sized male hands. However, it is nearly impossible for me to reach the "back" button in iOS while holding the phone one-handed. I can't even imagine how this would feel on the 6 Plus. Granted, Apple provided a way to access the navigation bar items by adding a "reachability mode", but this just smacks of a half-assed solution to a problem which should not have existed to begin with. Frankly, I never use the reachability mode anyway as it would then take three button tabs to execute a single action (double tap home to get into the mode, then hit back). This is perhaps an area where Androids native "back" button works in their favor &mdash; its right there by the thumb; no special mode required. 
+
+{% capture image_url %}{{ site.baseurl }}/assets/images/img_iphone6_reachability.png{% endcapture %}
+{% include image.html src=image_url class="post_section" caption="'Reachability mode' on the iPhone 6" %}
+
+
+I am a fairly frequent runner, as well as a gym-goer. I previously would bring my iPhone 5 with me daily on runs or gym sessions &mdash; the phone fit fairly comfortably into my gym shorts. Now, though, the 6 protrudes with odd angles from my pockets, becoming a fairly large nuisance while I exercise. Not great.  
+
+The larger form factor is not all bad, though. I love how much easier it is to type on the keyboard now. Previously, with the 5, I would mistype nearly every word and relied heavily on auto-correct. While I still suck at typing on mobile apparently, the mistakes are now much less pronounced. The larger size also is more conducive for reading, and I now find reading web content much more natural &mdash; on the 5 it was a strain. 
+
+The 5 form factor is something to be cherished. We'll see if people gradually adopt and become familiar with the larger size. As it stands, the slightly smaller size of the 5 is something I truly miss. 

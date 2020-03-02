@@ -21,6 +21,8 @@ $color-dark-text: mix($base-color, $light-mix-color, 50%);
     --color-text-subtle: #{mix($text-color, $bgd-color, 50%)};
     --color-text-adjusted: #{darken($text-color, 5%)};
     --color-sticky-header-bgd: #{transparentize($color: lighten($bgd-color, 20%), $amount: .05)};
+    --color-button-bgd: $text-color;
+    --color-button-bgd-hover: #{transparentize($text-color, .5)};
 
     @include prefers-dark {
         --color-text: #{$color-dark-text};
@@ -31,5 +33,7 @@ $color-dark-text: mix($base-color, $light-mix-color, 50%);
         --color-text-subtle: #{mix($color-dark-text, $color-dark-bgd, 50%)};
         --color-text-adjusted: #{lighten($color-dark-text, 5%)};
         --color-sticky-header-bgd: #{transparentize($color: darken($color-dark-bgd, 20%), $amount: .05)};
+        --color-button-bgd: #{$color-dark-text};
+        --color-button-bgd-hover: #{transparentize($color-dark-text, .5)};
     }
 }

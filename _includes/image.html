@@ -1,0 +1,10 @@
+<figure class="image {{ include.class }} {% if include.canZoom %}js-image-focus{% endif %}" data-image-src="{{ include.src }}" data-caption="{{ include.caption }}">
+    <div class="image_frame">
+        <img src="{{ include.src }}" />
+    </div>
+    {% if include.caption %}
+    <figcaption class="image_caption">
+        {{ include.caption }}
+    </figcaption>
+    {% endif %}
+</figure>

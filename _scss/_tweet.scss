@@ -1,0 +1,7 @@
+.tweet {
+    > * {
+        display: inline-block !important;
+    }
+
+    margin: $size-lg auto;
+}

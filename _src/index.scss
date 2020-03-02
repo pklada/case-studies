@@ -7,6 +7,8 @@
 @import '../_scss/navigation';
 @import '../_scss/post';
 @import '../_scss/image';
+@import '../_scss/button';
+@import '../_scss/tweet';
 @import '../_scss/type';
 @import '../_scss/figure-grid';
 @import '../_scss/figure-row';
@@ -17,7 +19,11 @@
 @import '../_scss/project-card';
 @import '../_scss/avatar';
 @import '../_scss/sticky-header';
+@import '../_scss/code-block';
 
 /* specific page layouts */
 @import '../_scss/project-pages';
 @import '../_scss/home';
+
+// code highlighting
+@import '../_scss/highlight';

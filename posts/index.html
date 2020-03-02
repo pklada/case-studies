@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="home page">
+  <div class="page_intro">
+    <h2 class="page_title">Posts</h2>
+  </div>
+  <div class="postList">
+    <ul>
+        {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+</div>

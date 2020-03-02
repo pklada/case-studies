@@ -2,21 +2,40 @@
 layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post__container">
-    <header class="post__header">
-      <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
-      <p class="post__meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-          {{ page.date | date: date_format }}
-        </time>
-        {% if page.author %}
-          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-        {% endif %}</p>
-    </header>
 
-    <div class="post__content" itemprop="articleBody">
-      {{ content }}
+  <div class="post_intro js-sticky-test">
+    <div class="post_title">
+      <h2>{{ page.title | escape }}</h2>
+    </div>
+    <div class="post_meta">
+      <div class="post_metaDate">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+      </div>
+      {% if page.author %}
+      <div class="post_metaAuthor">
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      </div>
+      {% endif %}
     </div>
   </div>
+
+  <div class="post_body" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% if page.custom_buttons or page.custom-button-url %}
+  <div class="post_footer">
+
+    {% if page.custom-button-url %}
+    <a href="{{ page.custom-button-url }}" class="button {{ page.custom-button-class }}">{{ page.custom-button-title }}</a>
+    {% endif %}
+
+    {% for button in page.custom_buttons %}
+			<a href="{{ button.url }}" class="button {{ button.class }}">
+				{{ button.title }}
+			</a>
+		{% endfor %}
+  </div>
+  {% endif %}
 </article>
