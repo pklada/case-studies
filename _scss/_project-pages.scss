@@ -17,6 +17,7 @@
             align-items: center;
             line-height: 1;
             border: none;
+            text-decoration: none;
 
             &:first-child {
                 svg {
@@ -43,6 +44,7 @@
 
             &:hover {
                 background-color: var(--color-bgd-adjusted-sm);
+                opacity: 1;
             }
         }
     }

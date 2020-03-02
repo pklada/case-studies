@@ -11,6 +11,7 @@
 
     .home_avatar {
         box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
+        flex-shrink: 0;
     }
 
     .home_dribbbleLink {
@@ -43,13 +44,16 @@
     }
 
     .home_sidebarIntro {
-        height: $home-sidebar-intro-height;
+        flex-basis: $home-sidebar-intro-height;
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
+        padding-top: $size-lg;
+        flex-grow: 1;
 
         > p {
             margin-bottom: $size-lg;
+            font-size: $font-md;
         }
     }
 

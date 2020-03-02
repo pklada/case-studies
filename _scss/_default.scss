@@ -24,7 +24,7 @@ $font-xxs: 11px;
 $font-post-body: $font-sm;
 $font-post-subtitle: $font-md;
 
-$system-font-family: "Avenir", "Work Sans", sans-serif;
+$system-font-family: "Work Sans", "Avenir", sans-serif;
 $primary-font-family: $system-font-family;
 
 $border-radius: 6px;
@@ -83,9 +83,12 @@ main {
 a {
   color: $link-color;
   text-decoration: underline;
+  text-decoration-color: transparentize($color: $link-color, $amount: .8);
+  transition: all ease 150ms;
 
   &:hover {
     color: $primary-color;
+    opacity: .6;
   }
 }
 
