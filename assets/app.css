@@ -359,7 +359,7 @@ template {
   --color-bgd-adjusted: #f5efea;
   --color-bgd-increased: white;
   --color-bgd-adjusted-sm: #faf7f4;
-  --color-text-subtle: #ada199;
+  --color-text-subtle: #9c8f85;
   --color-text-adjusted: #4c3a2d;
   --color-sticky-header-bgd: rgba(255, 255, 255, 0.95);
   --color-button-bgd: $text-color;
@@ -371,7 +371,7 @@ template {
       --color-bgd-adjusted: #201912;
       --color-bgd-increased: black;
       --color-bgd-adjusted-sm: #19140e;
-      --color-text-subtle: #72665d;
+      --color-text-subtle: #87796f;
       --color-text-adjusted: #e3d2c6;
       --color-sticky-header-bgd: rgba(0, 0, 0, 0.95);
       --color-button-bgd: #dbc5b5;
@@ -1658,10 +1658,10 @@ code {
   position: relative;
   float: left;
   margin-left: -460px;
-  height: 940px;
+  height: 810px;
   margin-right: 32px; }
 .project.project-spaces .project-intro-phones .phone-drawer {
-    width: 400px;
+    width: 450px;
     height: auto;
     position: absolute;
     top: -80px;
@@ -1670,7 +1670,7 @@ code {
 @media only screen and (max-width: 600px) {
       .project.project-spaces .project-intro-phones .phone-drawer {
         width: 260px;
-        top: -10px;
+        top: 0;
         z-index: 1; } }
 @media (min-width: 768px) and (max-width: 991px) {
       .project.project-spaces .project-intro-phones .phone-drawer {
@@ -1678,7 +1678,7 @@ code {
         z-index: 1;
         top: -80px; } }
 .project.project-spaces .project-intro-phones .phone-home {
-    width: 400px;
+    width: 450px;
     height: auto;
     position: absolute;
     top: 220px;
