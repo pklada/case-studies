@@ -9,10 +9,6 @@
 
     margin-left: $home-sidebar-width;
 
-    @include widescreen {
-        margin-left: $home-sidebar-widescreen-width;
-    }
-
     .home_avatar {
         box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
         flex-shrink: 0;
@@ -94,10 +90,10 @@
     }
 
     @include mobile {
-        grid-template-columns: auto;
-        grid-template-areas: 
-            "sidebar"
-            "main"
-        ;
+        margin-left: 0;
+    }
+
+    @include widescreen {
+        margin-left: $home-sidebar-widescreen-width;
     }
 }

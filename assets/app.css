@@ -1735,9 +1735,6 @@ code {
   padding: 0;
   max-width: none;
   margin-left: 30vw; }
-@media (min-width: 1601px) {
-    .home {
-      margin-left: 500px; } }
 .home .home_avatar {
     box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px rgba(183, 139, 107, 0.3);
     -ms-flex-negative: 0;
@@ -1805,9 +1802,10 @@ code {
       margin-top: 0; }
 @media only screen and (max-width: 600px) {
     .home {
-      -ms-grid-columns: auto;
-          grid-template-columns: auto;
-      grid-template-areas: "sidebar" "main"; } }
+      margin-left: 0; } }
+@media (min-width: 1601px) {
+    .home {
+      margin-left: 500px; } }
 .highlight {
   background: transparent; }
 .highlight .c {
