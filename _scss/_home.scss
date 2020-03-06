@@ -1,13 +1,17 @@
 .home {
     $home-sidebar-width: 30vw;
+    $home-sidebar-widescreen-width: 500px;
     $home-sidebar-intro-height: 200px;
 
-    display: grid;
-    grid-template-columns: $home-sidebar-width auto;
-    grid-template-areas: "sidebar main";
     margin: 0;
     padding: 0;
     max-width: none;
+
+    margin-left: $home-sidebar-width;
+
+    @include widescreen {
+        margin-left: $home-sidebar-widescreen-width;
+    }
 
     .home_avatar {
         box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px transparentize($color: $primary-color, $amount: .7);
@@ -19,7 +23,6 @@
     }
 
     .home_sidebar{
-        grid-area: sidebar;
         background: var(--color-bgd-adjusted-sm);
         padding: $size-lg;
         position: fixed;
@@ -32,6 +35,10 @@
             width: auto;
             position: relative;
             height: auto;
+        }
+
+        @include widescreen {
+            width: $home-sidebar-widescreen-width;
         }
     }
 
@@ -58,7 +65,6 @@
     }
 
     .home_content {
-        grid-area: main;
         padding: $size-lg;
     }
 

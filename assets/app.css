@@ -1731,14 +1731,13 @@ code {
       .project.project-spaces .project-figure-phones img {
         width: 100%; } }
 .home {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 30vw auto;
-      grid-template-columns: 30vw auto;
-  grid-template-areas: "sidebar main";
   margin: 0;
   padding: 0;
-  max-width: none; }
+  max-width: none;
+  margin-left: 30vw; }
+@media (min-width: 1601px) {
+    .home {
+      margin-left: 500px; } }
 .home .home_avatar {
     box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px rgba(183, 139, 107, 0.3);
     -ms-flex-negative: 0;
@@ -1746,7 +1745,6 @@ code {
 .home .home_dribbbleLink {
     margin-top: 64px; }
 .home .home_sidebar {
-    grid-area: sidebar;
     background: var(--color-bgd-adjusted-sm);
     padding: 32px;
     position: fixed;
@@ -1759,6 +1757,9 @@ code {
         width: auto;
         position: relative;
         height: auto; } }
+@media (min-width: 1601px) {
+      .home .home_sidebar {
+        width: 500px; } }
 .home .home_sidebarDivider {
     height: 3px;
     background: var(--color-bgd-adjusted);
@@ -1781,7 +1782,6 @@ code {
       margin-bottom: 32px;
       font-size: 24px; }
 .home .home_content {
-    grid-area: main;
     padding: 32px; }
 .home .home_contentWrapper {
     max-width: 800px;
