@@ -9,7 +9,8 @@
 }
 
 @mixin prefers-dark {
-  @media (prefers-color-scheme: dark) { 
+  .prefers-dark,
+  .prefers-dark & {
     @content;
   }
 }

@@ -5,7 +5,7 @@
     {% include head.html %}
   </head>
 
-  <body>
+  <body class="{% if page.darkHero %}dark-hero{% endif %}">
     {% if page.nextProjectSlug or page.previousProjectSlug %}
     <div class="stickyHeader js-sticky-header">
       <div class="stickyHeader_start">
@@ -27,6 +27,8 @@
       {% include navigation.html %}
     {% endif %}
     {{ content }}
+
+    {% include bulb.html %}
     </main>
 
     {% include footer.html %}
@@ -42,6 +44,10 @@
       {% else %}
       new StickyHeader(element);
       {% endif %}
+    });
+
+    document.querySelectorAll('.js-bulb').forEach((element) => {
+      new Bulb(element);
     });
   </script>
 

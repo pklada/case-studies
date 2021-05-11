@@ -1,6 +1,9 @@
 <footer class="footer {{ include.class }}">
   <div class="footer_container">
-    <div class="footer_copy">&copy; {{ 'now' | date: "%Y" }} Pete Lada</div>
+    <div class="footer_copy">
+      <p>&copy; {{ 'now' | date: "%Y" }} Pete Lada</p>
+      {% include bulb.html class="footer_bulb" %}
+    </div>
     <ul class="footer_links">
       <li><a href="https://twitter.com/pklada">@pklada</a></li>
       <li><a href="https://dribbble.com/plada">Dribbble</a></li>

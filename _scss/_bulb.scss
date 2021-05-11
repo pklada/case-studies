@@ -1,0 +1,49 @@
+.bulb {
+  position: absolute;
+  top: $size-lg;
+  right: $size-lg;
+  z-index: 100;
+
+  @include mobile {
+    display: none;
+  }
+
+  button {
+    width: $min-tap-size;
+    height: $min-tap-size;
+    appearance: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color ease 150ms;
+
+    &:hover {
+      background-color: var(--color-bgd-adjusted);
+
+      .dark-hero & {
+        background-color: transparentize($color-dark-bgd, 0.8);
+      }
+    }
+
+    svg {
+      display: inline-flex;
+
+      rect,
+      path {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  .bulb_icon {
+    display: none;
+
+    &.is-visible {
+      display: inline-flex;
+    }
+  }
+}

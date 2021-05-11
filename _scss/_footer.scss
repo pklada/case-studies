@@ -11,15 +11,22 @@
   }
 
   .has-sidebar & {
-      display: none;
+    display: none;
 
-      @include mobile {
-          display: block;
-      }
+    @include mobile {
+      display: block;
+    }
   }
 
   .footer_copy {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+      flex-grow: 1;
+    }
   }
 
   .footer_links {
@@ -34,14 +41,14 @@
       padding: 0;
 
       &:after {
-        content: "•";
+        content: '•';
         margin: 0 $size-xs;
         display: inline-block;
       }
 
       &:last-child {
         &:after {
-          content: "";
+          content: '';
         }
       }
     }
@@ -78,32 +85,45 @@
     display: flex;
 
     .footer_container {
-        flex-wrap: wrap;
+      flex-wrap: wrap;
     }
 
     .footer_links {
-        width: 100%;
-        margin-top: $size-md;
-        flex-wrap: wrap;
-        flex-direction: row-reverse;
+      width: 100%;
+      margin-top: $size-md;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
     }
 
     li {
-        width: 80px;
-        display: block;
-        margin-bottom: $size-md;
+      width: 80px;
+      display: block;
+      margin-bottom: $size-md;
     }
 
     li:after {
-        display: none;
+      display: none;
     }
 
     @include mobile {
-        display: none;
+      display: none;
     }
+  }
+
+  .footer_bulb {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: -1 * $size-sm;
+    bottom: -1 * $size-sm;
+    display: none;
   }
 
   @include mobile {
     padding-bottom: calc(env(safe-area-inset-bottom) + #{$size-md});
+
+    .footer_bulb {
+      display: block;
+    }
   }
 }
