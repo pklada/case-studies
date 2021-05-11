@@ -1,0 +1,11 @@
+.waveDivider {
+  background-image: url(/assets/images/wave.svg);
+  height: 7px;
+  background-position: left center;
+  background-repeat: repeat-x;
+  opacity: 0.2;
+
+  @include prefers-dark {
+    opacity: 0.5;
+  }
+}

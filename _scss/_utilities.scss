@@ -2,6 +2,26 @@
     margin-bottom: $size-md;
 }
 
+.l-v-right-spaced {
+    margin-right: $size-md;
+}
+
+.l-v-right-spaced-sm {
+    margin-right: $size-sm;
+}
+
+.l-v-right-spaced-xs {
+    margin-right: $size-xs;
+}
+
+.l-v-left-spaced-xs {
+    margin-left: $size-xs;
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

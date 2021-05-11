@@ -1,0 +1,24 @@
+
+$icon-size-default: 24px;
+$icon-size-small: 16px;
+
+.icon {
+    width: $icon-size-default;
+    height: $icon-size-default;
+    display: inline-flex;
+
+    > img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &.icon-small {
+        width: $icon-size-small;
+        height: $icon-size-small;
+    }
+
+    &.icon-rounded {
+        border-radius: $border-radius-sm;
+        overflow: hidden;
+    }
+}
