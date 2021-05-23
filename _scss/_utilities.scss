@@ -1,5 +1,13 @@
 .l-v-bottom-spaced {
-    margin-bottom: $size-md;
+    margin-bottom: $size-md !important;
+}
+
+.l-v-bottom-spaced-lg {
+    margin-bottom: $size-lg !important;
+}
+
+.l-v-bottom-spaced-xl {
+    margin-bottom: $size-xl !important;
 }
 
 .l-v-right-spaced {
@@ -36,4 +44,8 @@
 
 .font-small {
     font-size: $font-sm;
+}
+
+.text-align-center {
+    text-align: center;
 }

@@ -35,8 +35,13 @@
     }
 
     &.image-borderless {
+        img, video {
+            border-radius: 0;
+        }
+
         .image_frame {
             border: none;
+            border-radius: 0;
         }
     }
 

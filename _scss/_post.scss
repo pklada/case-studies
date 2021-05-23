@@ -58,9 +58,9 @@ $post-subtitle-list-counter-size: 24px;
       td {
         padding: $size-sm;
         position: relative;
+        vertical-align: bottom;
 
         &:first-child {
-          vertical-align: bottom;
           font-weight: bold;
           overflow: hidden;
 

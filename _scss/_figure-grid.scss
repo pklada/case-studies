@@ -15,6 +15,12 @@ $figureGridGutter: $size-lg;
         margin-bottom: $figureGridGutter;
     }
 
+    &.figureGrid-threeup {
+        .figureGrid_item {
+            width: calc(33% - #{$figureGridGutter});
+        }
+    }
+
     @include mobile {
         margin-right: auto;
 

@@ -1,0 +1,159 @@
+---
+layout: project
+title: Quora Dark Mode
+description: Adding themeability to a massive consumer platform
+darkHero: true
+projectClass: quora-dark-mode
+details:
+  - item:
+    key: Company
+    value: Quora
+  - item:
+    key: Year
+    value: 2020
+  - item:
+    key: Additional design
+    value: Xinran Wang
+
+nextProjectSlug: guidebook-schedule-redesign
+previousProjectSlug: guidebook-beacon
+projectTitle: Quora Dark Mode
+stickyTestElementClass: 'js-sticky-test'
+
+image: web-image-quora-dark-mode.png
+
+---
+<div class="">
+  <div class="post project project-schedule post-invertedHero">
+    <div class="post_intro js-sticky-test">
+      <div class="post_title">
+        <h2>Quora Dark Mode</h2>
+      </div>
+      <div class="post_introQuote">
+        <p>Adding themeability to a massive consumer platform</p>
+      </div>
+    </div>
+    <div class="post_body">
+
+      <div class="post_details">
+        <table>
+          {% for detail in page.details %}
+            <tr>
+              <td>{{ detail.key }}</td>
+              <td>{{ detail.value }}</td>
+            </tr>
+          {% endfor %}
+          <tr>
+            <td>My role</td>
+            <td>
+              <ul>
+                <li>Design direction</li>
+                <li>UI/UX design</li>
+                <li>Front-end implementation</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Summary</h3>
+      <p>I helped design and implement dark mode on the Quora platform, both on mobile and desktop.</p>
+      <h3>Background</h3>
+      <p>As Quora matured as a product the lack of a universal dark mode become more problematic. Nearly every other comparable social product had the option to enable a dark variant, which hurt Quora's image as a modern consumer product. While migrating the platform to React, we took the opportunity to implement a robust dark mode color theme on the product.</p>
+
+      <h3>Goals</h3>
+      <ol class="numbered-list">
+        <li>Design a dark color theme which adheres to Quora's existing brand language.</li>
+        <li>Implement a dark mode experience while maintaining key engagement metrics.</li>
+        <li>Apply the same color theme and implementation mechanisms across both mobile and desktop.</li>
+      </ol>
+
+      <div class="post_section popped focused">
+        {% capture screenBlob %}
+          <div class="js-swipe swipe">
+            <div class="swipe_handle js-swipe-handle"></div>
+            <div class="js-swipe-item swipe_item">
+              <div><img src="/assets/images/quora-dark-mode-example-screen-dark.jpg" /></div>
+            </div>
+            <div class="swipe_base">
+              <img src="/assets/images/quora-dark-mode-example-screen-light.jpg" />
+            </div>
+          </div>
+        {% endcapture %}
+
+        {% capture screenBlobSpace %}
+          <div class="js-swipe swipe">
+            <div class="swipe_handle js-swipe-handle"></div>
+            <div class="js-swipe-item swipe_item">
+              <div><img src="/assets/images/quora-dark-mode-example-screen-space-dark.jpg" /></div>
+            </div>
+            <div class="swipe_base">
+              <img src="/assets/images/quora-dark-mode-example-screen-space-light.jpg" />
+            </div>
+          </div>
+        {% endcapture %}
+
+
+        {% include browser.html 
+          url="https://quora.com" 
+          screenBlob=screenBlob
+          class="l-v-bottom-spaced-xl"
+          caption="Quora's home page in both light and dark mode (use slider to reveal entire view)."
+        %}
+
+        {% include browser.html 
+          url="https://quora.com" 
+          class="l-v-bottom-spaced-xl"
+          screenBlob=screenBlobSpace
+          caption="An example Space on Quora in both light and dark mode (use slider to reveal entire view)."
+        %}
+
+        {% include browser.html 
+          url="https://quora.com" 
+          screenImageSrc="/assets/images/quora-dark-mode-screen-3.jpg" 
+          caption="The theme setting switcher uses abstracted images to give a hint of each theme."
+        %}
+      </div>
+
+      <div class="post_section popped">
+        <div>
+          <figure class="image project-figure-mobile-scroll">
+            <div class="image_frame">
+              <img src="{{ site.baseurl }}/assets/images/quora-dark-mode-mweb.jpg" srcset="{{ site.baseurl }}/assets/images/quora-dark-mode-mweb.jpg, {{ site.baseurl }}/assets/images/quora-dark-mode-mweb@2x.jpg 2x" />
+            </div>
+            <figcaption class="image_caption">The dark theme carried over to mobile.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+
+      <h3>Specific challenges</h3>
+      <h4>Shallow theming infrastructure</h4>
+      <p>While our initial React implementation had light theming capabilities, there didn't exist the ability to support more than two themes (necessary for experimentation) or robust theme contexts. I wrote much of the front end code which powered these new concepts, allowing us to test multiple theme variants against eachother.</p>
+      
+      <h4>Negative engagement investigation</h4>
+      <p>Our initial dark theme showed an ~3% engagement drop with users in the experiment. I led an effort to understand this drop, including testing a number of different dark theme variants. We discovered that the drop was caused by enabling the "auto" theme mode by default, causing us to adjust the default theme setting and successfully launching the experience.</p>
+
+      <div class="post_section popped-full">
+        <figure class="image image-borderless js-image-focus project-figure-mobile-scroll" data-image-src="{{ site.baseurl }}/assets/images/quora-dark-mode-theme-variants@2x.jpg">
+          <div class="image_frame">
+            <img src="{{ site.baseurl }}/assets/images/quora-dark-mode-theme-variants.jpg" srcset="{{ site.baseurl }}/assets/images/quora-dark-mode-theme-variants.jpg, {{ site.baseurl }}/assets/images/quora-dark-mode-theme-variants@2x.jpg 2x" />
+          </div>
+          <figcaption class="image_caption">I experimented with a number of theme variants and tested them in production. No variant proved to be more successful than another.</figcaption>
+        </figure>
+      </div>
+
+      <h4>Legacy views</h4>
+      <p>While most of the product was migrated to React at this point, there were a number of views which used Quora's legacy front end framework which had no support for (or awareness of) theming. I had to duplicate much of our existing theme logic and infrastructure to support these legacy views as to not break the dark mode experience.</p>
+
+
+
+      <div class="post_section">
+        <div class="callout post_section">
+          <h4 class="callout_title">Additional materials</h4>
+          <p><a href="https://productupdates.quora.com/Dark-mode-now-on-Quora-for-desktop-and-mobile-web">A Quora post I wrote on the desktop launch</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

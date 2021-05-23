@@ -1,0 +1,60 @@
+
+
+.swipe {
+    position: relative;
+    overflow: hidden;
+
+    .swipe_handle {
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background-color: transparent;
+        touch-action: none;
+        user-select: none;
+        border-left: 1px solid rgba(0, 0, 0, .2);
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 80px;
+            background-color: white;
+            background-image: url(/assets/images/resize.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: $border-radius-sm;
+            content: "";
+            transform: translate3d(-50%, -50%, 0);
+            box-shadow: 0 0 4px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+            cursor: ew-resize;
+        }
+
+        @include mobile {
+            &:before {
+                height: 44px;
+            }
+        }
+    }
+
+    .swipe_item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        bottom: 0;
+        overflow: hidden;
+
+        > div {
+            width: 100%;
+        }
+    }
+
+    .swipe_base {
+        position: relative;
+        z-index: 1; 
+    }
+}

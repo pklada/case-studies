@@ -1,0 +1,28 @@
+<figure class="browser {{ include.class }} {% if include.zoomSrc %}js-image-focus{% endif %}"
+        {% if include.zoomSrc %}data-image-src="{{ include.zoomSrc }}"
+        {% endif %}
+        {% if include.zoomCaption %}data-caption="{{ include.zoomCaption }}"
+        {% endif %}>
+  <div class="browser_frame">
+    <div class="browser_controls">
+      <div class="browser_button"></div>
+      <div class="browser_button"></div>
+      <div class="browser_button"></div>
+      <p>{{ include.url }}</p>
+    </div>
+    <div class="browser_screen">
+      {% if include.screenImageSrc %}
+      <img src="{{ include.screenImageSrc }}" />
+      {% endif %}
+      {% if include.screenBlob %}
+      {{ include.screenBlob }}
+      {% endif %}
+      {% if include.zoomSrc %}<div class="browser_zoomIndicator"></div>{% endif %}
+    </div>
+  </div>
+  {% if include.caption %}
+  <figcaption class="browser_caption">
+    {{ include.caption }}
+  </figcaption>
+  {% endif %}
+</figure>

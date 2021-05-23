@@ -182,4 +182,24 @@
             }
         }
     }
+
+    &.project-quora-dark-mode {
+        .project-figure-mobile-scroll {
+            @include mobile {
+                > .image_frame {
+                    width: calc(100vw);
+                    overflow: scroll;
+                    margin-left: -1 * $size-md;
+                    border-radius: 0;
+                }
+
+                img {
+                    width: 200vw;
+                    max-width: none;
+                    position: relative;
+                    border-radius: 0;
+                }
+            }
+        }
+    }
 }
