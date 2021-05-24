@@ -6,3 +6,4 @@ import './image-focus';
 import './sticky-header';
 import './bulb';
 import './swipe';
+import './perspective';

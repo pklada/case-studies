@@ -547,8 +547,8 @@ a:hover {
     opacity: .7; }
 .navigation_logo {
     margin-bottom: 16px;
-    width: 48px;
-    height: 48px; }
+    width: 32px;
+    height: 32px; }
 .navigation_logo svg {
     width: 100%;
     height: auto; }
@@ -614,7 +614,7 @@ a:hover {
       width: 100%;
       border-radius: 6px;
       border: 1px solid var(--color-bgd-adjusted);
-      background: var(--color-bgd-increased);
+      background: var(--color-bgd-adjusted-sm);
       overflow: hidden; }
 .post .post_details table td {
         padding: 8px;
@@ -1547,12 +1547,12 @@ code {
         align-items: center;
     -ms-flex-pack: center;
         justify-content: center;
-    box-shadow: 0 0 0 3px var(--color-bgd-adjusted-sm); }
-.avatar .avatar_badge > svg {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.2); }
+.avatar .avatar_badge svg {
       width: 12px;
       height: auto;
       vertical-align: middle; }
-.avatar .avatar_badge > svg path {
+.avatar .avatar_badge svg path {
         fill: var(--color-bgd); }
 .stickyHeader {
   display: -ms-flexbox;
@@ -1902,6 +1902,9 @@ code {
   padding: 0;
   max-width: none;
   margin-left: 30vw; }
+.home .home_avatarContainer {
+    -ms-flex-item-align: start;
+        align-self: flex-start; }
 .home .home_avatar {
     box-shadow: 0 0 0 3px var(--color-bgd), 0 0 0 4px rgba(183, 139, 107, 0.3);
     -ms-flex-negative: 0;

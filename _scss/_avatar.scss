@@ -45,9 +45,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 0 0 3px var(--color-bgd-adjusted-sm);
+        box-shadow: 0 0 5px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.2);
         
-        > svg {
+        svg {
             width: 12px;
             height: auto;
             vertical-align: middle;

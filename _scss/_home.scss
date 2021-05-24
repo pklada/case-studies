@@ -9,6 +9,10 @@
 
   margin-left: $home-sidebar-width;
 
+  .home_avatarContainer {
+    align-self: flex-start;
+  }
+
   .home_avatar {
     box-shadow: 0 0 0 3px var(--color-bgd),
       0 0 0 4px transparentize($color: $primary-color, $amount: 0.7);
