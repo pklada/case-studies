@@ -23,6 +23,7 @@ $color-dark-text: mix($base-color, $light-mix-color, 50%);
     --color-sticky-header-bgd: #{transparentize($color: lighten($bgd-color, 20%), $amount: .05)};
     --color-button-bgd: $text-color;
     --color-button-bgd-hover: #{transparentize($text-color, .5)};
+    --color-highlight: #{adjust-hue($base-color, 175)};
 
     @include prefers-dark {
         --color-text: #{$color-dark-text};

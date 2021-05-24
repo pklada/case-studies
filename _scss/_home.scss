@@ -11,11 +11,15 @@
 
   .home_avatarContainer {
     align-self: flex-start;
+    box-shadow: 0 0 0 3px var(--color-bgd),
+      0 0 0 4px transparentize($color: $primary-color, $amount: 0.85);
+    display: inline-flex;
+    border-radius: 50%;
+    z-index: 1;
+    position: relative;
   }
 
   .home_avatar {
-    box-shadow: 0 0 0 3px var(--color-bgd),
-      0 0 0 4px transparentize($color: $primary-color, $amount: 0.7);
     flex-shrink: 0;
   }
 
@@ -73,6 +77,9 @@
     > p {
       margin-bottom: $size-lg;
       font-size: $font-md;
+      position: relative;
+      z-index: 2;
+      transform: translate3d(0, 0, 0);
     }
   }
 

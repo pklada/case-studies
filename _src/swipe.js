@@ -1,5 +1,17 @@
 import throttle from 'lodash/throttle';
 
+const isElementInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
 class SwipeableImage {
   constructor(el) {
     this.el = el;
@@ -10,6 +22,8 @@ class SwipeableImage {
     this.handleDrag = this.handleDrag.bind(this);
     this.handleDragEnd = this.handleDragEnd.bind(this);
     this.handleDragStart = this.handleDragStart.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.throttledHandleScroll = throttle(this.handleScroll, 250);
 
     this.throttledHandleDrag = throttle(this.handleDrag, 250);
 
@@ -27,8 +41,15 @@ class SwipeableImage {
     this.width = this.el.clientWidth;
 
     this.active = false;
+    this.hasAnimated = false;
 
-    this.setTranslate(this.xOffset);
+    if (el.dataset.swipeAnimate) {
+      this.setTranslate(20);
+      window.addEventListener('scroll', this.throttledHandleScroll);
+      window.addEventListener('load', this.handleScroll, { once: true });
+    } else {
+      this.setTranslate(this.xOffset);
+    }
   }
 
   handleDragStart(e) {
@@ -79,6 +100,57 @@ class SwipeableImage {
     this.swipe.style.transform = `translateX(${-(this.width - desiredX)}px)`;
     this.swipeChild.style.transform = `translateX(${this.width - desiredX}px)`;
     this.handle.style.transform = `translate3d(${desiredX}px, 0, 0)`;
+  }
+
+  handleScroll() {
+    if (isElementInViewport(this.el)) {
+      window.removeEventListener('scroll', this.throttledHandleScroll);
+      this.animate();
+    }
+  }
+
+  animate() {
+    if (this.hasAnimated) {
+      return;
+    }
+
+    let startTime;
+    const startOffset = 20;
+    const duration = 1000;
+    const targetOffset = this.xOffset;
+
+    /* eslint-disable */
+    const easeInOutCubic = (t, b, c, d) => {
+      if ((t /= d / 2) < 1) return (c / 2) * t * t * t + b;
+      return (c / 2) * ((t -= 2) * t * t + 2) + b;
+    };
+    /* eslint-enable */
+
+    if (duration > 0) {
+      this.active = false;
+
+      const anim = (timestamp) => {
+        startTime = startTime || timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = easeInOutCubic(
+          elapsed,
+          startOffset,
+          targetOffset - startOffset,
+          duration,
+        );
+        this.setTranslate(progress);
+        if (elapsed < duration) {
+          requestAnimationFrame(anim);
+        } else {
+          this.setTranslate(targetOffset);
+        }
+      };
+      requestAnimationFrame(anim);
+    } else {
+      this.setTranslate(targetOffset);
+      this.hasAnimated = true;
+      this.active = true;
+    }
   }
 }
 

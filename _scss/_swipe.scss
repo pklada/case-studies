@@ -1,60 +1,85 @@
-
-
 .swipe {
-    position: relative;
+  position: relative;
+  overflow: hidden;
+
+  .swipe_handle {
+    position: absolute;
+    z-index: 3;
+    left: calc(-5px);
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background-color: transparent;
+    touch-action: none;
+    user-select: none;
+    cursor: ew-resize;
+
+    &:before {
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 12px);
+      width: 24px;
+      height: 80px;
+      background-color: white;
+      background-image: url(/assets/images/resize.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: $border-radius-sm;
+      content: '';
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      transition: all ease 200ms;
+      transform-origin: center center;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(50% - 1px);
+      width: 2px;
+      content: '';
+      background: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      transform-origin: center center;
+      transition: all ease 200ms;
+    }
+
+    @include mobile {
+      &:before {
+        height: 44px;
+        top: calc(50% - 22px);
+      }
+    }
+  }
+
+  .swipe_item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    bottom: 0;
     overflow: hidden;
 
+    > div {
+      width: 100%;
+    }
+  }
+
+  .swipe_base {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
     .swipe_handle {
-        position: absolute;
-        z-index: 3;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 0;
-        background-color: transparent;
-        touch-action: none;
-        user-select: none;
-        border-left: 1px solid rgba(0, 0, 0, .2);
-
-        &:before {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 24px;
-            height: 80px;
-            background-color: white;
-            background-image: url(/assets/images/resize.svg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            border-radius: $border-radius-sm;
-            content: "";
-            transform: translate3d(-50%, -50%, 0);
-            box-shadow: 0 0 4px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
-            cursor: ew-resize;
-        }
-
-        @include mobile {
-            &:before {
-                height: 44px;
-            }
-        }
+      &:before {
+        transform: scale(110%);
+      }
+      &:after {
+        background-color: var(--color-highlight);
+        transform: scaleX(200%);
+      }
     }
-
-    .swipe_item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        bottom: 0;
-        overflow: hidden;
-
-        > div {
-            width: 100%;
-        }
-    }
-
-    .swipe_base {
-        position: relative;
-        z-index: 1; 
-    }
+  }
 }
