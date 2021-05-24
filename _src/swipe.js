@@ -6,7 +6,7 @@ const isElementInViewport = (el) => {
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
-    rect.bottom <=
+    rect.bottom - (el.clientHeight / 3) <=
       (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
@@ -42,9 +42,11 @@ class SwipeableImage {
 
     this.active = false;
     this.hasAnimated = false;
+    this.isPristine = true;
 
     if (el.dataset.swipeAnimate) {
       this.setTranslate(20);
+      this.xOffset = 20;
       window.addEventListener('scroll', this.throttledHandleScroll);
       window.addEventListener('load', this.handleScroll, { once: true });
     } else {
@@ -68,6 +70,8 @@ class SwipeableImage {
     if (!this.active) {
       return;
     }
+
+    this.isPristine = false;
 
     e.preventDefault();
 
@@ -110,14 +114,14 @@ class SwipeableImage {
   }
 
   animate() {
-    if (this.hasAnimated) {
+    if (this.hasAnimated || !this.isPristine) {
       return;
     }
 
     let startTime;
     const startOffset = 20;
     const duration = 1000;
-    const targetOffset = this.xOffset;
+    const targetOffset = this.width / 2;
 
     /* eslint-disable */
     const easeInOutCubic = (t, b, c, d) => {
