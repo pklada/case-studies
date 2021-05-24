@@ -131,8 +131,6 @@ class SwipeableImage {
     /* eslint-enable */
 
     if (duration > 0) {
-      this.active = false;
-
       const anim = (timestamp) => {
         startTime = startTime || timestamp;
         const elapsed = timestamp - startTime;
@@ -147,13 +145,15 @@ class SwipeableImage {
           requestAnimationFrame(anim);
         } else {
           this.setTranslate(targetOffset);
+          this.hasAnimated = true;
+          this.xOffset = targetOffset;
         }
       };
       requestAnimationFrame(anim);
     } else {
       this.setTranslate(targetOffset);
       this.hasAnimated = true;
-      this.active = true;
+      this.xOffset = targetOffset;
     }
   }
 }
