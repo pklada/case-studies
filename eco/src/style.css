@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply h-10;
+    @apply px-2;
+  }
+
+  button.selected {
+    @apply bg-white;
+    @apply text-brandDarkBlue;
+  }
+
+  button.theme-object {
+    color: inherit;
+    margin-left: 8px;
+    margin-right: 8px;
+    transition: all ease 150ms;
+    width: auto;
+    height: auto;
+    @apply px-0;
+  }
+
+  button.theme-object.selected {
+    background: transparent;
+    box-shadow: 0 0 0 4px currentColor, 0 0 0 5px white !important;
+  }
+
+  button.theme-object:hover {
+    background: transparent;
+    box-shadow: 0 0 0 4px currentColor, 0 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-object label {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    opacity: 0;
+    transition: opacity ease 0.2s;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
+  .theme-object:hover label {
+    opacity: 1;
+  }
+}

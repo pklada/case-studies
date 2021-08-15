@@ -1,0 +1,196 @@
+{
+  "extensionsUsed": [
+    "KHR_texture_transform"
+  ],
+  "asset": {
+    "generator": "Marmoset Toolbag 3.08",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "CreditCard_GLTF_data.bin",
+      "byteLength": 8616
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1920
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1920,
+      "byteLength": 1280
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3200,
+      "byteLength": 1920
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5120,
+      "byteLength": 2560
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7680,
+      "byteLength": 936
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC3",
+      "min": [
+        -4.285999774932861,
+        -2.6989998817443848,
+        0
+      ],
+      "max": [
+        4.285999774932861,
+        2.6989998817443848,
+        0.05400000140070915
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 468,
+      "type": "SCALAR"
+    }
+  ],
+  "images": [
+    {
+      "uri": "CreditCard_GLTF_img0.jpg"
+    },
+    {
+      "uri": "CreditCard_GLTF_img1.jpg"
+    },
+    {
+      "uri": "CreditCard_GLTF_img2.jpg"
+    },
+    {
+      "uri": "CreditCard_GLTF_img3.jpg"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    },
+    {
+      "source": 1
+    },
+    {
+      "source": 2
+    },
+    {
+      "source": 3
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "TEXCOORD_0": 1,
+            "NORMAL": 2,
+            "TANGENT": 3,
+            "POSITION": 0
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "Credit_Card"
+    }
+  ],
+  "materials": [
+    {
+      "name": "CreditCard_Mat",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicRoughnessTexture": {
+          "index": 0
+        },
+        "metallicFactor": 1,
+        "roughnessFactor": 1
+      },
+      "normalTexture": {
+        "index": 1
+      },
+      "occlusionTexture": {
+        "index": 2,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "doubleSided": false
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Credit_Card",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        6.123234262925839e-17,
+        -1,
+        0,
+        0,
+        1,
+        6.123234262925839e-17,
+        0,
+        0,
+        0,
+        -1.1802043786701688e-9,
+        1
+      ]
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
