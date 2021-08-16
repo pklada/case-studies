@@ -44,7 +44,7 @@ controls.screenSpacePanning = true;
 controls.target.set(0, 7, 0);
 
 // setup ground
-const planeGeometry = new THREE.PlaneGeometry(100, 100, 32, 32);
+const planeGeometry = new THREE.PlaneGeometry(1000, 1000, 32, 32);
 const planeMaterial = new THREE.MeshStandardMaterial({
   color: floorColor,
   metalness: 0.7,
@@ -123,7 +123,7 @@ function setupLights() {
   ambientLight.name = "ambient_light";
   camera.add(ambientLight);
 
-  const directionalLight = new THREE.DirectionalLight(lightColor, 1.6);
+  const directionalLight = new THREE.DirectionalLight(lightColor, 1.8);
   directionalLight.position.set(10, 25, 5); // ~60º
   directionalLight.name = "main_light";
   directionalLight.castShadow = true;
@@ -142,15 +142,6 @@ function setupLights() {
   directionalLight.shadow.camera.far = 300;
   directionalLight.shadow.camera.near = 5;
 
-  const pointLight1 = new THREE.PointLight(lightColor, 1);
-  pointLight1.position.set(10, 20, -10);
-  pointLight1.castShadow = true;
-  scene.add(pointLight1);
-
-  const pointLight2 = new THREE.PointLight(lightColor, 2);
-  pointLight2.position.set(5, 8, 8)
-  pointLight2.castShadow = true;
-  scene.add(pointLight2);
 
   lights.push(ambientLight, directionalLight);
 }
@@ -194,6 +185,11 @@ const changeTexture = (themeName) => {
         texture.encoding = THREE.sRGBEncoding;
         texture.flipY = false;
         node.material.map = texture;
+        // sort of plastic
+        // node.material.roughness = .28;
+        // node.material.aoMap = null;
+        // node.material.roughnessMap = null;
+        // node.material.normalMap = null;
         hasChanged = true;
         node.material.needsUpdate = true;
       }
@@ -246,6 +242,7 @@ const toggleRotation = () => {
 
 setupThemeSelector();
 setSelectedTheme("light");
+toggleRotation();
 
 document
   .querySelector(".rotate-button")
