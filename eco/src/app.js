@@ -11,6 +11,8 @@ const floorColor = 0x000d85;
 const lightColor = 0xffffff;
 scene.background = new THREE.Color(bgd);
 
+const uiElements = document.querySelectorAll(".ui");
+
 // setup renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.gammaFactor = 2.2;
@@ -65,6 +67,10 @@ const loader = new GLTFLoader();
 loader.load("./card/CreditCard_GLTF.gltf", function (gltf) {
   setupCards(gltf.scene);
   setupLights();
+
+  uiElements.forEach(element => {
+      element.style.opacity = "";
+  })
 });
 
 const setupCards = function (object) {
@@ -172,6 +178,16 @@ const themes = {
     bg: "#111111",
     floor: "#111111",
   },
+  grayVertical: {
+    cardSrc: "./gray-vertical.jpg",
+    bg: "#aaa",
+    floor: "#666",
+  },
+  blackVertical: {
+    cardSrc: "./black-vertical.jpg",
+    bg: "#111",
+    floor: "#111",
+  }
 };
 
 let selectedTheme = "light";

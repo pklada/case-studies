@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>Eco Card Viewer</title>
-    <link rel="icon" type="image/png" href="favicon.ico"/>
+    <link rel="icon" type="image/png" href="favicon.ico" />
   </head>
   <body>
-    <div class="flex p-5 fixed left-0 right-0 top-0">
+    <div class="flex p-5 fixed left-0 right-0 top-0 ui" style="opacity: 0">
       <div class="eco-logo w-20 inline-block">
         <svg
           width="100%"
@@ -61,10 +61,21 @@
         items-center
         justify-center
         group
+        ui
       "
+      style="opacity: 0"
     >
       <p class="text-white flex-1 opacity-50">Themes</p>
-      <div class="flex flex-grow items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity">
+      <div
+        class="
+          flex flex-grow
+          items-center
+          justify-center
+          opacity-50
+          group-hover:opacity-100
+          transition-opacity
+        "
+      >
         <button
           data-theme-option="light"
           class="
@@ -105,12 +116,70 @@
             >Two-tone dark mint</label
           >
         </button>
+        <button
+          data-theme-option="grayVertical"
+          class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          "
+        >
+          <div class="w-7 h-7 overflow-hidden rounded">
+            <img src="./thumb_grayscaleVertical.jpg" />
+          </div>
+          <label class="block text-white text-xs absolute whitespace-nowrap"
+            >Grayscale Vertical</label
+          >
+        </button>
+        <button
+          data-theme-option="blackVertical"
+          class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          "
+        >
+          <div class="w-7 h-7 overflow-hidden rounded">
+            <img src="./thumb_blackscaleVertical.jpg" />
+          </div>
+          <label class="block text-white text-xs absolute whitespace-nowrap"
+            >Black Vertical</label
+          >
+        </button>
       </div>
-      <div class="flex-1 text-right group-hover:opacity-100 transition-opacity opacity-50">
-        <button class="rotate-button rounded inline-block text-white whitespace-nowrap">
+      <div
+        class="
+          flex-1
+          text-right
+          group-hover:opacity-100
+          transition-opacity
+          opacity-50
+        "
+      >
+        <button
+          class="
+            rotate-button
+            rounded
+            inline-block
+            whitespace-nowrap
+           text-white
+          "
+        >
           Auto-rotate
         </button>
       </div>
     </div>
+    <div class="vignette"></div>
+    <div class="loader js-loader"></div>
   </body>
 </html>

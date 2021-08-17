@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  canvas {
+    position: relative;
+    z-index: 1;
+  }
+  .ui {
+    position: relative;
+    z-index: 3;
+  }
   button {
     @apply h-10;
     @apply px-2;
@@ -10,7 +18,7 @@
 
   button.selected {
     @apply bg-white;
-    @apply text-brandDarkBlue;
+    @apply text-currentColor;
   }
 
   button.theme-object {
@@ -45,5 +53,23 @@
 
   .theme-object:hover label {
     opacity: 1;
+  }
+
+  .vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    color: inherit;
+    background-image: radial-gradient(
+      transparent 0%,
+      transparent 70%,
+      currentColor 100%
+    );
+    z-index: 2;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
   }
 }
