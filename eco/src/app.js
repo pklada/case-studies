@@ -174,20 +174,40 @@ const themes = {
     floor: "#000d85",
   },
   dark: {
-    cardSrc: "./card-dark.jpg",
+    cardSrc: "./themes/card-dark.jpg",
     bg: "#111111",
     floor: "#111111",
   },
   grayVertical: {
-    cardSrc: "./gray-vertical.jpg",
-    bg: "#aaa",
-    floor: "#666",
-  },
-  blackVertical: {
-    cardSrc: "./black-vertical.jpg",
+    cardSrc: "./themes/gray-vertical.jpg",
     bg: "#111",
     floor: "#111",
-  }
+  },
+  blackVertical: {
+    cardSrc: "./themes/black-vertical.jpg",
+    bg: "#000",
+    floor: "#050505",
+  },
+  risingBlue: {
+    cardSrc: "./themes/rising-blue.jpg",
+    bg: "#000D85",
+    floor: "#000D85",
+  },
+  risingBlack: {
+    cardSrc: "./themes/rising-black.jpg",
+    bg: "#000",
+    floor: "#050505",
+  },
+  mountainOrange: {
+    cardSrc: "./themes/mountain-orange.jpg",
+    bg: "#111",
+    floor: "#111",
+  },
+  mountainBlue: {
+    cardSrc: "./themes/mountain-blue.jpg",
+    bg: "#000D85",
+    floor: "#000D85",
+  },
 };
 
 let selectedTheme = "light";

@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Eco Card Viewer</title>
-    <link rel="icon" type="image/png" href="favicon.ico" />
-  <script defer src="main.js"></script></head>
-  <body>
-    <div class="flex p-5 fixed left-0 right-0 top-0 ui" style="opacity: 0">
-      <div class="eco-logo w-20 inline-block">
-        <svg
-          width="100%"
-          viewBox="0 0 200 64"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M84.8411 48.5581C81.9791 44.1961 81 39.9847 81 32.0379C81 24.8182 82.0795 20.6067 85.1173 15.8938C88.0546 11.3314 93.0757 8.84961 99.3269 8.84961C110.499 8.84961 117.378 16.3451 117.378 28.403V32.414C117.378 33.3916 116.574 34.1938 115.595 34.1938H87.5274C87.0002 34.1938 86.6236 34.5448 86.6236 35.0963C86.6236 44.6474 91.2681 50.012 99.5027 50.012C105.227 50.012 109.771 47.781 111.478 41.6141C111.754 40.6364 112.557 40.0849 113.537 40.0849H115.319C116.399 40.0849 117.026 40.7868 116.85 41.8648C115.771 49.8115 108.716 55.2513 99.5027 55.2513C92.7995 55.2513 87.7031 52.92 84.8411 48.5581ZM110.85 29.1801C111.378 29.1801 111.754 28.8292 111.754 28.2777C111.754 19.1778 107.285 14.0889 99.4273 14.0889C91.6447 14.0889 86.724 19.5288 86.724 28.2777C86.724 28.8041 87.0755 29.1801 87.6278 29.1801H110.85Z"
-            fill="white"
-          />
-          <path
-            d="M126.592 47.2039C123.73 42.842 123.454 38.455 123.454 32.0375C123.454 25.6199 123.73 21.2329 126.592 16.871C129.73 12.0579 134.902 8.84912 141.706 8.84912C146.626 8.84912 150.919 10.1778 153.857 12.8601C156.894 15.7179 158.501 19.9043 158.501 24.0155C158.501 24.9932 157.974 25.7954 156.97 25.7954H154.735C153.932 25.7954 153.028 25.3442 153.028 24.3665C153.028 21.5087 151.949 18.4754 149.714 16.5201C147.756 14.9157 144.969 14.1135 141.681 14.1135C136.76 14.1135 132.743 16.5201 130.684 20.9823C129.354 23.8401 129.078 26.8734 129.078 32.0375C129.078 37.2016 129.354 40.2599 130.684 43.0927C132.743 47.5548 136.76 49.9614 141.681 49.9614C145.697 49.9614 148.66 48.708 150.442 46.6524C152.15 44.697 152.953 42.0147 152.953 39.7836C152.953 38.6305 153.857 38.2544 154.66 38.2544H156.719C157.698 38.2544 158.501 39.0566 158.501 40.0343C158.501 43.6943 157.07 47.4295 154.66 50.1118C151.723 53.3206 147.154 55.2007 141.706 55.2007C134.902 55.2509 129.705 52.0421 126.592 47.2039Z"
-            fill="white"
-          />
-          <path
-            d="M166.635 47.2039C164.3 43.4436 163.497 40.0594 163.497 32.0375C163.497 24.0155 164.2 20.531 166.635 16.871C169.949 11.8824 175.221 8.84912 181.748 8.84912C188.276 8.84912 193.724 11.7821 196.862 16.871C199.272 20.531 200 24.0155 200 32.0375C200 40.0594 199.297 43.5439 196.862 47.2039C193.724 52.2928 188.276 55.2258 181.748 55.2258C175.221 55.2258 169.748 52.2928 166.635 47.2039ZM192.719 43.1177C193.975 40.5357 194.326 38.1291 194.326 32.0625C194.326 25.996 193.975 23.5894 192.719 21.0073C190.761 16.8209 186.544 14.1386 181.723 14.1386C176.903 14.1386 172.786 16.8209 170.727 21.0073C169.472 23.5894 169.12 25.996 169.12 32.0625C169.12 38.1291 169.472 40.5357 170.727 43.1177C172.786 47.3042 176.903 49.9865 181.723 49.9865C186.569 49.9865 190.761 47.3042 192.719 43.1177Z"
-            fill="white"
-          />
-          <path
-            d="M4.37756 15.8343C9.85913 25.4904 20.1998 32 32.0534 32C43.869 32 54.1815 25.5319 59.6765 15.9267C54.1332 6.40233 43.8143 0 32 0C20.224 0 9.93372 6.36093 4.37756 15.8343Z"
-            fill="white"
-            fill-opacity="0.62"
-          />
-          <path
-            d="M13.4066 5.95312C21.4827 11.7574 26.7465 21.2609 26.7465 32.0001C26.7465 42.7392 21.4827 52.2428 13.4066 58.047C5.29012 52.2428 0 42.7392 0 32.0001C0 21.2609 5.29012 11.7574 13.4066 5.95312Z"
-            fill="white"
-            fill-opacity="0.35"
-          />
-          <path
-            d="M26.749 63.5713C28.4575 63.8533 30.2116 64 32 64C49.5195 64 63.7507 49.921 63.9968 32.46C62.2385 32.1576 60.431 32 58.587 32C41.1442 32 26.9773 46.0958 26.749 63.5713Z"
-            fill="white"
-            fill-opacity="0.85"
-          />
-        </svg>
-      </div>
-      <div class="flex-1"></div>
-      <div class="text-right">
-        <p class="text-white">Card Viewer</p>
-        <p class="text-white opacity-50 text-xs">by Pete Lada</p>
-      </div>
-    </div>
 
-    <div
-      class="
+<head>
+  <meta charset="utf-8" />
+  <title>Eco Card Viewer</title>
+  <link rel="icon"
+        type="image/png"
+        href="favicon.ico" />
+<script defer src="main.js"></script></head>
+
+<body>
+  <div class="flex p-5 fixed left-0 right-0 top-0 ui"
+       style="opacity: 0">
+    <div class="eco-logo w-20 inline-block">
+      <svg width="100%"
+           viewBox="0 0 200 64"
+           fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M84.8411 48.5581C81.9791 44.1961 81 39.9847 81 32.0379C81 24.8182 82.0795 20.6067 85.1173 15.8938C88.0546 11.3314 93.0757 8.84961 99.3269 8.84961C110.499 8.84961 117.378 16.3451 117.378 28.403V32.414C117.378 33.3916 116.574 34.1938 115.595 34.1938H87.5274C87.0002 34.1938 86.6236 34.5448 86.6236 35.0963C86.6236 44.6474 91.2681 50.012 99.5027 50.012C105.227 50.012 109.771 47.781 111.478 41.6141C111.754 40.6364 112.557 40.0849 113.537 40.0849H115.319C116.399 40.0849 117.026 40.7868 116.85 41.8648C115.771 49.8115 108.716 55.2513 99.5027 55.2513C92.7995 55.2513 87.7031 52.92 84.8411 48.5581ZM110.85 29.1801C111.378 29.1801 111.754 28.8292 111.754 28.2777C111.754 19.1778 107.285 14.0889 99.4273 14.0889C91.6447 14.0889 86.724 19.5288 86.724 28.2777C86.724 28.8041 87.0755 29.1801 87.6278 29.1801H110.85Z"
+              fill="white" />
+        <path d="M126.592 47.2039C123.73 42.842 123.454 38.455 123.454 32.0375C123.454 25.6199 123.73 21.2329 126.592 16.871C129.73 12.0579 134.902 8.84912 141.706 8.84912C146.626 8.84912 150.919 10.1778 153.857 12.8601C156.894 15.7179 158.501 19.9043 158.501 24.0155C158.501 24.9932 157.974 25.7954 156.97 25.7954H154.735C153.932 25.7954 153.028 25.3442 153.028 24.3665C153.028 21.5087 151.949 18.4754 149.714 16.5201C147.756 14.9157 144.969 14.1135 141.681 14.1135C136.76 14.1135 132.743 16.5201 130.684 20.9823C129.354 23.8401 129.078 26.8734 129.078 32.0375C129.078 37.2016 129.354 40.2599 130.684 43.0927C132.743 47.5548 136.76 49.9614 141.681 49.9614C145.697 49.9614 148.66 48.708 150.442 46.6524C152.15 44.697 152.953 42.0147 152.953 39.7836C152.953 38.6305 153.857 38.2544 154.66 38.2544H156.719C157.698 38.2544 158.501 39.0566 158.501 40.0343C158.501 43.6943 157.07 47.4295 154.66 50.1118C151.723 53.3206 147.154 55.2007 141.706 55.2007C134.902 55.2509 129.705 52.0421 126.592 47.2039Z"
+              fill="white" />
+        <path d="M166.635 47.2039C164.3 43.4436 163.497 40.0594 163.497 32.0375C163.497 24.0155 164.2 20.531 166.635 16.871C169.949 11.8824 175.221 8.84912 181.748 8.84912C188.276 8.84912 193.724 11.7821 196.862 16.871C199.272 20.531 200 24.0155 200 32.0375C200 40.0594 199.297 43.5439 196.862 47.2039C193.724 52.2928 188.276 55.2258 181.748 55.2258C175.221 55.2258 169.748 52.2928 166.635 47.2039ZM192.719 43.1177C193.975 40.5357 194.326 38.1291 194.326 32.0625C194.326 25.996 193.975 23.5894 192.719 21.0073C190.761 16.8209 186.544 14.1386 181.723 14.1386C176.903 14.1386 172.786 16.8209 170.727 21.0073C169.472 23.5894 169.12 25.996 169.12 32.0625C169.12 38.1291 169.472 40.5357 170.727 43.1177C172.786 47.3042 176.903 49.9865 181.723 49.9865C186.569 49.9865 190.761 47.3042 192.719 43.1177Z"
+              fill="white" />
+        <path d="M4.37756 15.8343C9.85913 25.4904 20.1998 32 32.0534 32C43.869 32 54.1815 25.5319 59.6765 15.9267C54.1332 6.40233 43.8143 0 32 0C20.224 0 9.93372 6.36093 4.37756 15.8343Z"
+              fill="white"
+              fill-opacity="0.62" />
+        <path d="M13.4066 5.95312C21.4827 11.7574 26.7465 21.2609 26.7465 32.0001C26.7465 42.7392 21.4827 52.2428 13.4066 58.047C5.29012 52.2428 0 42.7392 0 32.0001C0 21.2609 5.29012 11.7574 13.4066 5.95312Z"
+              fill="white"
+              fill-opacity="0.35" />
+        <path d="M26.749 63.5713C28.4575 63.8533 30.2116 64 32 64C49.5195 64 63.7507 49.921 63.9968 32.46C62.2385 32.1576 60.431 32 58.587 32C41.1442 32 26.9773 46.0958 26.749 63.5713Z"
+              fill="white"
+              fill-opacity="0.85" />
+      </svg>
+    </div>
+    <div class="flex-1"></div>
+    <div class="text-right">
+      <p class="text-white">Card Viewer</p>
+      <p class="text-white opacity-50 text-xs">by Pete Lada</p>
+    </div>
+  </div>
+
+  <div class="
         fixed
         bottom-0
         left-0
@@ -63,22 +53,18 @@
         group
         ui
       "
-      style="opacity: 0"
-    >
-      <p class="text-white flex-1 opacity-50">Themes</p>
-      <div
-        class="
+       style="opacity: 0">
+    <p class="text-white flex-1 opacity-50">Themes</p>
+    <div class="
           flex flex-grow
           items-center
           justify-center
           opacity-50
           group-hover:opacity-100
           transition-opacity
-        "
-      >
-        <button
-          data-theme-option="light"
-          class="
+        ">
+      <button data-theme-option="light"
+              class="
             theme-object
             rounded
             inline-block
@@ -87,18 +73,14 @@
             flex
             justify-center
             align-center
-          "
-        >
-          <div class="w-7 h-7 overflow-hidden rounded">
-            <img src="./thumb_twoToneLightPurple.jpg" />
-          </div>
-          <label class="block text-white text-xs absolute whitespace-nowrap"
-            >Two-tone light purple</label
-          >
-        </button>
-        <button
-          data-theme-option="dark"
-          class="
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_twoToneLightPurple.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Two-tone light purple</label>
+      </button>
+      <button data-theme-option="dark"
+              class="
             theme-object
             rounded
             inline-block
@@ -107,18 +89,14 @@
             flex
             justify-center
             align-center
-          "
-        >
-          <div class="w-7 h-7 overflow-hidden rounded">
-            <img src="./thumb_twoToneDarkMint.jpg" />
-          </div>
-          <label class="block text-white text-xs absolute whitespace-nowrap"
-            >Two-tone dark mint</label
-          >
-        </button>
-        <button
-          data-theme-option="grayVertical"
-          class="
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_twoToneDarkMint.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Two-tone dark mint</label>
+      </button>
+      <button data-theme-option="grayVertical"
+              class="
             theme-object
             rounded
             inline-block
@@ -127,18 +105,14 @@
             flex
             justify-center
             align-center
-          "
-        >
-          <div class="w-7 h-7 overflow-hidden rounded">
-            <img src="./thumb_grayscaleVertical.jpg" />
-          </div>
-          <label class="block text-white text-xs absolute whitespace-nowrap"
-            >Grayscale Vertical</label
-          >
-        </button>
-        <button
-          data-theme-option="blackVertical"
-          class="
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_grayscaleVertical.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Grayscale Vertical</label>
+      </button>
+      <button data-theme-option="blackVertical"
+              class="
             theme-object
             rounded
             inline-block
@@ -147,39 +121,102 @@
             flex
             justify-center
             align-center
-          "
-        >
-          <div class="w-7 h-7 overflow-hidden rounded">
-            <img src="./thumb_blackscaleVertical.jpg" />
-          </div>
-          <label class="block text-white text-xs absolute whitespace-nowrap"
-            >Black Vertical</label
-          >
-        </button>
-      </div>
-      <div
-        class="
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_blackscaleVertical.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Black Vertical</label>
+      </button>
+      <button data-theme-option="risingBlue"
+              class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_risingBlue.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Rising Blue</label>
+      </button>
+      <button data-theme-option="risingBlack"
+              class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_risingBlack.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Rising Black</label>
+      </button>
+      <button data-theme-option="mountainOrange"
+              class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_mountainOrange.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Mountain Orange</label>
+      </button>
+      <button data-theme-option="mountainBlue"
+              class="
+            theme-object
+            rounded
+            inline-block
+            text-white
+            relative
+            flex
+            justify-center
+            align-center
+          ">
+        <div class="w-7 h-7 overflow-hidden rounded">
+          <img src="./thumbs/thumb_mountainBlue.jpg" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">Mountain Blue</label>
+      </button>
+    </div>
+
+
+
+
+
+    <div class="
           flex-1
           text-right
           group-hover:opacity-100
           transition-opacity
           opacity-50
-        "
-      >
-        <button
-          class="
+        ">
+      <button class="
             rotate-button
             rounded
             inline-block
             whitespace-nowrap
            text-white
-          "
-        >
-          Auto-rotate
-        </button>
-      </div>
+          ">
+        Auto-rotate
+      </button>
     </div>
-    <div class="vignette"></div>
-    <div class="loader js-loader"></div>
-  </body>
+  </div>
+  <div class="vignette"></div>
+  <div class="loader js-loader"></div>
+</body>
+
 </html>
