@@ -182,6 +182,13 @@ const themes = [
     floor: '#111',
   },
   {
+    cardSrc: './themes/sketch-blue.jpg',
+    name: 'Sketchy - blue vertical',
+    thumbSrc: './thumbs/thumb_researchDark.jpg',
+    bg: '#000d85',
+    floor: '#000d85',
+  },
+  {
     cardSrc: './card/CreditCard_GLTF_img3.jpg',
     name: 'Two-tone light purple',
     thumbSrc: './thumbs/thumb_twoToneLightPurple.jpg',
@@ -337,3 +344,4 @@ document
   .addEventListener('click', toggleRotation);
 
 window.changeTexture = changeTexture;
+window.setTheme = setSelectedTheme;
