@@ -1,8 +1,8 @@
-const THREE = require("three");
-const { GLTFLoader } = require("three/examples/jsm/loaders/GLTFLoader");
-const OrbitControls = require("three-orbitcontrols");
+const THREE = require('three');
+const { GLTFLoader } = require('three/examples/jsm/loaders/GLTFLoader');
+const OrbitControls = require('three-orbitcontrols');
 
-import "./style.css";
+import './style.css';
 
 // setup scene
 const scene = new THREE.Scene();
@@ -11,7 +11,7 @@ const floorColor = 0x000d85;
 const lightColor = 0xffffff;
 scene.background = new THREE.Color(bgd);
 
-const uiElements = document.querySelectorAll(".ui");
+const uiElements = document.querySelectorAll('.ui');
 
 // setup renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -33,7 +33,7 @@ const camera = new THREE.PerspectiveCamera(
   60,
   window.innerWidth / window.innerHeight,
   1,
-  1000
+  1000,
 );
 camera.position.set(1, 2, -3);
 scene.add(camera);
@@ -64,13 +64,13 @@ scene.fog = new THREE.Fog(fogColor, fogNear, fogFar);
 
 // load object
 const loader = new GLTFLoader();
-loader.load("./card/CreditCard_GLTF.gltf", function (gltf) {
+loader.load('./card/CreditCard_GLTF.gltf', function (gltf) {
   setupCards(gltf.scene);
   setupLights();
 
-  uiElements.forEach(element => {
-      element.style.opacity = "";
-  })
+  uiElements.forEach((element) => {
+    element.style.opacity = '';
+  });
 });
 
 const setupCards = function (object) {
@@ -118,7 +118,7 @@ const setupCards = function (object) {
         }
         if (node.material.map) node.material.map.anisotropy = 16;
       }
-    })
+    }),
   );
 
   cards.push(cardFront, cardBack);
@@ -126,12 +126,12 @@ const setupCards = function (object) {
 
 function setupLights() {
   const ambientLight = new THREE.AmbientLight(lightColor, 1.1);
-  ambientLight.name = "ambient_light";
+  ambientLight.name = 'ambient_light';
   camera.add(ambientLight);
 
   const directionalLight = new THREE.DirectionalLight(lightColor, 1.8);
   directionalLight.position.set(10, 25, 5); // ~60º
-  directionalLight.name = "main_light";
+  directionalLight.name = 'main_light';
   directionalLight.castShadow = true;
   window.directionalLight = directionalLight;
   camera.add(directionalLight);
@@ -147,7 +147,6 @@ function setupLights() {
   directionalLight.shadow.mapSize.height = 1024 * 2;
   directionalLight.shadow.camera.far = 300;
   directionalLight.shadow.camera.near = 5;
-
 
   lights.push(ambientLight, directionalLight);
 }
@@ -167,50 +166,82 @@ function animate() {
 }
 animate();
 
-const themes = {
-  light: {
-    cardSrc: "./card/CreditCard_GLTF_img3.jpg",
-    bg: "#000d85",
-    floor: "#000d85",
+const themes = [
+  {
+    cardSrc: './themes/research-blue.jpg',
+    name: 'Research - blue horizontal',
+    thumbSrc: './thumbs/thumb_researchBlue.jpg',
+    bg: '#000d85',
+    floor: '#000d85',
   },
-  dark: {
-    cardSrc: "./themes/card-dark.jpg",
-    bg: "#111111",
-    floor: "#111111",
+  {
+    cardSrc: './themes/research-horiz-dark.jpg',
+    name: 'Research - dark horizontal',
+    thumbSrc: './thumbs/thumb_researchDark.jpg',
+    bg: '#111',
+    floor: '#111',
   },
-  grayVertical: {
-    cardSrc: "./themes/gray-vertical.jpg",
-    bg: "#111",
-    floor: "#111",
+  {
+    cardSrc: './card/CreditCard_GLTF_img3.jpg',
+    name: 'Two-tone light purple',
+    thumbSrc: './thumbs/thumb_twoToneLightPurple.jpg',
+    bg: '#000d85',
+    floor: '#000d85',
   },
-  blackVertical: {
-    cardSrc: "./themes/black-vertical.jpg",
-    bg: "#000",
-    floor: "#050505",
+  {
+    cardSrc: './themes/card-dark.jpg',
+    name: 'Two-tone dark mint',
+    thumbSrc: './thumbs/thumb_twoToneDarkMint.jpg',
+    bg: '#111111',
+    floor: '#111111',
   },
-  risingBlue: {
-    cardSrc: "./themes/rising-blue.jpg",
-    bg: "#000D85",
-    floor: "#000D85",
+  {
+    cardSrc: './themes/gray-vertical.jpg',
+    name: 'Grayscale Vertical',
+    thumbSrc: './thumbs/thumb_grayscaleVertical.jpg',
+    bg: '#111',
+    floor: '#111',
   },
-  risingBlack: {
-    cardSrc: "./themes/rising-black.jpg",
-    bg: "#000",
-    floor: "#050505",
+  {
+    cardSrc: './themes/black-vertical.jpg',
+    name: 'Black Vertical',
+    thumbSrc: './thumbs/thumb_blackscaleVertical.jpg',
+    bg: '#000',
+    floor: '#050505',
   },
-  mountainOrange: {
-    cardSrc: "./themes/mountain-orange.jpg",
-    bg: "#111",
-    floor: "#111",
+  {
+    cardSrc: './themes/rising-blue.jpg',
+    name: 'Rising Blue',
+    thumbSrc: './thumbs/thumb_risingBlue.jpg',
+    bg: '#000D85',
+    floor: '#000D85',
   },
-  mountainBlue: {
-    cardSrc: "./themes/mountain-blue.jpg",
-    bg: "#000D85",
-    floor: "#000D85",
+  {
+    cardSrc: './themes/rising-black.jpg',
+    name: 'Rising Black',
+    thumbSrc: './thumbs/thumb_risingBlack.jpg',
+    bg: '#000',
+    floor: '#050505',
   },
-};
+  {
+    cardSrc: './themes/mountain-orange.jpg',
+    name: 'Mountain Orange',
+    thumbSrc: './thumbs/thumb_mountainOrange.jpg',
+    bg: '#111',
+    floor: '#111',
+  },
+  {
+    cardSrc: './themes/mountain-blue.jpg',
+    name: 'Mountain Blue',
+    thumbSrc: './thumbs/thumb_mountainBlue.jpg',
+    bg: '#000D85',
+    floor: '#000D85',
+  },
+];
 
-let selectedTheme = "light";
+let selectedTheme = 'light';
+
+const themeContainer = document.querySelector('.js-theme-container');
 
 const changeTexture = (themeName) => {
   cards.forEach((object, index) =>
@@ -229,59 +260,80 @@ const changeTexture = (themeName) => {
         hasChanged = true;
         node.material.needsUpdate = true;
       }
-    })
+    }),
   );
 };
 
-const changeColors = (themeName) => {
-  scene.background = new THREE.Color(themes[themeName].bg);
-  plane.material.color.set(themes[themeName].floor);
-  scene.fog = new THREE.Fog(themes[themeName].bg, fogNear, fogFar);
-  document.body.style.color = themes[themeName].bg;
+const changeColors = (themeIndex) => {
+  scene.background = new THREE.Color(themes[themeIndex].bg);
+  plane.material.color.set(themes[themeIndex].floor);
+  scene.fog = new THREE.Fog(themes[themeIndex].bg, fogNear, fogFar);
+  document.body.style.color = themes[themeIndex].bg;
 };
 
 const setupThemeSelector = () => {
-  const themeItems = document.querySelectorAll("[data-theme-option]");
-  themeItems.forEach((item) => {
-    item.classList.remove("selected");
-    item.addEventListener("click", () => {
-      setSelectedTheme(item.dataset.themeOption);
+  themes.forEach((item, index) => {
+    const button = document.createElement('button');
+    button.classList.add(
+      'theme-object',
+      'rounded',
+      'inline-block',
+      'text-white',
+      'relative',
+      'flex',
+      'justify-center',
+      'align-center',
+    );
+    button.dataset.themeId = index;
+    button.innerHTML = `<div class="w-7 h-7 overflow-hidden rounded">
+          <img src="${item.thumbSrc}" />
+        </div>
+        <label class="block text-white text-xs absolute whitespace-nowrap">${item.name}</label>`;
+    button.classList.remove('selected');
+    button.addEventListener('click', () => {
+      setSelectedTheme(index);
     });
+
+    themeContainer.appendChild(button);
   });
 };
 
-const setSelectedTheme = (themeOption) => {
-  changeTexture(themeOption);
-  changeColors(themeOption);
-  selectedTheme = themeOption;
+const setSelectedTheme = (themeIndex) => {
+  changeTexture(themeIndex);
+  changeColors(themeIndex);
+  selectedTheme = themeIndex;
   clearSelectedTheme();
 
-  const themeItems = document.querySelectorAll("[data-theme-option]");
-  themeItems.forEach((item) => {
-    if (item.dataset.themeOption === selectedTheme) {
-      item.classList.add("selected");
+  themes.forEach((_, index) => {
+    if (index === themeIndex) {
+      document
+        .querySelector(`[data-theme-id="${index}"]`)
+        .classList.add('selected');
     }
   });
 };
 
 const clearSelectedTheme = () => {
-  const themeItems = document.querySelectorAll("[data-theme-option]");
+  const themeItems = document.querySelectorAll('[data-theme-id]');
   themeItems.forEach((item) => {
-    item.classList.remove("selected");
+    item.classList.remove('selected');
   });
 };
 
 const toggleRotation = () => {
   controls.autoRotate = !controls.autoRotate;
-  document.querySelector(".rotate-button").classList.toggle("selected");
+  document.querySelector('.rotate-button').classList.toggle('selected');
 };
 
 setupThemeSelector();
-setSelectedTheme("light");
 toggleRotation();
 
+window.addEventListener("load", () => {
+  setSelectedTheme(0);
+});
+
 document
-  .querySelector(".rotate-button")
-  .addEventListener("click", toggleRotation);
+  .querySelector('.rotate-button')
+  .addEventListener('click', toggleRotation);
 
 window.changeTexture = changeTexture;

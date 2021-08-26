@@ -51,8 +51,16 @@
     padding: 2px 4px;
   }
 
-  .theme-object:hover label {
+  .theme-object.selected label {
     opacity: 1;
+  }
+
+  .theme-object:hover label {
+    opacity: 1 !important;
+  }
+
+  .theme-selector:hover .theme-object.selected label {
+    opacity: 0;
   }
 
   .vignette {
