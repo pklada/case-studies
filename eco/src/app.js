@@ -335,7 +335,7 @@ const toggleRotation = () => {
 setupThemeSelector();
 toggleRotation();
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     setSelectedTheme(0);
   }, 100);
