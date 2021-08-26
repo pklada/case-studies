@@ -336,7 +336,9 @@ setupThemeSelector();
 toggleRotation();
 
 window.addEventListener("load", () => {
-  setSelectedTheme(0);
+  setTimeout(() => {
+    setSelectedTheme(0);
+  }, 100);
 });
 
 document
