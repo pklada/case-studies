@@ -168,6 +168,20 @@ animate();
 
 const themes = [
   {
+    cardSrc: './themes/grid-dark.jpg',
+    name: 'Grid - dark vertical',
+    thumbSrc: './thumbs/grid-dark.png',
+    bg: '#000d85',
+    floor: '#000d85',
+  },
+  {
+    cardSrc: './themes/grid-blue.jpg',
+    name: 'Grid - blue vertical',
+    thumbSrc: './thumbs/grid-blue.png',
+    bg: '#000d85',
+    floor: '#000d85',
+  },
+  {
     cardSrc: './themes/research-blue.jpg',
     name: 'Research - blue horizontal',
     thumbSrc: './thumbs/thumb_researchBlue.jpg',
@@ -333,7 +347,6 @@ const toggleRotation = () => {
 };
 
 setupThemeSelector();
-toggleRotation();
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
