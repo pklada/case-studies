@@ -168,6 +168,13 @@ animate();
 
 const themes = [
   {
+    cardSrc: './themes/rd-final.jpg',
+    name: 'R&D Final',
+    thumbSrc: './thumbs/grid-dark.png',
+    bg: '#111',
+    floor: '#111',
+  },
+  {
     cardSrc: './themes/grid-dark.jpg',
     name: 'Grid - dark vertical',
     thumbSrc: './thumbs/grid-dark.png',
