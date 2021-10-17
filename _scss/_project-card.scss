@@ -49,6 +49,7 @@
     .projectCard_subtitle {
         margin: 0;
         color: rgba(0,0,0,.4);
+        font-size: $font-xxs;
 
         @include prefers-dark {
             color: rgba(255, 255, 255, .4);

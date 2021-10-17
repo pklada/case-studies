@@ -1,205 +1,236 @@
 .project {
+  .project_footer {
+    @include container($narrow: true);
+    max-width: $post-container-width;
+    display: flex;
+    border-top: 3px solid var(--color-bgd-adjusted);
+    margin-top: $size-xl;
+    padding-top: $size-xl;
+    padding-left: 0;
+    padding-right: 0;
 
-    .project_footer {
-        @include container($narrow: true);
-        max-width: $post-container-width;
-        display: flex;
-        border-top: 3px solid var(--color-bgd-adjusted);
-        margin-top: $size-xl;
-        padding-top: $size-xl;
-        padding-left: 0;
-        padding-right: 0;
+    > a {
+      width: 50%;
+      padding: $size-md;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      border: none;
+      text-decoration: none;
+      white-space: nowrap;
 
-        > a {
-            width: 50%;
-            padding: $size-md;
-            display: flex;
-            align-items: center;
-            line-height: 1;
-            border: none;
-            text-decoration: none;
-
-            &:first-child {
-                svg {
-                    transform: rotate(180deg);
-                }
-            }
-
-            &:last-child {
-                justify-content: flex-end;
-
-                svg {
-                    margin-right: 0;
-                    margin-left: $size-sm;
-                }
-            }
-
-            svg {
-                margin-right: $size-sm;
-
-                path {
-                    fill: $link-color;
-                }
-            }
-
-            &:hover {
-                background-color: var(--color-bgd-adjusted-sm);
-                opacity: 1;
-            }
+      &:first-child {
+        svg {
+          transform: rotate(180deg);
         }
+      }
+
+      &:last-child {
+        justify-content: flex-end;
+
+        svg {
+          margin-right: 0;
+          margin-left: $size-sm;
+        }
+      }
+
+      svg {
+        margin-right: $size-sm;
+
+        path {
+          fill: $link-color;
+        }
+      }
+
+      &:hover {
+        background-color: var(--color-bgd-adjusted-sm);
+        opacity: 1;
+      }
     }
 
-    &.project-schedule {
+    @include mobile {
+      margin-top: $size-lg;
+      padding-top: $size-lg;
+    }
+  }
 
-        .project-figure-phone-android {
-            float: right; 
-            width: auto;
-            max-width: none;
-            margin-right: -290px;
-            margin-left: $size-xl;
+  &.project-schedule {
+    .project-figure-phone-android {
+      float: right;
+      width: auto;
+      max-width: none;
+      margin-right: -290px;
+      margin-left: $size-xl;
 
-            img {
-                max-width: 500px;
-            }
+      img {
+        max-width: 500px;
+      }
 
-            @include mobile {
-                float: none;
-                position: relative;
-                bottom: -30px;
-                margin-right: auto;
-                margin-left: auto;
-                margin-bottom: 0;
+      @include mobile {
+        float: none;
+        position: relative;
+        bottom: -30px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0;
 
-                img {
-                    max-width: 400px;
-                }
-            }
+        img {
+          max-width: 400px;
         }
+      }
+    }
+  }
+
+  &.project-spaces {
+    .project-intro-phones {
+      width: 500px;
+      position: relative;
+      float: left;
+      margin-left: -460px;
+      height: 810px;
+      margin-right: $size-lg;
+
+      .phone-drawer {
+        width: 450px;
+        height: auto;
+        position: absolute;
+        top: -80px;
+        right: 0;
+        z-index: 2;
+
+        @include mobile {
+          width: 260px;
+          top: 0;
+          z-index: 1;
+        }
+
+        @include tablet {
+          right: -20px;
+          z-index: 1;
+          top: -80px;
+        }
+      }
+
+      .phone-home {
+        width: 450px;
+        height: auto;
+        position: absolute;
+        top: 220px;
+        right: 100px;
+        z-index: 1;
+
+        @include mobile {
+          width: 280px;
+          top: 230px;
+          right: 0;
+          z-index: 2;
+        }
+
+        @include tablet {
+          right: -10px;
+          top: 170px;
+          z-index: 1;
+        }
+      }
+
+      @include mobile {
+        margin-right: $size-md;
+        margin-left: -225px;
+        height: 620px;
+      }
+
+      @include tablet {
+        margin-left: -400px;
+      }
     }
 
-    &.project-spaces {
-
-        .project-intro-phones {
-            width: 500px;
-            position: relative;
-            float: left;
-            margin-left: -460px;
-            height: 810px;
-            margin-right: $size-lg;
-
-            .phone-drawer {
-                width: 450px;
-                height: auto;
-                position: absolute;
-                top: -80px;
-                right: 0;
-                z-index: 2;
-
-                @include mobile {
-                    width: 260px;
-                    top: 0;
-                    z-index: 1;
-                }
-
-                @include tablet {
-                    right: -20px;
-                    z-index: 1;
-                    top: -80px;
-                }
-            }
-
-            .phone-home {
-                width: 450px;
-                height: auto;
-                position: absolute;
-                top: 220px;
-                right: 100px;
-                z-index: 1;
-
-                @include mobile {
-                    width: 280px;
-                    top: 230px;
-                    right: 0;
-                    z-index: 2;
-                }
-
-                @include tablet {
-                    right: -10px;
-                    top: 170px;
-                    z-index: 1;
-                }
-            }
-
-            @include mobile {
-                margin-right: $size-md;
-                margin-left: -225px;
-                height: 620px;
-            }
-
-            @include tablet {
-                margin-left: -400px;
-            }
+    .project-figure-themes {
+      @include mobile {
+        > .image_frame {
+          width: calc(100vw);
+          overflow: scroll;
+          margin-left: -1 * $size-md;
         }
 
-        .project-figure-themes {
-            @include mobile {
-                > .image_frame {
-                    width: calc(100vw);
-                    overflow: scroll;
-                    margin-left: -1 * $size-md;
-                }
-
-                img {
-                    width: 200vw;
-                    max-width: none;
-                    position: relative;
-                }
-            }
+        img {
+          width: 200vw;
+          max-width: none;
+          position: relative;
         }
-
-        .project-figure-phones {
-            float: right; 
-            width: auto;
-            max-width: none;
-            margin-right: -330px;
-            margin-left: $size-xl;
-            margin-top: -60px;
-
-            img {
-                max-width: 500px;
-            }
-
-            @include mobile {
-                max-width: 400px;
-                margin-right: 0;
-                margin-left: auto;
-                margin-top: $size-md;
-                margin-bottom: $size-md;
-
-                img {
-                    width: 100%;
-                }
-            }
-        }
+      }
     }
 
-    &.project-quora-dark-mode {
-        .project-figure-mobile-scroll {
-            @include mobile {
-                > .image_frame {
-                    width: calc(100vw);
-                    overflow: scroll;
-                    margin-left: -1 * $size-md;
-                    border-radius: 0;
-                }
+    .project-figure-phones {
+      float: right;
+      width: auto;
+      max-width: none;
+      margin-right: -330px;
+      margin-left: $size-xl;
+      margin-top: -60px;
 
-                img {
-                    width: 200vw;
-                    max-width: none;
-                    position: relative;
-                    border-radius: 0;
-                }
-            }
+      img {
+        max-width: 500px;
+      }
+
+      @include mobile {
+        max-width: 400px;
+        margin-right: 0;
+        margin-left: auto;
+        margin-top: $size-md;
+        margin-bottom: $size-md;
+
+        img {
+          width: 100%;
         }
+      }
     }
+  }
+
+  &.project-quora-messages {
+    .comparison-horizontal {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .comparison-vertical {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    .intro {
+      height: 380px;
+      overflow: hidden;
+      margin-bottom: -($size-xl * 2);
+
+      @include mobile {
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: -1 * $size-lg;
+      }
+    }
+  }
+
+  &.project-quora-dark-mode {
+    .project-figure-mobile-scroll {
+      @include mobile {
+        > .image_frame {
+          width: calc(100vw);
+          overflow: scroll;
+          margin-left: -1 * $size-md;
+          border-radius: 0;
+        }
+
+        img {
+          width: 200vw;
+          max-width: none;
+          position: relative;
+          border-radius: 0;
+        }
+      }
+    }
+  }
 }

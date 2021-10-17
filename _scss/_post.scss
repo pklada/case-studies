@@ -106,6 +106,17 @@ $post-subtitle-list-counter-size: 24px;
     }
   }
 
+  .post_introImage {
+    width: 100%;
+    position: relative;
+    margin-top: $size-lg;
+
+    > img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
   .post_body {
     max-width: $post-container-width;
     margin: $size-xl auto;
@@ -316,6 +327,23 @@ $post-subtitle-list-counter-size: 24px;
         background-color: var(--color-text);
         z-index: 0;
         transform: rotate(-2deg);
+      }
+
+      &:after {
+        position: absolute;
+        top: calc(100% - 25px);
+        height: 50px;
+        left: calc((150vw - #{$post-container-width}) / 2 * -1);
+        width: calc(150vw);
+        background: var(--color-bgd);
+        content: "";
+        z-index: 10;
+        transform: rotate(-2deg);
+        box-shadow: 0 -5px 5px rgba(0,0,0,.05);
+
+        @include mobile {
+          display: none;
+        }
       }
 
       .post_title,

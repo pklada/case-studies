@@ -1,0 +1,138 @@
+---
+layout: project
+title: Quora Messages
+description: Improving a complex multiplatform communication tool
+darkHero: false
+projectClass: quora-messages
+details:
+  - item:
+    key: Company
+    value: Quora
+  - item:
+    key: Year
+    value: 2021
+
+nextProjectSlug: quora-dark-mode
+previousProjectSlug: guidebook-beacon
+projectTitle: Quora Messages Redesign
+stickyTestElementClass: 'js-sticky-test'
+
+image: web-image-quora-dark-mode.png
+
+---
+<div>
+  <div class="post project project-quora-messages post-invertedHero">
+    <div class="post_intro js-sticky-test">
+      <div class="post_title">
+        <h2>Quora Messages Redesign</h2>
+      </div>
+      <div class="post_introQuote">
+        <p>Improving a complex multiplatform communication tool</p>
+      </div>
+      <div class="post_introImage intro">
+        <img src="/assets/images/quora-messages-iphone.png" />
+      </div>
+    </div>
+    <div class="post_body">
+
+      <div class="post_details">
+        <table>
+          {% for detail in page.details %}
+            <tr>
+              <td>{{ detail.key }}</td>
+              <td>{{ detail.value }}</td>
+            </tr>
+          {% endfor %}
+          <tr>
+            <td>My role</td>
+            <td>
+              <ul>
+                <li>Design direction</li>
+                <li>Product management</li>
+                <li>UI/UX design</li>
+                <li>Front-end implementation</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Summary</h3>
+      <p>I redesigned Quora's messaging system and helped implement the front end in React.</p>
+      <h3>Background</h3>
+      <p>Midway through Quora's React migration, I was asked to lead design on migrating the messages product from Webnode (Quora's proprietary front-end framework) to React. While messaging is not a core feature of Quora, it is quite heavily used, with nearly 10 million messages sent per week. </p>
+        <p>Initially, the goal was simply to migrate the messages product in its current form, without any changes to behavior or functionality. When I joined the project, I pushed hard to use this as an opportunity to overhaul the messages feature - bringing it closer to parity with other major social internet products.</p>
+
+        <figure class="image post_section popped-full image-borderless comparison-horizontal">
+            <div class="image_frame">
+              <img src="/assets/images/quora-messages-comparison.png" srcset="/assets/images/quora-messages-comparison.png, /assets/images/quora-messages-comparison@2x.png 2x" />
+            </div>
+            <figcaption class="image_caption">
+              Old Quora messages vs. the new redesign.
+            </figcaption>
+          </figure>
+
+          <figure class="image post_section popped-full image-borderless comparison-vertical">
+            <div class="image_frame">
+              <img src="/assets/images/quora-messages-comparison-vertical.png" srcset="/assets/images/quora-messages-comparison-vertical.png, /assets/images/quora-messages-comparison-vertical@2x.png 2x" />
+            </div>
+            <figcaption class="image_caption">
+              Old Quora messages vs. the new redesign.
+            </figcaption>
+          </figure>
+
+
+      <h3>Specific problem areas</h3>
+      <ul>
+          <li>There was no dedicated messaging page on desktop. Messages always opened in an overlay, which provided easy access but made navigating the messages system as a power user frustrating.</li>
+        <li>The messages inbox was a separate view from the message thread on desktop. This made navigating between threads more frictional than needed. </li>
+        <li>Generally, performance was pretty poor. Sending a message would send a full page reload. Some of this would be improved “automatically” with React, but there was room to make our message system feel more native. </li>
+        <li>The UI felt relatively outdated. </li>
+      </ul>
+      <p>Ultimately, I was successful in convincing leadership that an overhaul was necessary. I worked with a small team of engineers to fix the issues mentioned above, and implement a smoother, more responsive messaging system. This included moving messages to its own dedicated page on desktop, including a two-column inbox system. We added a messages dock on desktop as well, which persisted on every page, to continue to allow the quick ease of access which the overlay previously provided. We introduced live-updating of message threads, so sending and receiving messages didn’t require a full page refresh. </p>
+
+        <figure class="browser post_section popped">
+            <div class="browser_frame">
+              <div class="browser_controls">
+                <div class="browser_button"></div>
+                <div class="browser_button"></div>
+                <div class="browser_button"></div>
+                <p>https://quora.com</p>
+              </div>
+              <div class="browser_screen">
+                <video autoplay loop mute playsinline>
+                  <source src="/assets/videos/quora-messages-dock.mov" />
+                </video>
+              </div>
+            </div>
+            <figcaption class="browser_caption">
+              The desktop messages dock in use.
+            </figcaption>
+          </figure>
+    
+    <h3>Results</h3>
+    <p>
+Results were positive, particularly on desktop where the bulk of changes were made. We saw messages sent increase by 20% on desktop during the initial migration, and another 20% when we introduced the dock (the dock also increased messages thread started by ~30%). The screenshots below are taken from Scientist, Quora's internal experiment analysis tool.</p>
+    
+    <figure class="image post_section">
+        <div class="image_frame">
+        <img src="/assets/images/quora-message-migration-results.jpg" />
+        </div>
+        <figcaption class="image_caption">
+            Results from the initial React migration + redesign.
+        </figcaption>
+    </figure>
+
+    <figure class="image post_section">
+        <div class="image_frame">
+        <img src="/assets/images/quora-message-migration-results-2.jpg" />
+        </div>
+        <figcaption class="image_caption">
+            Results from the subsequent desktop messages dock experiment.
+        </figcaption>
+    </figure>
+    
+    <p>In the end, this was a successful migration which resulted in an opportunity to modernize a non-mission-critical feature, in which design played a key role in both pushing for change and leading implementation.</p>
+    </div>
+  </div>
+</div>
