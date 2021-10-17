@@ -386,7 +386,7 @@ html {
 html.has-open-overlay {
     overflow: hidden; }
 body {
-  font-family: "Work Sans", "Avenir", sans-serif;
+  font-family: "Avenir", "Work Sans", sans-serif;
   color: var(--color-text);
   display: -ms-flexbox;
   display: flex;
@@ -1207,7 +1207,7 @@ code {
       cursor: pointer;
       font-size: 13px;
       text-transform: uppercase;
-      font-family: "Work Sans", "Avenir", sans-serif;
+      font-family: "Avenir", "Work Sans", sans-serif;
       font-weight: 600;
       letter-spacing: .5px; }
 .imageFocus .imageFocus_controls .imageFocus_controlButton:hover {
@@ -1499,8 +1499,9 @@ code {
 .projectCard .projectCard_title {
   margin: 0;
   color: rgba(0, 0, 0, 0.75);
-  font-weight: 500;
-  font-size: 13px; }
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px; }
 .projectCard .projectCard_title .prefers-dark,
   .prefers-dark .projectCard .projectCard_title {
     color: rgba(255, 255, 255, 0.75); }
@@ -2019,8 +2020,8 @@ code {
 .home .home_sidebarDescription > p {
     margin-bottom: 0; }
 .home .home_sidebarIntro {
-    -ms-flex-preferred-size: 200px;
-        flex-basis: 200px;
+    -ms-flex-preferred-size: 186px;
+        flex-basis: 186px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: end;
@@ -2043,7 +2044,7 @@ code {
     margin-left: auto;
     margin-right: auto; }
 .home .home_contentIntro {
-    height: 200px;
+    height: 186px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: end;

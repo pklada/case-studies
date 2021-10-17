@@ -38,8 +38,9 @@
     .projectCard_title {
         margin: 0;
         color: rgba(0,0,0,.75);
-        font-weight: 500;
+        font-weight: 600;
         font-size: $font-xs;
+        margin-bottom: 2px;
 
         @include prefers-dark {
             color: rgba(255, 255, 255, .75);
